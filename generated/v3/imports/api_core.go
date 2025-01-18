@@ -40,9 +40,9 @@ Cancel Cancel an active import
 
 This allows a developer to cancel an active import.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param importId
- @return ApiCancelRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param importId
+	@return ApiCancelRequest
 */
 func (a *CoreApiService) Cancel(ctx context.Context, importId int64) ApiCancelRequest {
 	return ApiCancelRequest{
@@ -53,7 +53,8 @@ func (a *CoreApiService) Cancel(ctx context.Context, importId int64) ApiCancelRe
 }
 
 // Execute executes the request
-//  @return ActionResponse
+//
+//	@return ActionResponse
 func (a *CoreApiService) CancelExecute(r ApiCancelRequest) (*ActionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -173,8 +174,8 @@ Create Start a new import
 
 Begins importing data from the specified file resources. This uploads the corresponding file and uses the import request object to convert rows in the files to objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateRequest
 */
 func (a *CoreApiService) Create(ctx context.Context) ApiCreateRequest {
 	return ApiCreateRequest{
@@ -184,7 +185,8 @@ func (a *CoreApiService) Create(ctx context.Context) ApiCreateRequest {
 }
 
 // Execute executes the request
-//  @return PublicImportResponse
+//
+//	@return PublicImportResponse
 func (a *CoreApiService) CreateExecute(r ApiCreateRequest) (*PublicImportResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -310,9 +312,9 @@ GetByID Get the information on any import
 
 A complete summary of an import record, including any updates.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param importId
- @return ApiGetByIDRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param importId
+	@return ApiGetByIDRequest
 */
 func (a *CoreApiService) GetByID(ctx context.Context, importId int64) ApiGetByIDRequest {
 	return ApiGetByIDRequest{
@@ -323,7 +325,8 @@ func (a *CoreApiService) GetByID(ctx context.Context, importId int64) ApiGetByID
 }
 
 // Execute executes the request
-//  @return PublicImportResponse
+//
+//	@return PublicImportResponse
 func (a *CoreApiService) GetByIDExecute(r ApiGetByIDRequest) (*PublicImportResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -449,8 +452,8 @@ GetPage Get active imports
 
 Returns a paged list of active imports for this account.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetPageRequest
 */
 func (a *CoreApiService) GetPage(ctx context.Context) ApiGetPageRequest {
 	return ApiGetPageRequest{
@@ -460,7 +463,8 @@ func (a *CoreApiService) GetPage(ctx context.Context) ApiGetPageRequest {
 }
 
 // Execute executes the request
-//  @return CollectionResponsePublicImportResponse
+//
+//	@return CollectionResponsePublicImportResponse
 func (a *CoreApiService) GetPageExecute(r ApiGetPageRequest) (*CollectionResponsePublicImportResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet

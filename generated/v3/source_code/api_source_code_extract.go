@@ -42,8 +42,8 @@ func (r ApiExtractAsyncRequest) Execute() (*TaskLocator, *http.Response, error) 
 /*
 ExtractAsync Method for ExtractAsync
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiExtractAsyncRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtractAsyncRequest
 */
 func (a *SourceCodeExtractApiService) ExtractAsync(ctx context.Context) ApiExtractAsyncRequest {
 	return ApiExtractAsyncRequest{
@@ -53,7 +53,8 @@ func (a *SourceCodeExtractApiService) ExtractAsync(ctx context.Context) ApiExtra
 }
 
 // Execute executes the request
-//  @return TaskLocator
+//
+//	@return TaskLocator
 func (a *SourceCodeExtractApiService) ExtractAsyncExecute(r ApiExtractAsyncRequest) (*TaskLocator, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -162,9 +163,9 @@ func (r ApiExtractGetAsyncStatusRequest) Execute() (*ActionResponse, *http.Respo
 /*
 ExtractGetAsyncStatus Method for ExtractGetAsyncStatus
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param taskId
- @return ApiExtractGetAsyncStatusRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param taskId
+	@return ApiExtractGetAsyncStatusRequest
 */
 func (a *SourceCodeExtractApiService) ExtractGetAsyncStatus(ctx context.Context, taskId int32) ApiExtractGetAsyncStatusRequest {
 	return ApiExtractGetAsyncStatusRequest{
@@ -175,7 +176,8 @@ func (a *SourceCodeExtractApiService) ExtractGetAsyncStatus(ctx context.Context,
 }
 
 // Execute executes the request
-//  @return ActionResponse
+//
+//	@return ActionResponse
 func (a *SourceCodeExtractApiService) ExtractGetAsyncStatusExecute(r ApiExtractGetAsyncStatusRequest) (*ActionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet

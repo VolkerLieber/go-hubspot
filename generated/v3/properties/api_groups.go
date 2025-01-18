@@ -40,10 +40,10 @@ GroupsArchive Archive a property group
 
 Move a property group identified by {groupName} to the recycling bin.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param objectType
- @param groupName
- @return ApiGroupsArchiveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param objectType
+	@param groupName
+	@return ApiGroupsArchiveRequest
 */
 func (a *GroupsApiService) GroupsArchive(ctx context.Context, objectType string, groupName string) ApiGroupsArchiveRequest {
 	return ApiGroupsArchiveRequest{
@@ -104,16 +104,12 @@ func (a *GroupsApiService) GroupsArchiveExecute(r ApiGroupsArchiveRequest) (*htt
 	}
 	if r.ctx != nil {
 		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["private_apps_legacy"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["private-app-legacy"] = key
-			}
+		if auth, ok := r.ctx.Value(hubspot.ContextKey).(hubspot.Authorizer); ok {
+			auth.Apply(hubspot.AuthorizationRequest{
+				QueryParams: localVarQueryParams,
+				FormParams:  localVarFormParams,
+				Headers:     localVarHeaderParams,
+			})
 		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -172,9 +168,9 @@ GroupsCreate Create a property group
 
 Create and return a copy of a new property group.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param objectType
- @return ApiGroupsCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param objectType
+	@return ApiGroupsCreateRequest
 */
 func (a *GroupsApiService) GroupsCreate(ctx context.Context, objectType string) ApiGroupsCreateRequest {
 	return ApiGroupsCreateRequest{
@@ -185,7 +181,8 @@ func (a *GroupsApiService) GroupsCreate(ctx context.Context, objectType string) 
 }
 
 // Execute executes the request
-//  @return PropertyGroup
+//
+//	@return PropertyGroup
 func (a *GroupsApiService) GroupsCreateExecute(r ApiGroupsCreateRequest) (*PropertyGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -240,16 +237,12 @@ func (a *GroupsApiService) GroupsCreateExecute(r ApiGroupsCreateRequest) (*Prope
 	}
 	if r.ctx != nil {
 		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["private_apps_legacy"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["private-app-legacy"] = key
-			}
+		if auth, ok := r.ctx.Value(hubspot.ContextKey).(hubspot.Authorizer); ok {
+			auth.Apply(hubspot.AuthorizationRequest{
+				QueryParams: localVarQueryParams,
+				FormParams:  localVarFormParams,
+				Headers:     localVarHeaderParams,
+			})
 		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -311,9 +304,9 @@ GroupsGetAll Read all property groups
 
 Read all existing property groups for the specified object type and HubSpot account.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param objectType
- @return ApiGroupsGetAllRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param objectType
+	@return ApiGroupsGetAllRequest
 */
 func (a *GroupsApiService) GroupsGetAll(ctx context.Context, objectType string) ApiGroupsGetAllRequest {
 	return ApiGroupsGetAllRequest{
@@ -324,7 +317,8 @@ func (a *GroupsApiService) GroupsGetAll(ctx context.Context, objectType string) 
 }
 
 // Execute executes the request
-//  @return CollectionResponsePropertyGroupNoPaging
+//
+//	@return CollectionResponsePropertyGroupNoPaging
 func (a *GroupsApiService) GroupsGetAllExecute(r ApiGroupsGetAllRequest) (*CollectionResponsePropertyGroupNoPaging, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -374,16 +368,12 @@ func (a *GroupsApiService) GroupsGetAllExecute(r ApiGroupsGetAllRequest) (*Colle
 	}
 	if r.ctx != nil {
 		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["private_apps_legacy"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["private-app-legacy"] = key
-			}
+		if auth, ok := r.ctx.Value(hubspot.ContextKey).(hubspot.Authorizer); ok {
+			auth.Apply(hubspot.AuthorizationRequest{
+				QueryParams: localVarQueryParams,
+				FormParams:  localVarFormParams,
+				Headers:     localVarHeaderParams,
+			})
 		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -446,10 +436,10 @@ GroupsGetByName Read a property group
 
 Read a property group identified by {groupName}.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param objectType
- @param groupName
- @return ApiGroupsGetByNameRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param objectType
+	@param groupName
+	@return ApiGroupsGetByNameRequest
 */
 func (a *GroupsApiService) GroupsGetByName(ctx context.Context, objectType string, groupName string) ApiGroupsGetByNameRequest {
 	return ApiGroupsGetByNameRequest{
@@ -461,7 +451,8 @@ func (a *GroupsApiService) GroupsGetByName(ctx context.Context, objectType strin
 }
 
 // Execute executes the request
-//  @return PropertyGroup
+//
+//	@return PropertyGroup
 func (a *GroupsApiService) GroupsGetByNameExecute(r ApiGroupsGetByNameRequest) (*PropertyGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -512,16 +503,12 @@ func (a *GroupsApiService) GroupsGetByNameExecute(r ApiGroupsGetByNameRequest) (
 	}
 	if r.ctx != nil {
 		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["private_apps_legacy"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["private-app-legacy"] = key
-			}
+		if auth, ok := r.ctx.Value(hubspot.ContextKey).(hubspot.Authorizer); ok {
+			auth.Apply(hubspot.AuthorizationRequest{
+				QueryParams: localVarQueryParams,
+				FormParams:  localVarFormParams,
+				Headers:     localVarHeaderParams,
+			})
 		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -590,10 +577,10 @@ GroupsUpdate Update a property group
 
 Perform a partial update of a property group identified by {groupName}. Provided fields will be overwritten.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param objectType
- @param groupName
- @return ApiGroupsUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param objectType
+	@param groupName
+	@return ApiGroupsUpdateRequest
 */
 func (a *GroupsApiService) GroupsUpdate(ctx context.Context, objectType string, groupName string) ApiGroupsUpdateRequest {
 	return ApiGroupsUpdateRequest{
@@ -605,7 +592,8 @@ func (a *GroupsApiService) GroupsUpdate(ctx context.Context, objectType string, 
 }
 
 // Execute executes the request
-//  @return PropertyGroup
+//
+//	@return PropertyGroup
 func (a *GroupsApiService) GroupsUpdateExecute(r ApiGroupsUpdateRequest) (*PropertyGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
@@ -661,16 +649,12 @@ func (a *GroupsApiService) GroupsUpdateExecute(r ApiGroupsUpdateRequest) (*Prope
 	}
 	if r.ctx != nil {
 		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["private_apps_legacy"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["private-app-legacy"] = key
-			}
+		if auth, ok := r.ctx.Value(hubspot.ContextKey).(hubspot.Authorizer); ok {
+			auth.Apply(hubspot.AuthorizationRequest{
+				QueryParams: localVarQueryParams,
+				FormParams:  localVarFormParams,
+				Headers:     localVarHeaderParams,
+			})
 		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)

@@ -42,10 +42,10 @@ This will delete the event template. All associated events will be removed from 
 
 This action can't be undone, so it's highly recommended that you stop using any associated events before deleting a template.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param eventTemplateId The event template ID.
- @param appId The ID of the target app.
- @return ApiDeleteCrmV3TimelineAppIdEventTemplatesEventTemplateIdArchiveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param eventTemplateId The event template ID.
+	@param appId The ID of the target app.
+	@return ApiDeleteCrmV3TimelineAppIdEventTemplatesEventTemplateIdArchiveRequest
 */
 func (a *TemplatesApiService) DeleteCrmV3TimelineAppIdEventTemplatesEventTemplateIdArchive(ctx context.Context, eventTemplateId string, appId int32) ApiDeleteCrmV3TimelineAppIdEventTemplatesEventTemplateIdArchiveRequest {
 	return ApiDeleteCrmV3TimelineAppIdEventTemplatesEventTemplateIdArchiveRequest{
@@ -155,10 +155,10 @@ GetCrmV3TimelineAppIdEventTemplatesEventTemplateIdGetById Gets a specific event 
 
 View the current state of a specific template and its tokens.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param eventTemplateId The event template ID.
- @param appId The ID of the target app.
- @return ApiGetCrmV3TimelineAppIdEventTemplatesEventTemplateIdGetByIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param eventTemplateId The event template ID.
+	@param appId The ID of the target app.
+	@return ApiGetCrmV3TimelineAppIdEventTemplatesEventTemplateIdGetByIdRequest
 */
 func (a *TemplatesApiService) GetCrmV3TimelineAppIdEventTemplatesEventTemplateIdGetById(ctx context.Context, eventTemplateId string, appId int32) ApiGetCrmV3TimelineAppIdEventTemplatesEventTemplateIdGetByIdRequest {
 	return ApiGetCrmV3TimelineAppIdEventTemplatesEventTemplateIdGetByIdRequest{
@@ -170,7 +170,8 @@ func (a *TemplatesApiService) GetCrmV3TimelineAppIdEventTemplatesEventTemplateId
 }
 
 // Execute executes the request
-//  @return TimelineEventTemplate
+//
+//	@return TimelineEventTemplate
 func (a *TemplatesApiService) GetCrmV3TimelineAppIdEventTemplatesEventTemplateIdGetByIdExecute(r ApiGetCrmV3TimelineAppIdEventTemplatesEventTemplateIdGetByIdRequest) (*TimelineEventTemplate, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -278,9 +279,9 @@ GetCrmV3TimelineAppIdEventTemplatesGetAll List all event templates for your app
 
 Use this to list all event templates owned by your app.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param appId The ID of the target app.
- @return ApiGetCrmV3TimelineAppIdEventTemplatesGetAllRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param appId The ID of the target app.
+	@return ApiGetCrmV3TimelineAppIdEventTemplatesGetAllRequest
 */
 func (a *TemplatesApiService) GetCrmV3TimelineAppIdEventTemplatesGetAll(ctx context.Context, appId int32) ApiGetCrmV3TimelineAppIdEventTemplatesGetAllRequest {
 	return ApiGetCrmV3TimelineAppIdEventTemplatesGetAllRequest{
@@ -291,7 +292,8 @@ func (a *TemplatesApiService) GetCrmV3TimelineAppIdEventTemplatesGetAll(ctx cont
 }
 
 // Execute executes the request
-//  @return CollectionResponseTimelineEventTemplateNoPaging
+//
+//	@return CollectionResponseTimelineEventTemplateNoPaging
 func (a *TemplatesApiService) GetCrmV3TimelineAppIdEventTemplatesGetAllExecute(r ApiGetCrmV3TimelineAppIdEventTemplatesGetAllRequest) (*CollectionResponseTimelineEventTemplateNoPaging, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -411,9 +413,9 @@ Each event template contains its own set of tokens and `Markdown` templates. The
 
 You must create an event template before you can create events.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param appId The ID of the target app.
- @return ApiPostCrmV3TimelineAppIdEventTemplatesCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param appId The ID of the target app.
+	@return ApiPostCrmV3TimelineAppIdEventTemplatesCreateRequest
 */
 func (a *TemplatesApiService) PostCrmV3TimelineAppIdEventTemplatesCreate(ctx context.Context, appId int32) ApiPostCrmV3TimelineAppIdEventTemplatesCreateRequest {
 	return ApiPostCrmV3TimelineAppIdEventTemplatesCreateRequest{
@@ -424,7 +426,8 @@ func (a *TemplatesApiService) PostCrmV3TimelineAppIdEventTemplatesCreate(ctx con
 }
 
 // Execute executes the request
-//  @return TimelineEventTemplate
+//
+//	@return TimelineEventTemplate
 func (a *TemplatesApiService) PostCrmV3TimelineAppIdEventTemplatesCreateExecute(r ApiPostCrmV3TimelineAppIdEventTemplatesCreateRequest) (*TimelineEventTemplate, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -546,10 +549,10 @@ Updates an existing template and its tokens. This is primarily used to update th
 
 You can also update or replace all the tokens in the template here instead of doing individual API calls on the `/tokens` endpoint.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param eventTemplateId The event template ID.
- @param appId The ID of the target app.
- @return ApiPutCrmV3TimelineAppIdEventTemplatesEventTemplateIdUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param eventTemplateId The event template ID.
+	@param appId The ID of the target app.
+	@return ApiPutCrmV3TimelineAppIdEventTemplatesEventTemplateIdUpdateRequest
 */
 func (a *TemplatesApiService) PutCrmV3TimelineAppIdEventTemplatesEventTemplateIdUpdate(ctx context.Context, eventTemplateId string, appId int32) ApiPutCrmV3TimelineAppIdEventTemplatesEventTemplateIdUpdateRequest {
 	return ApiPutCrmV3TimelineAppIdEventTemplatesEventTemplateIdUpdateRequest{
@@ -561,7 +564,8 @@ func (a *TemplatesApiService) PutCrmV3TimelineAppIdEventTemplatesEventTemplateId
 }
 
 // Execute executes the request
-//  @return TimelineEventTemplate
+//
+//	@return TimelineEventTemplate
 func (a *TemplatesApiService) PutCrmV3TimelineAppIdEventTemplatesEventTemplateIdUpdateExecute(r ApiPutCrmV3TimelineAppIdEventTemplatesEventTemplateIdUpdateRequest) (*TimelineEventTemplate, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

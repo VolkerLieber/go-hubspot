@@ -41,8 +41,8 @@ func (r ApiPostCrmV3ObjectsFeedbackSubmissionsBatchArchiveArchiveRequest) Execut
 /*
 PostCrmV3ObjectsFeedbackSubmissionsBatchArchiveArchive Archive a batch of feedback submissions by ID
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostCrmV3ObjectsFeedbackSubmissionsBatchArchiveArchiveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPostCrmV3ObjectsFeedbackSubmissionsBatchArchiveArchiveRequest
 */
 func (a *BatchApiService) PostCrmV3ObjectsFeedbackSubmissionsBatchArchiveArchive(ctx context.Context) ApiPostCrmV3ObjectsFeedbackSubmissionsBatchArchiveArchiveRequest {
 	return ApiPostCrmV3ObjectsFeedbackSubmissionsBatchArchiveArchiveRequest{
@@ -155,8 +155,8 @@ func (r ApiPostCrmV3ObjectsFeedbackSubmissionsBatchCreateCreateRequest) Execute(
 /*
 PostCrmV3ObjectsFeedbackSubmissionsBatchCreateCreate Create a batch of feedback submissions
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostCrmV3ObjectsFeedbackSubmissionsBatchCreateCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPostCrmV3ObjectsFeedbackSubmissionsBatchCreateCreateRequest
 */
 func (a *BatchApiService) PostCrmV3ObjectsFeedbackSubmissionsBatchCreateCreate(ctx context.Context) ApiPostCrmV3ObjectsFeedbackSubmissionsBatchCreateCreateRequest {
 	return ApiPostCrmV3ObjectsFeedbackSubmissionsBatchCreateCreateRequest{
@@ -166,7 +166,8 @@ func (a *BatchApiService) PostCrmV3ObjectsFeedbackSubmissionsBatchCreateCreate(c
 }
 
 // Execute executes the request
-//  @return BatchResponseSimplePublicObject
+//
+//	@return BatchResponseSimplePublicObject
 func (a *BatchApiService) PostCrmV3ObjectsFeedbackSubmissionsBatchCreateCreateExecute(r ApiPostCrmV3ObjectsFeedbackSubmissionsBatchCreateCreateRequest) (*BatchResponseSimplePublicObject, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -287,8 +288,8 @@ func (r ApiPostCrmV3ObjectsFeedbackSubmissionsBatchReadReadRequest) Execute() (*
 /*
 PostCrmV3ObjectsFeedbackSubmissionsBatchReadRead Read a batch of feedback submissions by internal ID, or unique property values
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostCrmV3ObjectsFeedbackSubmissionsBatchReadReadRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPostCrmV3ObjectsFeedbackSubmissionsBatchReadReadRequest
 */
 func (a *BatchApiService) PostCrmV3ObjectsFeedbackSubmissionsBatchReadRead(ctx context.Context) ApiPostCrmV3ObjectsFeedbackSubmissionsBatchReadReadRequest {
 	return ApiPostCrmV3ObjectsFeedbackSubmissionsBatchReadReadRequest{
@@ -298,7 +299,8 @@ func (a *BatchApiService) PostCrmV3ObjectsFeedbackSubmissionsBatchReadRead(ctx c
 }
 
 // Execute executes the request
-//  @return BatchResponseSimplePublicObject
+//
+//	@return BatchResponseSimplePublicObject
 func (a *BatchApiService) PostCrmV3ObjectsFeedbackSubmissionsBatchReadReadExecute(r ApiPostCrmV3ObjectsFeedbackSubmissionsBatchReadReadRequest) (*BatchResponseSimplePublicObject, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -415,8 +417,8 @@ func (r ApiPostCrmV3ObjectsFeedbackSubmissionsBatchUpdateUpdateRequest) Execute(
 /*
 PostCrmV3ObjectsFeedbackSubmissionsBatchUpdateUpdate Update a batch of feedback submissions
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostCrmV3ObjectsFeedbackSubmissionsBatchUpdateUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPostCrmV3ObjectsFeedbackSubmissionsBatchUpdateUpdateRequest
 */
 func (a *BatchApiService) PostCrmV3ObjectsFeedbackSubmissionsBatchUpdateUpdate(ctx context.Context) ApiPostCrmV3ObjectsFeedbackSubmissionsBatchUpdateUpdateRequest {
 	return ApiPostCrmV3ObjectsFeedbackSubmissionsBatchUpdateUpdateRequest{
@@ -426,7 +428,8 @@ func (a *BatchApiService) PostCrmV3ObjectsFeedbackSubmissionsBatchUpdateUpdate(c
 }
 
 // Execute executes the request
-//  @return BatchResponseSimplePublicObject
+//
+//	@return BatchResponseSimplePublicObject
 func (a *BatchApiService) PostCrmV3ObjectsFeedbackSubmissionsBatchUpdateUpdateExecute(r ApiPostCrmV3ObjectsFeedbackSubmissionsBatchUpdateUpdateRequest) (*BatchResponseSimplePublicObject, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

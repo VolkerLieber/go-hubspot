@@ -38,12 +38,12 @@ func (r ApiFunctionsArchiveRequest) Execute() (*http.Response, error) {
 /*
 FunctionsArchive Archive a function for a definition
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param definitionId
- @param functionType
- @param functionId
- @param appId
- @return ApiFunctionsArchiveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param definitionId
+	@param functionType
+	@param functionId
+	@param appId
+	@return ApiFunctionsArchiveRequest
 */
 func (a *FunctionsApiService) FunctionsArchive(ctx context.Context, definitionId string, functionType string, functionId string, appId int32) ApiFunctionsArchiveRequest {
 	return ApiFunctionsArchiveRequest{
@@ -146,11 +146,11 @@ func (r ApiFunctionsArchiveByTypeRequest) Execute() (*http.Response, error) {
 /*
 FunctionsArchiveByType Delete a function for a definition
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param definitionId
- @param functionType
- @param appId
- @return ApiFunctionsArchiveByTypeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param definitionId
+	@param functionType
+	@param appId
+	@return ApiFunctionsArchiveByTypeRequest
 */
 func (a *FunctionsApiService) FunctionsArchiveByType(ctx context.Context, definitionId string, functionType string, appId int32) ApiFunctionsArchiveByTypeRequest {
 	return ApiFunctionsArchiveByTypeRequest{
@@ -258,12 +258,12 @@ func (r ApiFunctionsCreateOrReplaceRequest) Execute() (*PublicActionFunctionIden
 /*
 FunctionsCreateOrReplace Insert a function for a definition
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param definitionId
- @param functionType
- @param functionId
- @param appId
- @return ApiFunctionsCreateOrReplaceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param definitionId
+	@param functionType
+	@param functionId
+	@param appId
+	@return ApiFunctionsCreateOrReplaceRequest
 */
 func (a *FunctionsApiService) FunctionsCreateOrReplace(ctx context.Context, definitionId string, functionType string, functionId string, appId int32) ApiFunctionsCreateOrReplaceRequest {
 	return ApiFunctionsCreateOrReplaceRequest{
@@ -277,7 +277,8 @@ func (a *FunctionsApiService) FunctionsCreateOrReplace(ctx context.Context, defi
 }
 
 // Execute executes the request
-//  @return PublicActionFunctionIdentifier
+//
+//	@return PublicActionFunctionIdentifier
 func (a *FunctionsApiService) FunctionsCreateOrReplaceExecute(r ApiFunctionsCreateOrReplaceRequest) (*PublicActionFunctionIdentifier, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -388,11 +389,11 @@ func (r ApiFunctionsCreateOrReplaceByTypeRequest) Execute() (*PublicActionFuncti
 /*
 FunctionsCreateOrReplaceByType Insert a function for a definition
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param definitionId
- @param functionType
- @param appId
- @return ApiFunctionsCreateOrReplaceByTypeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param definitionId
+	@param functionType
+	@param appId
+	@return ApiFunctionsCreateOrReplaceByTypeRequest
 */
 func (a *FunctionsApiService) FunctionsCreateOrReplaceByType(ctx context.Context, definitionId string, functionType string, appId int32) ApiFunctionsCreateOrReplaceByTypeRequest {
 	return ApiFunctionsCreateOrReplaceByTypeRequest{
@@ -405,7 +406,8 @@ func (a *FunctionsApiService) FunctionsCreateOrReplaceByType(ctx context.Context
 }
 
 // Execute executes the request
-//  @return PublicActionFunctionIdentifier
+//
+//	@return PublicActionFunctionIdentifier
 func (a *FunctionsApiService) FunctionsCreateOrReplaceByTypeExecute(r ApiFunctionsCreateOrReplaceByTypeRequest) (*PublicActionFunctionIdentifier, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -510,12 +512,12 @@ func (r ApiFunctionsGetByIDRequest) Execute() (*PublicActionFunction, *http.Resp
 /*
 FunctionsGetByID Get a function for a given definition
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param definitionId
- @param functionType
- @param functionId
- @param appId
- @return ApiFunctionsGetByIDRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param definitionId
+	@param functionType
+	@param functionId
+	@param appId
+	@return ApiFunctionsGetByIDRequest
 */
 func (a *FunctionsApiService) FunctionsGetByID(ctx context.Context, definitionId string, functionType string, functionId string, appId int32) ApiFunctionsGetByIDRequest {
 	return ApiFunctionsGetByIDRequest{
@@ -529,7 +531,8 @@ func (a *FunctionsApiService) FunctionsGetByID(ctx context.Context, definitionId
 }
 
 // Execute executes the request
-//  @return PublicActionFunction
+//
+//	@return PublicActionFunction
 func (a *FunctionsApiService) FunctionsGetByIDExecute(r ApiFunctionsGetByIDRequest) (*PublicActionFunction, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -629,11 +632,11 @@ func (r ApiFunctionsGetByTypeRequest) Execute() (*PublicActionFunction, *http.Re
 /*
 FunctionsGetByType Get all functions by a type for a given definition
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param definitionId
- @param functionType
- @param appId
- @return ApiFunctionsGetByTypeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param definitionId
+	@param functionType
+	@param appId
+	@return ApiFunctionsGetByTypeRequest
 */
 func (a *FunctionsApiService) FunctionsGetByType(ctx context.Context, definitionId string, functionType string, appId int32) ApiFunctionsGetByTypeRequest {
 	return ApiFunctionsGetByTypeRequest{
@@ -646,7 +649,8 @@ func (a *FunctionsApiService) FunctionsGetByType(ctx context.Context, definition
 }
 
 // Execute executes the request
-//  @return PublicActionFunction
+//
+//	@return PublicActionFunction
 func (a *FunctionsApiService) FunctionsGetByTypeExecute(r ApiFunctionsGetByTypeRequest) (*PublicActionFunction, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -744,10 +748,10 @@ func (r ApiFunctionsGetPageRequest) Execute() (*CollectionResponsePublicActionFu
 /*
 FunctionsGetPage Get all functions for a given definition
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param definitionId
- @param appId
- @return ApiFunctionsGetPageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param definitionId
+	@param appId
+	@return ApiFunctionsGetPageRequest
 */
 func (a *FunctionsApiService) FunctionsGetPage(ctx context.Context, definitionId string, appId int32) ApiFunctionsGetPageRequest {
 	return ApiFunctionsGetPageRequest{
@@ -759,7 +763,8 @@ func (a *FunctionsApiService) FunctionsGetPage(ctx context.Context, definitionId
 }
 
 // Execute executes the request
-//  @return CollectionResponsePublicActionFunctionIdentifierNoPaging
+//
+//	@return CollectionResponsePublicActionFunctionIdentifierNoPaging
 func (a *FunctionsApiService) FunctionsGetPageExecute(r ApiFunctionsGetPageRequest) (*CollectionResponsePublicActionFunctionIdentifierNoPaging, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet

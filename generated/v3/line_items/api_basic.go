@@ -40,9 +40,9 @@ DeleteCrmV3ObjectsLineItemsLineItemIdArchive Archive
 
 Move an Object identified by `{lineItemId}` to the recycling bin.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param lineItemId
- @return ApiDeleteCrmV3ObjectsLineItemsLineItemIdArchiveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param lineItemId
+	@return ApiDeleteCrmV3ObjectsLineItemsLineItemIdArchiveRequest
 */
 func (a *BasicApiService) DeleteCrmV3ObjectsLineItemsLineItemIdArchive(ctx context.Context, lineItemId string) ApiDeleteCrmV3ObjectsLineItemsLineItemIdArchiveRequest {
 	return ApiDeleteCrmV3ObjectsLineItemsLineItemIdArchiveRequest{
@@ -190,8 +190,8 @@ GetCrmV3ObjectsLineItemsGetPage List
 
 Read a page of line items. Control what is returned via the `properties` query param.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetCrmV3ObjectsLineItemsGetPageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetCrmV3ObjectsLineItemsGetPageRequest
 */
 func (a *BasicApiService) GetCrmV3ObjectsLineItemsGetPage(ctx context.Context) ApiGetCrmV3ObjectsLineItemsGetPageRequest {
 	return ApiGetCrmV3ObjectsLineItemsGetPageRequest{
@@ -201,7 +201,8 @@ func (a *BasicApiService) GetCrmV3ObjectsLineItemsGetPage(ctx context.Context) A
 }
 
 // Execute executes the request
-//  @return CollectionResponseSimplePublicObjectWithAssociationsForwardPaging
+//
+//	@return CollectionResponseSimplePublicObjectWithAssociationsForwardPaging
 func (a *BasicApiService) GetCrmV3ObjectsLineItemsGetPageExecute(r ApiGetCrmV3ObjectsLineItemsGetPageRequest) (*CollectionResponseSimplePublicObjectWithAssociationsForwardPaging, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -384,9 +385,9 @@ GetCrmV3ObjectsLineItemsLineItemIdGetById Read
 
 Read an Object identified by `{lineItemId}`. `{lineItemId}` refers to the internal object ID by default, or optionally any unique property value as specified by the `idProperty` query param.  Control what is returned via the `properties` query param.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param lineItemId
- @return ApiGetCrmV3ObjectsLineItemsLineItemIdGetByIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param lineItemId
+	@return ApiGetCrmV3ObjectsLineItemsLineItemIdGetByIdRequest
 */
 func (a *BasicApiService) GetCrmV3ObjectsLineItemsLineItemIdGetById(ctx context.Context, lineItemId string) ApiGetCrmV3ObjectsLineItemsLineItemIdGetByIdRequest {
 	return ApiGetCrmV3ObjectsLineItemsLineItemIdGetByIdRequest{
@@ -397,7 +398,8 @@ func (a *BasicApiService) GetCrmV3ObjectsLineItemsLineItemIdGetById(ctx context.
 }
 
 // Execute executes the request
-//  @return SimplePublicObjectWithAssociations
+//
+//	@return SimplePublicObjectWithAssociations
 func (a *BasicApiService) GetCrmV3ObjectsLineItemsLineItemIdGetByIdExecute(r ApiGetCrmV3ObjectsLineItemsLineItemIdGetByIdRequest) (*SimplePublicObjectWithAssociations, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -556,9 +558,9 @@ PatchCrmV3ObjectsLineItemsLineItemIdUpdate Update
 
 Perform a partial update of an Object identified by `{lineItemId}`. `{lineItemId}` refers to the internal object ID by default, or optionally any unique property value as specified by the `idProperty` query param. Provided property values will be overwritten. Read-only and non-existent properties will be ignored. Properties values can be cleared by passing an empty string.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param lineItemId
- @return ApiPatchCrmV3ObjectsLineItemsLineItemIdUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param lineItemId
+	@return ApiPatchCrmV3ObjectsLineItemsLineItemIdUpdateRequest
 */
 func (a *BasicApiService) PatchCrmV3ObjectsLineItemsLineItemIdUpdate(ctx context.Context, lineItemId string) ApiPatchCrmV3ObjectsLineItemsLineItemIdUpdateRequest {
 	return ApiPatchCrmV3ObjectsLineItemsLineItemIdUpdateRequest{
@@ -569,7 +571,8 @@ func (a *BasicApiService) PatchCrmV3ObjectsLineItemsLineItemIdUpdate(ctx context
 }
 
 // Execute executes the request
-//  @return SimplePublicObject
+//
+//	@return SimplePublicObject
 func (a *BasicApiService) PatchCrmV3ObjectsLineItemsLineItemIdUpdateExecute(r ApiPatchCrmV3ObjectsLineItemsLineItemIdUpdateRequest) (*SimplePublicObject, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
@@ -689,8 +692,8 @@ PostCrmV3ObjectsLineItemsCreate Create
 
 Create a line item with the given properties and return a copy of the object, including the ID. Documentation and examples for creating standard line items is provided.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostCrmV3ObjectsLineItemsCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPostCrmV3ObjectsLineItemsCreateRequest
 */
 func (a *BasicApiService) PostCrmV3ObjectsLineItemsCreate(ctx context.Context) ApiPostCrmV3ObjectsLineItemsCreateRequest {
 	return ApiPostCrmV3ObjectsLineItemsCreateRequest{
@@ -700,7 +703,8 @@ func (a *BasicApiService) PostCrmV3ObjectsLineItemsCreate(ctx context.Context) A
 }
 
 // Execute executes the request
-//  @return SimplePublicObject
+//
+//	@return SimplePublicObject
 func (a *BasicApiService) PostCrmV3ObjectsLineItemsCreateExecute(r ApiPostCrmV3ObjectsLineItemsCreateRequest) (*SimplePublicObject, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

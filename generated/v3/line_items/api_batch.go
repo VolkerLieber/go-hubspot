@@ -41,8 +41,8 @@ func (r ApiPostCrmV3ObjectsLineItemsBatchArchiveArchiveRequest) Execute() (*http
 /*
 PostCrmV3ObjectsLineItemsBatchArchiveArchive Archive a batch of line items by ID
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostCrmV3ObjectsLineItemsBatchArchiveArchiveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPostCrmV3ObjectsLineItemsBatchArchiveArchiveRequest
 */
 func (a *BatchApiService) PostCrmV3ObjectsLineItemsBatchArchiveArchive(ctx context.Context) ApiPostCrmV3ObjectsLineItemsBatchArchiveArchiveRequest {
 	return ApiPostCrmV3ObjectsLineItemsBatchArchiveArchiveRequest{
@@ -155,8 +155,8 @@ func (r ApiPostCrmV3ObjectsLineItemsBatchCreateCreateRequest) Execute() (*BatchR
 /*
 PostCrmV3ObjectsLineItemsBatchCreateCreate Create a batch of line items
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostCrmV3ObjectsLineItemsBatchCreateCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPostCrmV3ObjectsLineItemsBatchCreateCreateRequest
 */
 func (a *BatchApiService) PostCrmV3ObjectsLineItemsBatchCreateCreate(ctx context.Context) ApiPostCrmV3ObjectsLineItemsBatchCreateCreateRequest {
 	return ApiPostCrmV3ObjectsLineItemsBatchCreateCreateRequest{
@@ -166,7 +166,8 @@ func (a *BatchApiService) PostCrmV3ObjectsLineItemsBatchCreateCreate(ctx context
 }
 
 // Execute executes the request
-//  @return BatchResponseSimplePublicObject
+//
+//	@return BatchResponseSimplePublicObject
 func (a *BatchApiService) PostCrmV3ObjectsLineItemsBatchCreateCreateExecute(r ApiPostCrmV3ObjectsLineItemsBatchCreateCreateRequest) (*BatchResponseSimplePublicObject, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -287,8 +288,8 @@ func (r ApiPostCrmV3ObjectsLineItemsBatchReadReadRequest) Execute() (*BatchRespo
 /*
 PostCrmV3ObjectsLineItemsBatchReadRead Read a batch of line items by internal ID, or unique property values
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostCrmV3ObjectsLineItemsBatchReadReadRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPostCrmV3ObjectsLineItemsBatchReadReadRequest
 */
 func (a *BatchApiService) PostCrmV3ObjectsLineItemsBatchReadRead(ctx context.Context) ApiPostCrmV3ObjectsLineItemsBatchReadReadRequest {
 	return ApiPostCrmV3ObjectsLineItemsBatchReadReadRequest{
@@ -298,7 +299,8 @@ func (a *BatchApiService) PostCrmV3ObjectsLineItemsBatchReadRead(ctx context.Con
 }
 
 // Execute executes the request
-//  @return BatchResponseSimplePublicObject
+//
+//	@return BatchResponseSimplePublicObject
 func (a *BatchApiService) PostCrmV3ObjectsLineItemsBatchReadReadExecute(r ApiPostCrmV3ObjectsLineItemsBatchReadReadRequest) (*BatchResponseSimplePublicObject, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -415,8 +417,8 @@ func (r ApiPostCrmV3ObjectsLineItemsBatchUpdateUpdateRequest) Execute() (*BatchR
 /*
 PostCrmV3ObjectsLineItemsBatchUpdateUpdate Update a batch of line items
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostCrmV3ObjectsLineItemsBatchUpdateUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPostCrmV3ObjectsLineItemsBatchUpdateUpdateRequest
 */
 func (a *BatchApiService) PostCrmV3ObjectsLineItemsBatchUpdateUpdate(ctx context.Context) ApiPostCrmV3ObjectsLineItemsBatchUpdateUpdateRequest {
 	return ApiPostCrmV3ObjectsLineItemsBatchUpdateUpdateRequest{
@@ -426,7 +428,8 @@ func (a *BatchApiService) PostCrmV3ObjectsLineItemsBatchUpdateUpdate(ctx context
 }
 
 // Execute executes the request
-//  @return BatchResponseSimplePublicObject
+//
+//	@return BatchResponseSimplePublicObject
 func (a *BatchApiService) PostCrmV3ObjectsLineItemsBatchUpdateUpdateExecute(r ApiPostCrmV3ObjectsLineItemsBatchUpdateUpdateRequest) (*BatchResponseSimplePublicObject, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

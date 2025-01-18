@@ -46,10 +46,10 @@ MetadataGet Get the metadata for a file
 
 Gets the metadata object for the file at the specified path in the specified environment.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param environment The environment of the file (\"draft\" or \"published\").
- @param path The file system location of the file.
- @return ApiMetadataGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param environment The environment of the file (\"draft\" or \"published\").
+	@param path The file system location of the file.
+	@return ApiMetadataGetRequest
 */
 func (a *MetadataApiService) MetadataGet(ctx context.Context, environment string, path string) ApiMetadataGetRequest {
 	return ApiMetadataGetRequest{
@@ -61,7 +61,8 @@ func (a *MetadataApiService) MetadataGet(ctx context.Context, environment string
 }
 
 // Execute executes the request
-//  @return AssetFileMetadata
+//
+//	@return AssetFileMetadata
 func (a *MetadataApiService) MetadataGetExecute(r ApiMetadataGetRequest) (*AssetFileMetadata, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet

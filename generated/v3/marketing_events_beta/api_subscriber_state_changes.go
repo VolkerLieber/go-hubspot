@@ -54,10 +54,10 @@ ExternalEmailUpsertByID Record
 
 Record a subscription state between multiple HubSpot contacts and a marketing event, using contact email addresses. Note that the contact must already exist in HubSpot; a contact will not be created.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param externalEventId The id of the marketing event
- @param subscriberState The new subscriber state for the HubSpot contacts and the specified marketing event
- @return ApiExternalEmailUpsertByIDRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param externalEventId The id of the marketing event
+	@param subscriberState The new subscriber state for the HubSpot contacts and the specified marketing event
+	@return ApiExternalEmailUpsertByIDRequest
 */
 func (a *SubscriberStateChangesApiService) ExternalEmailUpsertByID(ctx context.Context, externalEventId string, subscriberState string) ApiExternalEmailUpsertByIDRequest {
 	return ApiExternalEmailUpsertByIDRequest{
@@ -69,7 +69,8 @@ func (a *SubscriberStateChangesApiService) ExternalEmailUpsertByID(ctx context.C
 }
 
 // Execute executes the request
-//  @return Error
+//
+//	@return Error
 func (a *SubscriberStateChangesApiService) ExternalEmailUpsertByIDExecute(r ApiExternalEmailUpsertByIDRequest) (*Error, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -201,10 +202,10 @@ ExternalUpsertByID Record
 
 Record a subscription state between multiple HubSpot contacts and a marketing event, using HubSpot contact ids. Note that the contact must already exist in HubSpot; a contact will not be create.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param externalEventId The id of the marketing event
- @param subscriberState The new subscriber state for the HubSpot contacts and the specified marketing event
- @return ApiExternalUpsertByIDRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param externalEventId The id of the marketing event
+	@param subscriberState The new subscriber state for the HubSpot contacts and the specified marketing event
+	@return ApiExternalUpsertByIDRequest
 */
 func (a *SubscriberStateChangesApiService) ExternalUpsertByID(ctx context.Context, externalEventId string, subscriberState string) ApiExternalUpsertByIDRequest {
 	return ApiExternalUpsertByIDRequest{
@@ -216,7 +217,8 @@ func (a *SubscriberStateChangesApiService) ExternalUpsertByID(ctx context.Contex
 }
 
 // Execute executes the request
-//  @return Error
+//
+//	@return Error
 func (a *SubscriberStateChangesApiService) ExternalUpsertByIDExecute(r ApiExternalUpsertByIDRequest) (*Error, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

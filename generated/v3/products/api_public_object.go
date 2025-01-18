@@ -41,8 +41,8 @@ func (r ApiPostCrmV3ObjectsProductsMergeRequest) Execute() (*SimplePublicObject,
 /*
 PostCrmV3ObjectsProductsMerge Merge two products with same type
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostCrmV3ObjectsProductsMergeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPostCrmV3ObjectsProductsMergeRequest
 */
 func (a *PublicObjectApiService) PostCrmV3ObjectsProductsMerge(ctx context.Context) ApiPostCrmV3ObjectsProductsMergeRequest {
 	return ApiPostCrmV3ObjectsProductsMergeRequest{
@@ -52,7 +52,8 @@ func (a *PublicObjectApiService) PostCrmV3ObjectsProductsMerge(ctx context.Conte
 }
 
 // Execute executes the request
-//  @return SimplePublicObject
+//
+//	@return SimplePublicObject
 func (a *PublicObjectApiService) PostCrmV3ObjectsProductsMergeExecute(r ApiPostCrmV3ObjectsProductsMergeRequest) (*SimplePublicObject, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -106,16 +107,12 @@ func (a *PublicObjectApiService) PostCrmV3ObjectsProductsMergeExecute(r ApiPostC
 	}
 	if r.ctx != nil {
 		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["private_apps_legacy"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["private-app-legacy"] = key
-			}
+		if auth, ok := r.ctx.Value(hubspot.ContextKey).(hubspot.Authorizer); ok {
+			auth.Apply(hubspot.AuthorizationRequest{
+				QueryParams: localVarQueryParams,
+				FormParams:  localVarFormParams,
+				Headers:     localVarHeaderParams,
+			})
 		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)

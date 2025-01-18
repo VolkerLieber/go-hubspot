@@ -37,11 +37,11 @@ func (r ApiRevisionsGetByIDRequest) Execute() (*PublicActionRevision, *http.Resp
 /*
 RevisionsGetByID Gets a revision for a given definition by revision id
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param definitionId
- @param revisionId
- @param appId
- @return ApiRevisionsGetByIDRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param definitionId
+	@param revisionId
+	@param appId
+	@return ApiRevisionsGetByIDRequest
 */
 func (a *RevisionsApiService) RevisionsGetByID(ctx context.Context, definitionId string, revisionId string, appId int32) ApiRevisionsGetByIDRequest {
 	return ApiRevisionsGetByIDRequest{
@@ -54,7 +54,8 @@ func (a *RevisionsApiService) RevisionsGetByID(ctx context.Context, definitionId
 }
 
 // Execute executes the request
-//  @return PublicActionRevision
+//
+//	@return PublicActionRevision
 func (a *RevisionsApiService) RevisionsGetByIDExecute(r ApiRevisionsGetByIDRequest) (*PublicActionRevision, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -166,10 +167,10 @@ func (r ApiRevisionsGetPageRequest) Execute() (*CollectionResponsePublicActionRe
 /*
 RevisionsGetPage Get all revisions for a given definition
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param definitionId
- @param appId
- @return ApiRevisionsGetPageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param definitionId
+	@param appId
+	@return ApiRevisionsGetPageRequest
 */
 func (a *RevisionsApiService) RevisionsGetPage(ctx context.Context, definitionId string, appId int32) ApiRevisionsGetPageRequest {
 	return ApiRevisionsGetPageRequest{
@@ -181,7 +182,8 @@ func (a *RevisionsApiService) RevisionsGetPage(ctx context.Context, definitionId
 }
 
 // Execute executes the request
-//  @return CollectionResponsePublicActionRevisionForwardPaging
+//
+//	@return CollectionResponsePublicActionRevisionForwardPaging
 func (a *RevisionsApiService) RevisionsGetPageExecute(r ApiRevisionsGetPageRequest) (*CollectionResponsePublicActionRevisionForwardPaging, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet

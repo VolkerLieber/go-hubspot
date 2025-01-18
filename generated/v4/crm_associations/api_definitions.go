@@ -41,11 +41,11 @@ DeleteCrmV4AssociationsFromObjectTypeToObjectTypeLabelsAssociationTypeIdArchive 
 
 Deletes an association definition
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param fromObjectType
- @param toObjectType
- @param associationTypeId
- @return ApiDeleteCrmV4AssociationsFromObjectTypeToObjectTypeLabelsAssociationTypeIdArchiveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param fromObjectType
+	@param toObjectType
+	@param associationTypeId
+	@return ApiDeleteCrmV4AssociationsFromObjectTypeToObjectTypeLabelsAssociationTypeIdArchiveRequest
 */
 func (a *DefinitionsApiService) DeleteCrmV4AssociationsFromObjectTypeToObjectTypeLabelsAssociationTypeIdArchive(ctx context.Context, fromObjectType string, toObjectType string, associationTypeId int32) ApiDeleteCrmV4AssociationsFromObjectTypeToObjectTypeLabelsAssociationTypeIdArchiveRequest {
 	return ApiDeleteCrmV4AssociationsFromObjectTypeToObjectTypeLabelsAssociationTypeIdArchiveRequest{
@@ -108,16 +108,12 @@ func (a *DefinitionsApiService) DeleteCrmV4AssociationsFromObjectTypeToObjectTyp
 	}
 	if r.ctx != nil {
 		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["private_apps_legacy"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["private-app-legacy"] = key
-			}
+		if auth, ok := r.ctx.Value(hubspot.ContextKey).(hubspot.Authorizer); ok {
+			auth.Apply(hubspot.AuthorizationRequest{
+				QueryParams: localVarQueryParams,
+				FormParams:  localVarFormParams,
+				Headers:     localVarHeaderParams,
+			})
 		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -171,10 +167,10 @@ GetCrmV4AssociationsFromObjectTypeToObjectTypeLabelsGetAll Read
 
 Returns all association types between two object types
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param fromObjectType
- @param toObjectType
- @return ApiGetCrmV4AssociationsFromObjectTypeToObjectTypeLabelsGetAllRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param fromObjectType
+	@param toObjectType
+	@return ApiGetCrmV4AssociationsFromObjectTypeToObjectTypeLabelsGetAllRequest
 */
 func (a *DefinitionsApiService) GetCrmV4AssociationsFromObjectTypeToObjectTypeLabelsGetAll(ctx context.Context, fromObjectType string, toObjectType string) ApiGetCrmV4AssociationsFromObjectTypeToObjectTypeLabelsGetAllRequest {
 	return ApiGetCrmV4AssociationsFromObjectTypeToObjectTypeLabelsGetAllRequest{
@@ -186,7 +182,8 @@ func (a *DefinitionsApiService) GetCrmV4AssociationsFromObjectTypeToObjectTypeLa
 }
 
 // Execute executes the request
-//  @return CollectionResponseAssociationSpecWithLabelNoPaging
+//
+//	@return CollectionResponseAssociationSpecWithLabelNoPaging
 func (a *DefinitionsApiService) GetCrmV4AssociationsFromObjectTypeToObjectTypeLabelsGetAllExecute(r ApiGetCrmV4AssociationsFromObjectTypeToObjectTypeLabelsGetAllRequest) (*CollectionResponseAssociationSpecWithLabelNoPaging, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -237,16 +234,12 @@ func (a *DefinitionsApiService) GetCrmV4AssociationsFromObjectTypeToObjectTypeLa
 	}
 	if r.ctx != nil {
 		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["private_apps_legacy"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["private-app-legacy"] = key
-			}
+		if auth, ok := r.ctx.Value(hubspot.ContextKey).(hubspot.Authorizer); ok {
+			auth.Apply(hubspot.AuthorizationRequest{
+				QueryParams: localVarQueryParams,
+				FormParams:  localVarFormParams,
+				Headers:     localVarHeaderParams,
+			})
 		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -315,10 +308,10 @@ PostCrmV4AssociationsFromObjectTypeToObjectTypeLabelsCreate Create
 
 Create a user defined association definition
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param fromObjectType
- @param toObjectType
- @return ApiPostCrmV4AssociationsFromObjectTypeToObjectTypeLabelsCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param fromObjectType
+	@param toObjectType
+	@return ApiPostCrmV4AssociationsFromObjectTypeToObjectTypeLabelsCreateRequest
 */
 func (a *DefinitionsApiService) PostCrmV4AssociationsFromObjectTypeToObjectTypeLabelsCreate(ctx context.Context, fromObjectType string, toObjectType string) ApiPostCrmV4AssociationsFromObjectTypeToObjectTypeLabelsCreateRequest {
 	return ApiPostCrmV4AssociationsFromObjectTypeToObjectTypeLabelsCreateRequest{
@@ -330,7 +323,8 @@ func (a *DefinitionsApiService) PostCrmV4AssociationsFromObjectTypeToObjectTypeL
 }
 
 // Execute executes the request
-//  @return CollectionResponseAssociationSpecWithLabelNoPaging
+//
+//	@return CollectionResponseAssociationSpecWithLabelNoPaging
 func (a *DefinitionsApiService) PostCrmV4AssociationsFromObjectTypeToObjectTypeLabelsCreateExecute(r ApiPostCrmV4AssociationsFromObjectTypeToObjectTypeLabelsCreateRequest) (*CollectionResponseAssociationSpecWithLabelNoPaging, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -386,16 +380,12 @@ func (a *DefinitionsApiService) PostCrmV4AssociationsFromObjectTypeToObjectTypeL
 	}
 	if r.ctx != nil {
 		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["private_apps_legacy"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["private-app-legacy"] = key
-			}
+		if auth, ok := r.ctx.Value(hubspot.ContextKey).(hubspot.Authorizer); ok {
+			auth.Apply(hubspot.AuthorizationRequest{
+				QueryParams: localVarQueryParams,
+				FormParams:  localVarFormParams,
+				Headers:     localVarHeaderParams,
+			})
 		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -464,10 +454,10 @@ PutCrmV4AssociationsFromObjectTypeToObjectTypeLabelsUpdate Update
 
 Update a user defined association definition
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param fromObjectType
- @param toObjectType
- @return ApiPutCrmV4AssociationsFromObjectTypeToObjectTypeLabelsUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param fromObjectType
+	@param toObjectType
+	@return ApiPutCrmV4AssociationsFromObjectTypeToObjectTypeLabelsUpdateRequest
 */
 func (a *DefinitionsApiService) PutCrmV4AssociationsFromObjectTypeToObjectTypeLabelsUpdate(ctx context.Context, fromObjectType string, toObjectType string) ApiPutCrmV4AssociationsFromObjectTypeToObjectTypeLabelsUpdateRequest {
 	return ApiPutCrmV4AssociationsFromObjectTypeToObjectTypeLabelsUpdateRequest{
@@ -533,16 +523,12 @@ func (a *DefinitionsApiService) PutCrmV4AssociationsFromObjectTypeToObjectTypeLa
 	}
 	if r.ctx != nil {
 		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["private_apps_legacy"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["private-app-legacy"] = key
-			}
+		if auth, ok := r.ctx.Value(hubspot.ContextKey).(hubspot.Authorizer); ok {
+			auth.Apply(hubspot.AuthorizationRequest{
+				QueryParams: localVarQueryParams,
+				FormParams:  localVarFormParams,
+				Headers:     localVarHeaderParams,
+			})
 		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)

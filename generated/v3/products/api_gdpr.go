@@ -43,8 +43,8 @@ PostCrmV3ObjectsProductsGdprDeletePurge GDPR DELETE
 
 Permanently delete a contact and all associated content to follow GDPR. Use optional property 'idProperty' set to 'email' to identify contact by email address. If email address is not found, the email address will be added to a blocklist and prevent it from being used in the future.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostCrmV3ObjectsProductsGdprDeletePurgeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPostCrmV3ObjectsProductsGdprDeletePurgeRequest
 */
 func (a *GDPRApiService) PostCrmV3ObjectsProductsGdprDeletePurge(ctx context.Context) ApiPostCrmV3ObjectsProductsGdprDeletePurgeRequest {
 	return ApiPostCrmV3ObjectsProductsGdprDeletePurgeRequest{
@@ -106,16 +106,12 @@ func (a *GDPRApiService) PostCrmV3ObjectsProductsGdprDeletePurgeExecute(r ApiPos
 	}
 	if r.ctx != nil {
 		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["private_apps_legacy"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["private-app-legacy"] = key
-			}
+		if auth, ok := r.ctx.Value(hubspot.ContextKey).(hubspot.Authorizer); ok {
+			auth.Apply(hubspot.AuthorizationRequest{
+				QueryParams: localVarQueryParams,
+				FormParams:  localVarFormParams,
+				Headers:     localVarHeaderParams,
+			})
 		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)

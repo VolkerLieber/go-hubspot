@@ -40,9 +40,9 @@ DeleteCrmV3ObjectsFeedbackSubmissionsFeedbackSubmissionIdArchive Archive
 
 Move an Object identified by `{feedbackSubmissionId}` to the recycling bin.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param feedbackSubmissionId
- @return ApiDeleteCrmV3ObjectsFeedbackSubmissionsFeedbackSubmissionIdArchiveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param feedbackSubmissionId
+	@return ApiDeleteCrmV3ObjectsFeedbackSubmissionsFeedbackSubmissionIdArchiveRequest
 */
 func (a *BasicApiService) DeleteCrmV3ObjectsFeedbackSubmissionsFeedbackSubmissionIdArchive(ctx context.Context, feedbackSubmissionId string) ApiDeleteCrmV3ObjectsFeedbackSubmissionsFeedbackSubmissionIdArchiveRequest {
 	return ApiDeleteCrmV3ObjectsFeedbackSubmissionsFeedbackSubmissionIdArchiveRequest{
@@ -184,9 +184,9 @@ GetCrmV3ObjectsFeedbackSubmissionsFeedbackSubmissionIdGetById Read
 
 Read an Object identified by `{feedbackSubmissionId}`. `{feedbackSubmissionId}` refers to the internal object ID by default, or optionally any unique property value as specified by the `idProperty` query param.  Control what is returned via the `properties` query param.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param feedbackSubmissionId
- @return ApiGetCrmV3ObjectsFeedbackSubmissionsFeedbackSubmissionIdGetByIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param feedbackSubmissionId
+	@return ApiGetCrmV3ObjectsFeedbackSubmissionsFeedbackSubmissionIdGetByIdRequest
 */
 func (a *BasicApiService) GetCrmV3ObjectsFeedbackSubmissionsFeedbackSubmissionIdGetById(ctx context.Context, feedbackSubmissionId string) ApiGetCrmV3ObjectsFeedbackSubmissionsFeedbackSubmissionIdGetByIdRequest {
 	return ApiGetCrmV3ObjectsFeedbackSubmissionsFeedbackSubmissionIdGetByIdRequest{
@@ -197,7 +197,8 @@ func (a *BasicApiService) GetCrmV3ObjectsFeedbackSubmissionsFeedbackSubmissionId
 }
 
 // Execute executes the request
-//  @return SimplePublicObjectWithAssociations
+//
+//	@return SimplePublicObjectWithAssociations
 func (a *BasicApiService) GetCrmV3ObjectsFeedbackSubmissionsFeedbackSubmissionIdGetByIdExecute(r ApiGetCrmV3ObjectsFeedbackSubmissionsFeedbackSubmissionIdGetByIdRequest) (*SimplePublicObjectWithAssociations, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -384,8 +385,8 @@ GetCrmV3ObjectsFeedbackSubmissionsGetPage List
 
 Read a page of feedback submissions. Control what is returned via the `properties` query param.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetCrmV3ObjectsFeedbackSubmissionsGetPageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetCrmV3ObjectsFeedbackSubmissionsGetPageRequest
 */
 func (a *BasicApiService) GetCrmV3ObjectsFeedbackSubmissionsGetPage(ctx context.Context) ApiGetCrmV3ObjectsFeedbackSubmissionsGetPageRequest {
 	return ApiGetCrmV3ObjectsFeedbackSubmissionsGetPageRequest{
@@ -395,7 +396,8 @@ func (a *BasicApiService) GetCrmV3ObjectsFeedbackSubmissionsGetPage(ctx context.
 }
 
 // Execute executes the request
-//  @return CollectionResponseSimplePublicObjectWithAssociationsForwardPaging
+//
+//	@return CollectionResponseSimplePublicObjectWithAssociationsForwardPaging
 func (a *BasicApiService) GetCrmV3ObjectsFeedbackSubmissionsGetPageExecute(r ApiGetCrmV3ObjectsFeedbackSubmissionsGetPageRequest) (*CollectionResponseSimplePublicObjectWithAssociationsForwardPaging, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -556,9 +558,9 @@ PatchCrmV3ObjectsFeedbackSubmissionsFeedbackSubmissionIdUpdate Update
 
 Perform a partial update of an Object identified by `{feedbackSubmissionId}`. `{feedbackSubmissionId}` refers to the internal object ID by default, or optionally any unique property value as specified by the `idProperty` query param. Provided property values will be overwritten. Read-only and non-existent properties will be ignored. Properties values can be cleared by passing an empty string.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param feedbackSubmissionId
- @return ApiPatchCrmV3ObjectsFeedbackSubmissionsFeedbackSubmissionIdUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param feedbackSubmissionId
+	@return ApiPatchCrmV3ObjectsFeedbackSubmissionsFeedbackSubmissionIdUpdateRequest
 */
 func (a *BasicApiService) PatchCrmV3ObjectsFeedbackSubmissionsFeedbackSubmissionIdUpdate(ctx context.Context, feedbackSubmissionId string) ApiPatchCrmV3ObjectsFeedbackSubmissionsFeedbackSubmissionIdUpdateRequest {
 	return ApiPatchCrmV3ObjectsFeedbackSubmissionsFeedbackSubmissionIdUpdateRequest{
@@ -569,7 +571,8 @@ func (a *BasicApiService) PatchCrmV3ObjectsFeedbackSubmissionsFeedbackSubmission
 }
 
 // Execute executes the request
-//  @return SimplePublicObject
+//
+//	@return SimplePublicObject
 func (a *BasicApiService) PatchCrmV3ObjectsFeedbackSubmissionsFeedbackSubmissionIdUpdateExecute(r ApiPatchCrmV3ObjectsFeedbackSubmissionsFeedbackSubmissionIdUpdateRequest) (*SimplePublicObject, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
@@ -689,8 +692,8 @@ PostCrmV3ObjectsFeedbackSubmissionsCreate Create
 
 Create a feedback submission with the given properties and return a copy of the object, including the ID. Documentation and examples for creating standard feedback submissions is provided.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostCrmV3ObjectsFeedbackSubmissionsCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPostCrmV3ObjectsFeedbackSubmissionsCreateRequest
 */
 func (a *BasicApiService) PostCrmV3ObjectsFeedbackSubmissionsCreate(ctx context.Context) ApiPostCrmV3ObjectsFeedbackSubmissionsCreateRequest {
 	return ApiPostCrmV3ObjectsFeedbackSubmissionsCreateRequest{
@@ -700,7 +703,8 @@ func (a *BasicApiService) PostCrmV3ObjectsFeedbackSubmissionsCreate(ctx context.
 }
 
 // Execute executes the request
-//  @return SimplePublicObject
+//
+//	@return SimplePublicObject
 func (a *BasicApiService) PostCrmV3ObjectsFeedbackSubmissionsCreateExecute(r ApiPostCrmV3ObjectsFeedbackSubmissionsCreateRequest) (*SimplePublicObject, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

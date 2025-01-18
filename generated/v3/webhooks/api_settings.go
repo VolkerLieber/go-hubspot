@@ -37,9 +37,9 @@ func (r ApiSettingsClearRequest) Execute() (*http.Response, error) {
 /*
 SettingsClear Method for SettingsClear
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param appId
- @return ApiSettingsClearRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param appId
+	@return ApiSettingsClearRequest
 */
 func (a *SettingsApiService) SettingsClear(ctx context.Context, appId int32) ApiSettingsClearRequest {
 	return ApiSettingsClearRequest{
@@ -150,9 +150,9 @@ func (r ApiSettingsConfigureRequest) Execute() (*SettingsResponse, *http.Respons
 /*
 SettingsConfigure Method for SettingsConfigure
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param appId
- @return ApiSettingsConfigureRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param appId
+	@return ApiSettingsConfigureRequest
 */
 func (a *SettingsApiService) SettingsConfigure(ctx context.Context, appId int32) ApiSettingsConfigureRequest {
 	return ApiSettingsConfigureRequest{
@@ -163,7 +163,8 @@ func (a *SettingsApiService) SettingsConfigure(ctx context.Context, appId int32)
 }
 
 // Execute executes the request
-//  @return SettingsResponse
+//
+//	@return SettingsResponse
 func (a *SettingsApiService) SettingsConfigureExecute(r ApiSettingsConfigureRequest) (*SettingsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -273,9 +274,9 @@ func (r ApiSettingsGetAllRequest) Execute() (*SettingsResponse, *http.Response, 
 /*
 SettingsGetAll Method for SettingsGetAll
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param appId
- @return ApiSettingsGetAllRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param appId
+	@return ApiSettingsGetAllRequest
 */
 func (a *SettingsApiService) SettingsGetAll(ctx context.Context, appId int32) ApiSettingsGetAllRequest {
 	return ApiSettingsGetAllRequest{
@@ -286,7 +287,8 @@ func (a *SettingsApiService) SettingsGetAll(ctx context.Context, appId int32) Ap
 }
 
 // Execute executes the request
-//  @return SettingsResponse
+//
+//	@return SettingsResponse
 func (a *SettingsApiService) SettingsGetAllExecute(r ApiSettingsGetAllRequest) (*SettingsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet

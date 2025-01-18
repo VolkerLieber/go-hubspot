@@ -41,8 +41,8 @@ func (r ApiPostCrmV3ObjectsLineItemsMergeMergeRequest) Execute() (*SimplePublicO
 /*
 PostCrmV3ObjectsLineItemsMergeMerge Merge two line items with same type
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostCrmV3ObjectsLineItemsMergeMergeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPostCrmV3ObjectsLineItemsMergeMergeRequest
 */
 func (a *PublicObjectApiService) PostCrmV3ObjectsLineItemsMergeMerge(ctx context.Context) ApiPostCrmV3ObjectsLineItemsMergeMergeRequest {
 	return ApiPostCrmV3ObjectsLineItemsMergeMergeRequest{
@@ -52,7 +52,8 @@ func (a *PublicObjectApiService) PostCrmV3ObjectsLineItemsMergeMerge(ctx context
 }
 
 // Execute executes the request
-//  @return SimplePublicObject
+//
+//	@return SimplePublicObject
 func (a *PublicObjectApiService) PostCrmV3ObjectsLineItemsMergeMergeExecute(r ApiPostCrmV3ObjectsLineItemsMergeMergeRequest) (*SimplePublicObject, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

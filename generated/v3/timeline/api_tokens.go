@@ -45,11 +45,11 @@ The timeline will still display this property for older CRM objects if it's stil
 
 Any lists or reports referencing deleted tokens will no longer return new contacts, but old ones will still exist in the lists.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param eventTemplateId The event template ID.
- @param tokenName The token name.
- @param appId The ID of the target app.
- @return ApiDeleteCrmV3TimelineAppIdEventTemplatesEventTemplateIdTokensTokenNameArchiveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param eventTemplateId The event template ID.
+	@param tokenName The token name.
+	@param appId The ID of the target app.
+	@return ApiDeleteCrmV3TimelineAppIdEventTemplatesEventTemplateIdTokensTokenNameArchiveRequest
 */
 func (a *TokensApiService) DeleteCrmV3TimelineAppIdEventTemplatesEventTemplateIdTokensTokenNameArchive(ctx context.Context, eventTemplateId string, tokenName string, appId int32) ApiDeleteCrmV3TimelineAppIdEventTemplatesEventTemplateIdTokensTokenNameArchiveRequest {
 	return ApiDeleteCrmV3TimelineAppIdEventTemplatesEventTemplateIdTokensTokenNameArchiveRequest{
@@ -174,10 +174,10 @@ You can also use `objectPropertyName` to associate any CRM object properties. Th
 
 Token names should be unique across the template.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param eventTemplateId The event template ID.
- @param appId The ID of the target app.
- @return ApiPostCrmV3TimelineAppIdEventTemplatesEventTemplateIdTokensCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param eventTemplateId The event template ID.
+	@param appId The ID of the target app.
+	@return ApiPostCrmV3TimelineAppIdEventTemplatesEventTemplateIdTokensCreateRequest
 */
 func (a *TokensApiService) PostCrmV3TimelineAppIdEventTemplatesEventTemplateIdTokensCreate(ctx context.Context, eventTemplateId string, appId int32) ApiPostCrmV3TimelineAppIdEventTemplatesEventTemplateIdTokensCreateRequest {
 	return ApiPostCrmV3TimelineAppIdEventTemplatesEventTemplateIdTokensCreateRequest{
@@ -189,7 +189,8 @@ func (a *TokensApiService) PostCrmV3TimelineAppIdEventTemplatesEventTemplateIdTo
 }
 
 // Execute executes the request
-//  @return TimelineEventTemplateToken
+//
+//	@return TimelineEventTemplateToken
 func (a *TokensApiService) PostCrmV3TimelineAppIdEventTemplatesEventTemplateIdTokensCreateExecute(r ApiPostCrmV3TimelineAppIdEventTemplatesEventTemplateIdTokensCreateRequest) (*TimelineEventTemplateToken, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -311,11 +312,11 @@ PutCrmV3TimelineAppIdEventTemplatesEventTemplateIdTokensTokenNameUpdate Updates 
 
 This will update the existing token on an event template. Name and type can't be changed on existing tokens.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param eventTemplateId The event template ID.
- @param tokenName The token name.
- @param appId The ID of the target app.
- @return ApiPutCrmV3TimelineAppIdEventTemplatesEventTemplateIdTokensTokenNameUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param eventTemplateId The event template ID.
+	@param tokenName The token name.
+	@param appId The ID of the target app.
+	@return ApiPutCrmV3TimelineAppIdEventTemplatesEventTemplateIdTokensTokenNameUpdateRequest
 */
 func (a *TokensApiService) PutCrmV3TimelineAppIdEventTemplatesEventTemplateIdTokensTokenNameUpdate(ctx context.Context, eventTemplateId string, tokenName string, appId int32) ApiPutCrmV3TimelineAppIdEventTemplatesEventTemplateIdTokensTokenNameUpdateRequest {
 	return ApiPutCrmV3TimelineAppIdEventTemplatesEventTemplateIdTokensTokenNameUpdateRequest{
@@ -328,7 +329,8 @@ func (a *TokensApiService) PutCrmV3TimelineAppIdEventTemplatesEventTemplateIdTok
 }
 
 // Execute executes the request
-//  @return TimelineEventTemplateToken
+//
+//	@return TimelineEventTemplateToken
 func (a *TokensApiService) PutCrmV3TimelineAppIdEventTemplatesEventTemplateIdTokensTokenNameUpdateExecute(r ApiPutCrmV3TimelineAppIdEventTemplatesEventTemplateIdTokensTokenNameUpdateRequest) (*TimelineEventTemplateToken, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

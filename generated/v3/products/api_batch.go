@@ -41,8 +41,8 @@ func (r ApiBatchArchiveRequest) Execute() (*http.Response, error) {
 /*
 BatchArchive Archive a batch of products by ID
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiBatchArchiveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiBatchArchiveRequest
 */
 func (a *BatchApiService) BatchArchive(ctx context.Context) ApiBatchArchiveRequest {
 	return ApiBatchArchiveRequest{
@@ -104,16 +104,12 @@ func (a *BatchApiService) BatchArchiveExecute(r ApiBatchArchiveRequest) (*http.R
 	}
 	if r.ctx != nil {
 		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["private_apps_legacy"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["private-app-legacy"] = key
-			}
+		if auth, ok := r.ctx.Value(hubspot.ContextKey).(hubspot.Authorizer); ok {
+			auth.Apply(hubspot.AuthorizationRequest{
+				QueryParams: localVarQueryParams,
+				FormParams:  localVarFormParams,
+				Headers:     localVarHeaderParams,
+			})
 		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -169,8 +165,8 @@ func (r ApiBatchCreateRequest) Execute() (*BatchResponseSimplePublicObject, *htt
 /*
 BatchCreate Create a batch of products
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiBatchCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiBatchCreateRequest
 */
 func (a *BatchApiService) BatchCreate(ctx context.Context) ApiBatchCreateRequest {
 	return ApiBatchCreateRequest{
@@ -180,7 +176,8 @@ func (a *BatchApiService) BatchCreate(ctx context.Context) ApiBatchCreateRequest
 }
 
 // Execute executes the request
-//  @return BatchResponseSimplePublicObject
+//
+//	@return BatchResponseSimplePublicObject
 func (a *BatchApiService) BatchCreateExecute(r ApiBatchCreateRequest) (*BatchResponseSimplePublicObject, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -234,16 +231,12 @@ func (a *BatchApiService) BatchCreateExecute(r ApiBatchCreateRequest) (*BatchRes
 	}
 	if r.ctx != nil {
 		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["private_apps_legacy"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["private-app-legacy"] = key
-			}
+		if auth, ok := r.ctx.Value(hubspot.ContextKey).(hubspot.Authorizer); ok {
+			auth.Apply(hubspot.AuthorizationRequest{
+				QueryParams: localVarQueryParams,
+				FormParams:  localVarFormParams,
+				Headers:     localVarHeaderParams,
+			})
 		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -315,8 +308,8 @@ func (r ApiBatchReadRequest) Execute() (*BatchResponseSimplePublicObject, *http.
 /*
 BatchRead Read a batch of products by internal ID, or unique property values
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiBatchReadRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiBatchReadRequest
 */
 func (a *BatchApiService) BatchRead(ctx context.Context) ApiBatchReadRequest {
 	return ApiBatchReadRequest{
@@ -326,7 +319,8 @@ func (a *BatchApiService) BatchRead(ctx context.Context) ApiBatchReadRequest {
 }
 
 // Execute executes the request
-//  @return BatchResponseSimplePublicObject
+//
+//	@return BatchResponseSimplePublicObject
 func (a *BatchApiService) BatchReadExecute(r ApiBatchReadRequest) (*BatchResponseSimplePublicObject, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -383,16 +377,12 @@ func (a *BatchApiService) BatchReadExecute(r ApiBatchReadRequest) (*BatchRespons
 	}
 	if r.ctx != nil {
 		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["private_apps_legacy"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["private-app-legacy"] = key
-			}
+		if auth, ok := r.ctx.Value(hubspot.ContextKey).(hubspot.Authorizer); ok {
+			auth.Apply(hubspot.AuthorizationRequest{
+				QueryParams: localVarQueryParams,
+				FormParams:  localVarFormParams,
+				Headers:     localVarHeaderParams,
+			})
 		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -457,8 +447,8 @@ func (r ApiBatchUpdateRequest) Execute() (*BatchResponseSimplePublicObject, *htt
 /*
 BatchUpdate Update a batch of products
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiBatchUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiBatchUpdateRequest
 */
 func (a *BatchApiService) BatchUpdate(ctx context.Context) ApiBatchUpdateRequest {
 	return ApiBatchUpdateRequest{
@@ -468,7 +458,8 @@ func (a *BatchApiService) BatchUpdate(ctx context.Context) ApiBatchUpdateRequest
 }
 
 // Execute executes the request
-//  @return BatchResponseSimplePublicObject
+//
+//	@return BatchResponseSimplePublicObject
 func (a *BatchApiService) BatchUpdateExecute(r ApiBatchUpdateRequest) (*BatchResponseSimplePublicObject, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -522,16 +513,12 @@ func (a *BatchApiService) BatchUpdateExecute(r ApiBatchUpdateRequest) (*BatchRes
 	}
 	if r.ctx != nil {
 		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["private_apps_legacy"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["private-app-legacy"] = key
-			}
+		if auth, ok := r.ctx.Value(hubspot.ContextKey).(hubspot.Authorizer); ok {
+			auth.Apply(hubspot.AuthorizationRequest{
+				QueryParams: localVarQueryParams,
+				FormParams:  localVarFormParams,
+				Headers:     localVarHeaderParams,
+			})
 		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)

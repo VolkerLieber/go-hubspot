@@ -16,11 +16,11 @@ import (
 )
 
 var (
-	directoryUrl = "https://api.hubspot.com/api-catalog-public/v1/apis"
+	directoryUrl = "https://api.hubspot.com/public/api/spec/v1/specs"
 	replacer     = strings.NewReplacer(" ", "_", "-", "_")
 )
 
-//preProcessMap contains a grouped list of operations to rename before generating typings.
+// preProcessMap contains a grouped list of operations to rename before generating typings.
 var preProcessMap = map[string][]preProcessEntry{
 	"Accounting": {
 		{old: "post-/crm/.*/extensions/accounting/callback/customer-create/{requestId}_createCustomer", new: "CallbackCreateCustomer"},
@@ -512,7 +512,6 @@ type directory struct {
 // It returns the schema text as a string.
 func retrieveSchema(url string) (string, error) {
 	res, err := http.Get(url)
-
 	if err != nil {
 		return "", err
 	}
@@ -520,7 +519,6 @@ func retrieveSchema(url string) (string, error) {
 	defer res.Body.Close()
 
 	schema, err := io.ReadAll(res.Body)
-
 	if err != nil {
 		return "", err
 	}
@@ -539,8 +537,7 @@ func preProcessSchema(group string, schema string) (string, error) {
 	}
 
 	filename := "./schema/" + group + ".json"
-	err := ioutil.WriteFile(filename, []byte(schema), 0644)
-
+	err := ioutil.WriteFile(filename, []byte(schema), 0o644)
 	if err != nil {
 		return "", err
 	}
@@ -553,7 +550,6 @@ func preProcessSchema(group string, schema string) (string, error) {
 func versionFromSchema(input string) (string, error) {
 	var schema schemaOpenAPI
 	err := json.Unmarshal([]byte(input), &schema)
-
 	if err != nil {
 		return "", err
 	}
@@ -584,24 +580,21 @@ func main() {
 		panic(err)
 	}
 
-	//i := 0
-	//outer:
+	// i := 0
+	// outer:
 	for _, group := range r.Results {
 		for name, feature := range group.Features {
 			schema, err := retrieveSchema(feature.OpenAPI)
-
 			if err != nil {
 				panic(err)
 			}
 
 			filename, err := preProcessSchema(name, schema)
-
 			if err != nil {
 				panic(err)
 			}
 
 			version, err := versionFromSchema(schema)
-
 			if err != nil {
 				panic(err)
 			}
@@ -622,7 +615,7 @@ func main() {
 			if err != nil {
 				panic(err)
 			}
-			//i++
+			// i++
 		}
 	}
 
@@ -670,7 +663,7 @@ func main() {
 					b = bytes.Join([][]byte{b[:idx], []byte("\t\"github.com/clarkmcc/go-hubspot\""), b[idx:]}, []byte("\n"))
 				}
 
-				err = os.WriteFile(path, b, 0666)
+				err = os.WriteFile(path, b, 0o666)
 				if err != nil {
 					return err
 				}
@@ -690,10 +683,12 @@ func main() {
 	}
 }
 
-var findPrivateAppsAuth = []byte("if r.ctx != nil {\n\t\t// API Key Authentication\n\t\tif auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {\n\t\t\tif apiKey, ok := auth[\"private_apps\"]; ok {\n\t\t\t\tvar key string\n\t\t\t\tif apiKey.Prefix != \"\" {\n\t\t\t\t\tkey = apiKey.Prefix + \" \" + apiKey.Key\n\t\t\t\t} else {\n\t\t\t\t\tkey = apiKey.Key\n\t\t\t\t}\n\t\t\t\tlocalVarHeaderParams[\"private-app\"] = key\n\t\t\t}\n\t\t}\n\t}")
-var findPrivateAppsLegacyAuth = []byte("if r.ctx != nil {\n\t\t// API Key Authentication\n\t\tif auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {\n\t\t\tif apiKey, ok := auth[\"private_apps_legacy\"]; ok {\n\t\t\t\tvar key string\n\t\t\t\tif apiKey.Prefix != \"\" {\n\t\t\t\t\tkey = apiKey.Prefix + \" \" + apiKey.Key\n\t\t\t\t} else {\n\t\t\t\t\tkey = apiKey.Key\n\t\t\t\t}\n\t\t\t\tlocalVarHeaderParams[\"private-app-legacy\"] = key\n\t\t\t}\n\t\t}\n\t}")
-var findDeveloperHapiKeyAuth = []byte("if r.ctx != nil {\n\t\t// API Key Authentication\n\t\tif auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {\n\t\t\tif apiKey, ok := auth[\"developer_hapikey\"]; ok {\n\t\t\t\tvar key string\n\t\t\t\tif apiKey.Prefix != \"\" {\n\t\t\t\t\tkey = apiKey.Prefix + \" \" + apiKey.Key\n\t\t\t\t} else {\n\t\t\t\t\tkey = apiKey.Key\n\t\t\t\t}\n\t\t\t\tlocalVarQueryParams.Add(\"hapikey\", key)\n\t\t\t}\n\t\t}\n\t}")
-var replaceWith = []byte("if r.ctx != nil {\n\t\t// API Key Authentication\n\t\tif auth, ok := r.ctx.Value(hubspot.ContextKey).(hubspot.Authorizer); ok {\n\t\t\tauth.Apply(hubspot.AuthorizationRequest{\n\t\t\t\tQueryParams: localVarQueryParams,\n\t\t\t\tFormParams:  localVarFormParams,\n\t\t\t\tHeaders:     localVarHeaderParams,\n\t\t\t})\n\t\t}\n\t}")
+var (
+	findPrivateAppsAuth       = []byte("if r.ctx != nil {\n\t\t// API Key Authentication\n\t\tif auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {\n\t\t\tif apiKey, ok := auth[\"private_apps\"]; ok {\n\t\t\t\tvar key string\n\t\t\t\tif apiKey.Prefix != \"\" {\n\t\t\t\t\tkey = apiKey.Prefix + \" \" + apiKey.Key\n\t\t\t\t} else {\n\t\t\t\t\tkey = apiKey.Key\n\t\t\t\t}\n\t\t\t\tlocalVarHeaderParams[\"private-app\"] = key\n\t\t\t}\n\t\t}\n\t}")
+	findPrivateAppsLegacyAuth = []byte("if r.ctx != nil {\n\t\t// API Key Authentication\n\t\tif auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {\n\t\t\tif apiKey, ok := auth[\"private_apps_legacy\"]; ok {\n\t\t\t\tvar key string\n\t\t\t\tif apiKey.Prefix != \"\" {\n\t\t\t\t\tkey = apiKey.Prefix + \" \" + apiKey.Key\n\t\t\t\t} else {\n\t\t\t\t\tkey = apiKey.Key\n\t\t\t\t}\n\t\t\t\tlocalVarHeaderParams[\"private-app-legacy\"] = key\n\t\t\t}\n\t\t}\n\t}")
+	findDeveloperHapiKeyAuth  = []byte("if r.ctx != nil {\n\t\t// API Key Authentication\n\t\tif auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {\n\t\t\tif apiKey, ok := auth[\"developer_hapikey\"]; ok {\n\t\t\t\tvar key string\n\t\t\t\tif apiKey.Prefix != \"\" {\n\t\t\t\t\tkey = apiKey.Prefix + \" \" + apiKey.Key\n\t\t\t\t} else {\n\t\t\t\t\tkey = apiKey.Key\n\t\t\t\t}\n\t\t\t\tlocalVarQueryParams.Add(\"hapikey\", key)\n\t\t\t}\n\t\t}\n\t}")
+	replaceWith               = []byte("if r.ctx != nil {\n\t\t// API Key Authentication\n\t\tif auth, ok := r.ctx.Value(hubspot.ContextKey).(hubspot.Authorizer); ok {\n\t\t\tauth.Apply(hubspot.AuthorizationRequest{\n\t\t\t\tQueryParams: localVarQueryParams,\n\t\t\t\tFormParams:  localVarFormParams,\n\t\t\t\tHeaders:     localVarHeaderParams,\n\t\t\t})\n\t\t}\n\t}")
+)
 
 var findMethods = [][]byte{
 	findPrivateAppsAuth,

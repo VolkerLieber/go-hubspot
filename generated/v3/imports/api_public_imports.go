@@ -51,9 +51,9 @@ func (r ApiGetErrorsRequest) Execute() (*CollectionResponsePublicImportErrorForw
 /*
 GetErrors Method for GetErrors
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param importId
- @return ApiGetErrorsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param importId
+	@return ApiGetErrorsRequest
 */
 func (a *PublicImportsApiService) GetErrors(ctx context.Context, importId int64) ApiGetErrorsRequest {
 	return ApiGetErrorsRequest{
@@ -64,7 +64,8 @@ func (a *PublicImportsApiService) GetErrors(ctx context.Context, importId int64)
 }
 
 // Execute executes the request
-//  @return CollectionResponsePublicImportErrorForwardPaging
+//
+//	@return CollectionResponsePublicImportErrorForwardPaging
 func (a *PublicImportsApiService) GetErrorsExecute(r ApiGetErrorsRequest) (*CollectionResponsePublicImportErrorForwardPaging, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet

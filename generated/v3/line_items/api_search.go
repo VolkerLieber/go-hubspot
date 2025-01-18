@@ -41,8 +41,8 @@ func (r ApiPostCrmV3ObjectsLineItemsSearchDoSearchRequest) Execute() (*Collectio
 /*
 PostCrmV3ObjectsLineItemsSearchDoSearch Method for PostCrmV3ObjectsLineItemsSearchDoSearch
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostCrmV3ObjectsLineItemsSearchDoSearchRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPostCrmV3ObjectsLineItemsSearchDoSearchRequest
 */
 func (a *SearchApiService) PostCrmV3ObjectsLineItemsSearchDoSearch(ctx context.Context) ApiPostCrmV3ObjectsLineItemsSearchDoSearchRequest {
 	return ApiPostCrmV3ObjectsLineItemsSearchDoSearchRequest{
@@ -52,7 +52,8 @@ func (a *SearchApiService) PostCrmV3ObjectsLineItemsSearchDoSearch(ctx context.C
 }
 
 // Execute executes the request
-//  @return CollectionResponseWithTotalSimplePublicObjectForwardPaging
+//
+//	@return CollectionResponseWithTotalSimplePublicObjectForwardPaging
 func (a *SearchApiService) PostCrmV3ObjectsLineItemsSearchDoSearchExecute(r ApiPostCrmV3ObjectsLineItemsSearchDoSearchRequest) (*CollectionResponseWithTotalSimplePublicObjectForwardPaging, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

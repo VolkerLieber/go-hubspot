@@ -37,9 +37,9 @@ SettingsGetByID Get URL settings
 
 Returns the URL settings for an accounting app with the specified ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param appId The ID of the accounting app. This is the identifier of the application created in your HubSpot developer portal.
- @return ApiSettingsGetByIDRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param appId The ID of the accounting app. This is the identifier of the application created in your HubSpot developer portal.
+	@return ApiSettingsGetByIDRequest
 */
 func (a *SettingsApiService) SettingsGetByID(ctx context.Context, appId int32) ApiSettingsGetByIDRequest {
 	return ApiSettingsGetByIDRequest{
@@ -50,7 +50,8 @@ func (a *SettingsApiService) SettingsGetByID(ctx context.Context, appId int32) A
 }
 
 // Execute executes the request
-//  @return AccountingAppSettings
+//
+//	@return AccountingAppSettings
 func (a *SettingsApiService) SettingsGetByIDExecute(r ApiSettingsGetByIDRequest) (*AccountingAppSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -153,9 +154,9 @@ SettingsReplace Add/Update URL Settings
 
 Add/Update the URL settings for an accounting app with the specified ID.  All URLs must use the `https` protocol.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param appId The ID of the accounting app. This is the identifier of the application created in your HubSpot developer portal.
- @return ApiSettingsReplaceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param appId The ID of the accounting app. This is the identifier of the application created in your HubSpot developer portal.
+	@return ApiSettingsReplaceRequest
 */
 func (a *SettingsApiService) SettingsReplace(ctx context.Context, appId int32) ApiSettingsReplaceRequest {
 	return ApiSettingsReplaceRequest{

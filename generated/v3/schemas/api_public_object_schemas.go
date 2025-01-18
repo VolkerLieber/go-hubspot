@@ -37,9 +37,9 @@ func (r ApiDeleteCrmV3SchemasObjectTypePurgePurgeRequest) Execute() (*http.Respo
 /*
 DeleteCrmV3SchemasObjectTypePurgePurge Method for DeleteCrmV3SchemasObjectTypePurgePurge
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param objectType
- @return ApiDeleteCrmV3SchemasObjectTypePurgePurgeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param objectType
+	@return ApiDeleteCrmV3SchemasObjectTypePurgePurgeRequest
 
 Deprecated
 */

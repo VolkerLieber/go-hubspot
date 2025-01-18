@@ -41,10 +41,10 @@ CloneDraftTableRow Clone a row
 
 Clones a single row in the `draft` version of the table.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tableIdOrName The ID or name of the table
- @param rowId The ID of the row
- @return ApiCloneDraftTableRowRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param tableIdOrName The ID or name of the table
+	@param rowId The ID of the row
+	@return ApiCloneDraftTableRowRequest
 */
 func (a *RowsApiService) CloneDraftTableRow(ctx context.Context, tableIdOrName string, rowId string) ApiCloneDraftTableRowRequest {
 	return ApiCloneDraftTableRowRequest{
@@ -56,7 +56,8 @@ func (a *RowsApiService) CloneDraftTableRow(ctx context.Context, tableIdOrName s
 }
 
 // Execute executes the request
-//  @return HubDbTableRowV3
+//
+//	@return HubDbTableRowV3
 func (a *RowsApiService) CloneDraftTableRowExecute(r ApiCloneDraftTableRowRequest) (*HubDbTableRowV3, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -171,9 +172,9 @@ CreateTableRow Add a new row to a table
 
 Add a new row to a HubDB table. New rows will be added to the `draft` version of the table. Use `publish` endpoint to push these changes to published version.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tableIdOrName The ID or name of the target table.
- @return ApiCreateTableRowRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param tableIdOrName The ID or name of the target table.
+	@return ApiCreateTableRowRequest
 */
 func (a *RowsApiService) CreateTableRow(ctx context.Context, tableIdOrName string) ApiCreateTableRowRequest {
 	return ApiCreateTableRowRequest{
@@ -184,7 +185,8 @@ func (a *RowsApiService) CreateTableRow(ctx context.Context, tableIdOrName strin
 }
 
 // Execute executes the request
-//  @return HubDbTableRowV3
+//
+//	@return HubDbTableRowV3
 func (a *RowsApiService) CreateTableRowExecute(r ApiCreateTableRowRequest) (*HubDbTableRowV3, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -297,10 +299,10 @@ GetDraftTableRowByID Get a row from the draft table
 
 Get a single row by ID from a table's `draft` version.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tableIdOrName The ID or name of the table
- @param rowId The ID of the row
- @return ApiGetDraftTableRowByIDRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param tableIdOrName The ID or name of the table
+	@param rowId The ID of the row
+	@return ApiGetDraftTableRowByIDRequest
 */
 func (a *RowsApiService) GetDraftTableRowByID(ctx context.Context, tableIdOrName string, rowId string) ApiGetDraftTableRowByIDRequest {
 	return ApiGetDraftTableRowByIDRequest{
@@ -312,7 +314,8 @@ func (a *RowsApiService) GetDraftTableRowByID(ctx context.Context, tableIdOrName
 }
 
 // Execute executes the request
-//  @return HubDbTableRowV3
+//
+//	@return HubDbTableRowV3
 func (a *RowsApiService) GetDraftTableRowByIDExecute(r ApiGetDraftTableRowByIDRequest) (*HubDbTableRowV3, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -422,10 +425,10 @@ GetTableRow Get a table row
 Get a single row by ID from a table's `published` version.
 **Note:** This endpoint can be accessed without any authentication, if the table is set to be allowed for public access.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tableIdOrName The ID or name of the table
- @param rowId The ID of the row
- @return ApiGetTableRowRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param tableIdOrName The ID or name of the table
+	@param rowId The ID of the row
+	@return ApiGetTableRowRequest
 */
 func (a *RowsApiService) GetTableRow(ctx context.Context, tableIdOrName string, rowId string) ApiGetTableRowRequest {
 	return ApiGetTableRowRequest{
@@ -437,7 +440,8 @@ func (a *RowsApiService) GetTableRow(ctx context.Context, tableIdOrName string, 
 }
 
 // Execute executes the request
-//  @return HubDbTableRowV3
+//
+//	@return HubDbTableRowV3
 func (a *RowsApiService) GetTableRowExecute(r ApiGetTableRowRequest) (*HubDbTableRowV3, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -574,9 +578,9 @@ GetTableRows Get rows for a table
 Returns a set of rows in the `published` version of the specified table. Row results can be filtered and sorted. Filtering and sorting options will be sent as query parameters to the API request. For example, by adding the query parameters `column1__gt=5&sort=-column1`, API returns the rows with values for column `column1` greater than 5 and in the descending order of `column1` values. Refer to the [overview section](https://developers.hubspot.com/docs/api/cms/hubdb#filtering-and-sorting-table-rows) for detailed filtering and sorting options.
 **Note:** This endpoint can be accessed without any authentication, if the table is set to be allowed for public access.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tableIdOrName The ID or name of the table to query.
- @return ApiGetTableRowsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param tableIdOrName The ID or name of the table to query.
+	@return ApiGetTableRowsRequest
 */
 func (a *RowsApiService) GetTableRows(ctx context.Context, tableIdOrName string) ApiGetTableRowsRequest {
 	return ApiGetTableRowsRequest{
@@ -587,7 +591,8 @@ func (a *RowsApiService) GetTableRows(ctx context.Context, tableIdOrName string)
 }
 
 // Execute executes the request
-//  @return CollectionResponseWithTotalHubDbTableRowV3ForwardPaging
+//
+//	@return CollectionResponseWithTotalHubDbTableRowV3ForwardPaging
 func (a *RowsApiService) GetTableRowsExecute(r ApiGetTableRowsRequest) (*CollectionResponseWithTotalHubDbTableRowV3ForwardPaging, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -723,10 +728,10 @@ PurgeDraftTableRow Permanently deletes a row
 
 Permanently deletes a row from a table's `draft` version.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tableIdOrName The ID or name of the table
- @param rowId The ID of the row
- @return ApiPurgeDraftTableRowRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param tableIdOrName The ID or name of the table
+	@param rowId The ID of the row
+	@return ApiPurgeDraftTableRowRequest
 */
 func (a *RowsApiService) PurgeDraftTableRow(ctx context.Context, tableIdOrName string, rowId string) ApiPurgeDraftTableRowRequest {
 	return ApiPurgeDraftTableRowRequest{
@@ -863,9 +868,9 @@ ReadDraftTableRows Get rows from draft table
 
 Returns rows in the `draft` version of the specified table. Row results can be filtered and sorted. Filtering and sorting options will be sent as query parameters to the API request. For example, by adding the query parameters `column1__gt=5&sort=-column1`, API returns the rows with values for column `column1` greater than 5 and in the descending order of `column1` values. Refer to the [overview section](https://developers.hubspot.com/docs/api/cms/hubdb#filtering-and-sorting-table-rows) for detailed filtering and sorting options.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tableIdOrName The ID or name of the table to query.
- @return ApiReadDraftTableRowsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param tableIdOrName The ID or name of the table to query.
+	@return ApiReadDraftTableRowsRequest
 */
 func (a *RowsApiService) ReadDraftTableRows(ctx context.Context, tableIdOrName string) ApiReadDraftTableRowsRequest {
 	return ApiReadDraftTableRowsRequest{
@@ -876,7 +881,8 @@ func (a *RowsApiService) ReadDraftTableRows(ctx context.Context, tableIdOrName s
 }
 
 // Execute executes the request
-//  @return CollectionResponseWithTotalHubDbTableRowV3ForwardPaging
+//
+//	@return CollectionResponseWithTotalHubDbTableRowV3ForwardPaging
 func (a *RowsApiService) ReadDraftTableRowsExecute(r ApiReadDraftTableRowsRequest) (*CollectionResponseWithTotalHubDbTableRowV3ForwardPaging, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1021,10 +1027,10 @@ Replace a single row in the table's `draft` version.
 All the column values must be specified. If a column has a value in the target table and this request doesn't define that value, it will be deleted.
 See the `Create a row` endpoint for instructions on how to format the JSON row definitions.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tableIdOrName The ID or name of the table
- @param rowId The ID of the row
- @return ApiReplaceDraftTableRowRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param tableIdOrName The ID or name of the table
+	@param rowId The ID of the row
+	@return ApiReplaceDraftTableRowRequest
 */
 func (a *RowsApiService) ReplaceDraftTableRow(ctx context.Context, tableIdOrName string, rowId string) ApiReplaceDraftTableRowRequest {
 	return ApiReplaceDraftTableRowRequest{
@@ -1036,7 +1042,8 @@ func (a *RowsApiService) ReplaceDraftTableRow(ctx context.Context, tableIdOrName
 }
 
 // Execute executes the request
-//  @return HubDbTableRowV3
+//
+//	@return HubDbTableRowV3
 func (a *RowsApiService) ReplaceDraftTableRowExecute(r ApiReplaceDraftTableRowRequest) (*HubDbTableRowV3, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -1159,10 +1166,10 @@ Sparse updates a single row in the table's `draft` version.
 All the column values need not be specified. Only the columns or fields that needs to be modified can be specified.
 See the `Create a row` endpoint for instructions on how to format the JSON row definitions.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tableIdOrName The ID or name of the table
- @param rowId The ID of the row
- @return ApiUpdateDraftTableRowRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param tableIdOrName The ID or name of the table
+	@param rowId The ID of the row
+	@return ApiUpdateDraftTableRowRequest
 */
 func (a *RowsApiService) UpdateDraftTableRow(ctx context.Context, tableIdOrName string, rowId string) ApiUpdateDraftTableRowRequest {
 	return ApiUpdateDraftTableRowRequest{
@@ -1174,7 +1181,8 @@ func (a *RowsApiService) UpdateDraftTableRow(ctx context.Context, tableIdOrName 
 }
 
 // Execute executes the request
-//  @return HubDbTableRowV3
+//
+//	@return HubDbTableRowV3
 func (a *RowsApiService) UpdateDraftTableRowExecute(r ApiUpdateDraftTableRowRequest) (*HubDbTableRowV3, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch

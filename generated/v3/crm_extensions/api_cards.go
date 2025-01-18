@@ -40,10 +40,10 @@ CardsArchive Delete a card
 
 Permanently deletes a card definition with the given ID. Once deleted, data fetch requests for this card will no longer be sent to your service. This can't be undone.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param appId The ID of the target app.
- @param cardId The ID of the card to delete.
- @return ApiCardsArchiveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param appId The ID of the target app.
+	@param cardId The ID of the card to delete.
+	@return ApiCardsArchiveRequest
 */
 func (a *CardsApiService) CardsArchive(ctx context.Context, appId int32, cardId string) ApiCardsArchiveRequest {
 	return ApiCardsArchiveRequest{
@@ -159,9 +159,9 @@ CardsCreate Create a new card
 
 Defines a new card that will become active on an account when this app is installed.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param appId The ID of the target app.
- @return ApiCardsCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param appId The ID of the target app.
+	@return ApiCardsCreateRequest
 */
 func (a *CardsApiService) CardsCreate(ctx context.Context, appId int32) ApiCardsCreateRequest {
 	return ApiCardsCreateRequest{
@@ -172,7 +172,8 @@ func (a *CardsApiService) CardsCreate(ctx context.Context, appId int32) ApiCards
 }
 
 // Execute executes the request
-//  @return CardResponse
+//
+//	@return CardResponse
 func (a *CardsApiService) CardsCreateExecute(r ApiCardsCreateRequest) (*CardResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -284,9 +285,9 @@ CardsGetAll Get all cards
 
 Returns a list of cards for a given app.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param appId The ID of the target app.
- @return ApiCardsGetAllRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param appId The ID of the target app.
+	@return ApiCardsGetAllRequest
 */
 func (a *CardsApiService) CardsGetAll(ctx context.Context, appId int32) ApiCardsGetAllRequest {
 	return ApiCardsGetAllRequest{
@@ -297,7 +298,8 @@ func (a *CardsApiService) CardsGetAll(ctx context.Context, appId int32) ApiCards
 }
 
 // Execute executes the request
-//  @return CardListResponse
+//
+//	@return CardListResponse
 func (a *CardsApiService) CardsGetAllExecute(r ApiCardsGetAllRequest) (*CardListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -405,10 +407,10 @@ CardsGetByID Get a card.
 
 Returns the definition for a card with the given ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param appId The ID of the target app.
- @param cardId The ID of the target card.
- @return ApiCardsGetByIDRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param appId The ID of the target app.
+	@param cardId The ID of the target card.
+	@return ApiCardsGetByIDRequest
 */
 func (a *CardsApiService) CardsGetByID(ctx context.Context, appId int32, cardId string) ApiCardsGetByIDRequest {
 	return ApiCardsGetByIDRequest{
@@ -420,7 +422,8 @@ func (a *CardsApiService) CardsGetByID(ctx context.Context, appId int32, cardId 
 }
 
 // Execute executes the request
-//  @return CardResponse
+//
+//	@return CardResponse
 func (a *CardsApiService) CardsGetByIDExecute(r ApiCardsGetByIDRequest) (*CardResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -536,10 +539,10 @@ CardsUpdate Update a card
 
 Update a card definition with new details.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param appId The ID of the target app.
- @param cardId The ID of the card to update.
- @return ApiCardsUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param appId The ID of the target app.
+	@param cardId The ID of the card to update.
+	@return ApiCardsUpdateRequest
 */
 func (a *CardsApiService) CardsUpdate(ctx context.Context, appId int32, cardId string) ApiCardsUpdateRequest {
 	return ApiCardsUpdateRequest{
@@ -551,7 +554,8 @@ func (a *CardsApiService) CardsUpdate(ctx context.Context, appId int32, cardId s
 }
 
 // Execute executes the request
-//  @return CardResponse
+//
+//	@return CardResponse
 func (a *CardsApiService) CardsUpdateExecute(r ApiCardsUpdateRequest) (*CardResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch

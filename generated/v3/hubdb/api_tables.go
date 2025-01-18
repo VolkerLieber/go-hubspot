@@ -42,9 +42,9 @@ ArchiveTable Archive a table
 
 Archive (soft delete) an existing HubDB table. This archives both the published and draft versions.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tableIdOrName The ID or name of the table to archive.
- @return ApiArchiveTableRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param tableIdOrName The ID or name of the table to archive.
+	@return ApiArchiveTableRequest
 */
 func (a *TablesApiService) ArchiveTable(ctx context.Context, tableIdOrName string) ApiArchiveTableRequest {
 	return ApiArchiveTableRequest{
@@ -158,9 +158,9 @@ CloneDraftTable Clone a table
 
 Clone an existing HubDB table. The `newName` and `newLabel` of the new table can be sent as JSON in the `body` parameter. This will create the cloned table as a `draft`.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tableIdOrName The ID or name of the table to clone.
- @return ApiCloneDraftTableRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param tableIdOrName The ID or name of the table to clone.
+	@return ApiCloneDraftTableRequest
 */
 func (a *TablesApiService) CloneDraftTable(ctx context.Context, tableIdOrName string) ApiCloneDraftTableRequest {
 	return ApiCloneDraftTableRequest{
@@ -171,7 +171,8 @@ func (a *TablesApiService) CloneDraftTable(ctx context.Context, tableIdOrName st
 }
 
 // Execute executes the request
-//  @return HubDbTableV3
+//
+//	@return HubDbTableV3
 func (a *TablesApiService) CloneDraftTableExecute(r ApiCloneDraftTableRequest) (*HubDbTableV3, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -289,8 +290,8 @@ CreateTable Create a new table
 
 Creates a new draft HubDB table given a JSON schema. The table name and label should be unique for each account.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateTableRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateTableRequest
 */
 func (a *TablesApiService) CreateTable(ctx context.Context) ApiCreateTableRequest {
 	return ApiCreateTableRequest{
@@ -300,7 +301,8 @@ func (a *TablesApiService) CreateTable(ctx context.Context) ApiCreateTableReques
 }
 
 // Execute executes the request
-//  @return HubDbTableV3
+//
+//	@return HubDbTableV3
 func (a *TablesApiService) CreateTableExecute(r ApiCreateTableRequest) (*HubDbTableV3, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -418,9 +420,9 @@ ExportDraftTable Export a draft table
 
 Exports the `draft` version of a table to CSV / EXCEL format.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tableIdOrName The ID or name of the table to export.
- @return ApiExportDraftTableRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param tableIdOrName The ID or name of the table to export.
+	@return ApiExportDraftTableRequest
 */
 func (a *TablesApiService) ExportDraftTable(ctx context.Context, tableIdOrName string) ApiExportDraftTableRequest {
 	return ApiExportDraftTableRequest{
@@ -431,7 +433,8 @@ func (a *TablesApiService) ExportDraftTable(ctx context.Context, tableIdOrName s
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *TablesApiService) ExportDraftTableExecute(r ApiExportDraftTableRequest) (**os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -548,9 +551,9 @@ ExportTable Export a published version of a table
 
 Exports the `published` version of a table to CSV / EXCEL format.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tableIdOrName The ID or name of the table to export.
- @return ApiExportTableRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param tableIdOrName The ID or name of the table to export.
+	@return ApiExportTableRequest
 */
 func (a *TablesApiService) ExportTable(ctx context.Context, tableIdOrName string) ApiExportTableRequest {
 	return ApiExportTableRequest{
@@ -561,7 +564,8 @@ func (a *TablesApiService) ExportTable(ctx context.Context, tableIdOrName string
 }
 
 // Execute executes the request
-//  @return *os.File
+//
+//	@return *os.File
 func (a *TablesApiService) ExportTableExecute(r ApiExportTableRequest) (**os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -740,8 +744,8 @@ GetAllDraftTables Return all draft tables
 
 Returns the details for each draft table defined in the specified account, including column definitions.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAllDraftTablesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetAllDraftTablesRequest
 */
 func (a *TablesApiService) GetAllDraftTables(ctx context.Context) ApiGetAllDraftTablesRequest {
 	return ApiGetAllDraftTablesRequest{
@@ -751,7 +755,8 @@ func (a *TablesApiService) GetAllDraftTables(ctx context.Context) ApiGetAllDraft
 }
 
 // Execute executes the request
-//  @return CollectionResponseWithTotalHubDbTableV3ForwardPaging
+//
+//	@return CollectionResponseWithTotalHubDbTableV3ForwardPaging
 func (a *TablesApiService) GetAllDraftTablesExecute(r ApiGetAllDraftTablesRequest) (*CollectionResponseWithTotalHubDbTableV3ForwardPaging, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -964,8 +969,8 @@ GetAllTables Get all published tables
 
 Returns the details for the `published` version of each table defined in an account, including column definitions.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAllTablesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetAllTablesRequest
 */
 func (a *TablesApiService) GetAllTables(ctx context.Context) ApiGetAllTablesRequest {
 	return ApiGetAllTablesRequest{
@@ -975,7 +980,8 @@ func (a *TablesApiService) GetAllTables(ctx context.Context) ApiGetAllTablesRequ
 }
 
 // Execute executes the request
-//  @return CollectionResponseWithTotalHubDbTableV3ForwardPaging
+//
+//	@return CollectionResponseWithTotalHubDbTableV3ForwardPaging
 func (a *TablesApiService) GetAllTablesExecute(r ApiGetAllTablesRequest) (*CollectionResponseWithTotalHubDbTableV3ForwardPaging, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1133,9 +1139,9 @@ GetDraftTableDetailsByID Get details for a draft table
 
 Get the details for the `draft` version of a specific HubDB table. This will include the definitions for the columns in the table and the number of rows in the table.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tableIdOrName The ID or name of the table to return.
- @return ApiGetDraftTableDetailsByIDRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param tableIdOrName The ID or name of the table to return.
+	@return ApiGetDraftTableDetailsByIDRequest
 */
 func (a *TablesApiService) GetDraftTableDetailsByID(ctx context.Context, tableIdOrName string) ApiGetDraftTableDetailsByIDRequest {
 	return ApiGetDraftTableDetailsByIDRequest{
@@ -1146,7 +1152,8 @@ func (a *TablesApiService) GetDraftTableDetailsByID(ctx context.Context, tableId
 }
 
 // Execute executes the request
-//  @return HubDbTableV3
+//
+//	@return HubDbTableV3
 func (a *TablesApiService) GetDraftTableDetailsByIDExecute(r ApiGetDraftTableDetailsByIDRequest) (*HubDbTableV3, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1275,9 +1282,9 @@ Returns the details for the `published` version of the specified table. This wil
 
 **Note:** This endpoint can be accessed without any authentication if the table is set to be allowed for public access.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tableIdOrName The ID or name of the table to return.
- @return ApiGetTableDetailsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param tableIdOrName The ID or name of the table to return.
+	@return ApiGetTableDetailsRequest
 */
 func (a *TablesApiService) GetTableDetails(ctx context.Context, tableIdOrName string) ApiGetTableDetailsRequest {
 	return ApiGetTableDetailsRequest{
@@ -1288,7 +1295,8 @@ func (a *TablesApiService) GetTableDetails(ctx context.Context, tableIdOrName st
 }
 
 // Execute executes the request
-//  @return HubDbTableV3
+//
+//	@return HubDbTableV3
 func (a *TablesApiService) GetTableDetailsExecute(r ApiGetTableDetailsRequest) (*HubDbTableV3, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1416,9 +1424,9 @@ ImportDraftTable Import data into draft table
 Import the contents of a CSV file into an existing HubDB table. The data will always be imported into the `draft` version of the table. Use `/publish` endpoint to push these changes to `published` version.
 This endpoint takes a multi-part POST request. The first part will be a set of JSON-formatted options for the import and you can specify this with the name as `config`.  The second part will be the CSV file you want to import and you can specify this with the name as `file`. Refer the [overview section](https://developers.hubspot.com/docs/api/cms/hubdb#importing-tables) to check the details and format of the JSON-formatted options for the import.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tableIdOrName The ID of the destination table where data will be imported.
- @return ApiImportDraftTableRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param tableIdOrName The ID of the destination table where data will be imported.
+	@return ApiImportDraftTableRequest
 */
 func (a *TablesApiService) ImportDraftTable(ctx context.Context, tableIdOrName string) ApiImportDraftTableRequest {
 	return ApiImportDraftTableRequest{
@@ -1429,7 +1437,8 @@ func (a *TablesApiService) ImportDraftTable(ctx context.Context, tableIdOrName s
 }
 
 // Execute executes the request
-//  @return ImportResult
+//
+//	@return ImportResult
 func (a *TablesApiService) ImportDraftTableExecute(r ApiImportDraftTableRequest) (*ImportResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -1563,9 +1572,9 @@ PublishDraftTable Publish a table from draft
 
 Publishes the table by copying the data and table schema changes from draft version to the published version, meaning any website pages using data from the table will be updated.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tableIdOrName The ID or name of the table to publish.
- @return ApiPublishDraftTableRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param tableIdOrName The ID or name of the table to publish.
+	@return ApiPublishDraftTableRequest
 */
 func (a *TablesApiService) PublishDraftTable(ctx context.Context, tableIdOrName string) ApiPublishDraftTableRequest {
 	return ApiPublishDraftTableRequest{
@@ -1576,7 +1585,8 @@ func (a *TablesApiService) PublishDraftTable(ctx context.Context, tableIdOrName 
 }
 
 // Execute executes the request
-//  @return HubDbTableV3
+//
+//	@return HubDbTableV3
 func (a *TablesApiService) PublishDraftTableExecute(r ApiPublishDraftTableRequest) (*HubDbTableV3, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -1693,9 +1703,9 @@ ResetDraftTable Reset a draft table
 
 Replaces the data in the `draft` version of the table with values from the `published` version. Any unpublished changes in the `draft` will be lost after this call is made.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tableIdOrName The ID or name of the table to reset.
- @return ApiResetDraftTableRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param tableIdOrName The ID or name of the table to reset.
+	@return ApiResetDraftTableRequest
 */
 func (a *TablesApiService) ResetDraftTable(ctx context.Context, tableIdOrName string) ApiResetDraftTableRequest {
 	return ApiResetDraftTableRequest{
@@ -1706,7 +1716,8 @@ func (a *TablesApiService) ResetDraftTable(ctx context.Context, tableIdOrName st
 }
 
 // Execute executes the request
-//  @return HubDbTableV3
+//
+//	@return HubDbTableV3
 func (a *TablesApiService) ResetDraftTableExecute(r ApiResetDraftTableRequest) (*HubDbTableV3, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -1823,9 +1834,9 @@ UnpublishTable Unpublish a table
 
 Unpublishes the table, meaning any website pages using data from the table will not render any data.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tableIdOrName The ID or name of the table to publish.
- @return ApiUnpublishTableRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param tableIdOrName The ID or name of the table to publish.
+	@return ApiUnpublishTableRequest
 */
 func (a *TablesApiService) UnpublishTable(ctx context.Context, tableIdOrName string) ApiUnpublishTableRequest {
 	return ApiUnpublishTableRequest{
@@ -1836,7 +1847,8 @@ func (a *TablesApiService) UnpublishTable(ctx context.Context, tableIdOrName str
 }
 
 // Execute executes the request
-//  @return HubDbTableV3
+//
+//	@return HubDbTableV3
 func (a *TablesApiService) UnpublishTableExecute(r ApiUnpublishTableRequest) (*HubDbTableV3, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -1968,9 +1980,9 @@ UpdateDraftTable Update an existing table
 Update an existing HubDB table. You can use this endpoint to add or remove columns to the table as well as restore an archived table. Tables updated using the endpoint will only modify the `draft` verion of the table. Use `publish` endpoint to push all the changes to the `published` version. To restore a table, include the query parameter `archived=true` and `"archived": false` in the json body.
 **Note:** You need to include all the columns in the input when you are adding/removing/updating a column. If you do not include an already existing column in the request, it will be deleted.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tableIdOrName The ID or name of the table to update.
- @return ApiUpdateDraftTableRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param tableIdOrName The ID or name of the table to update.
+	@return ApiUpdateDraftTableRequest
 */
 func (a *TablesApiService) UpdateDraftTable(ctx context.Context, tableIdOrName string) ApiUpdateDraftTableRequest {
 	return ApiUpdateDraftTableRequest{
@@ -1981,7 +1993,8 @@ func (a *TablesApiService) UpdateDraftTable(ctx context.Context, tableIdOrName s
 }
 
 // Execute executes the request
-//  @return HubDbTableV3
+//
+//	@return HubDbTableV3
 func (a *TablesApiService) UpdateDraftTableExecute(r ApiUpdateDraftTableRequest) (*HubDbTableV3, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch

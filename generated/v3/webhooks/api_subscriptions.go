@@ -38,10 +38,10 @@ func (r ApiSubscriptionsArchiveRequest) Execute() (*http.Response, error) {
 /*
 SubscriptionsArchive Method for SubscriptionsArchive
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param subscriptionId
- @param appId
- @return ApiSubscriptionsArchiveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param subscriptionId
+	@param appId
+	@return ApiSubscriptionsArchiveRequest
 */
 func (a *SubscriptionsApiService) SubscriptionsArchive(ctx context.Context, subscriptionId int32, appId int32) ApiSubscriptionsArchiveRequest {
 	return ApiSubscriptionsArchiveRequest{
@@ -154,9 +154,9 @@ func (r ApiSubscriptionsBatchUpdateRequest) Execute() (*BatchResponseSubscriptio
 /*
 SubscriptionsBatchUpdate Method for SubscriptionsBatchUpdate
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param appId
- @return ApiSubscriptionsBatchUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param appId
+	@return ApiSubscriptionsBatchUpdateRequest
 */
 func (a *SubscriptionsApiService) SubscriptionsBatchUpdate(ctx context.Context, appId int32) ApiSubscriptionsBatchUpdateRequest {
 	return ApiSubscriptionsBatchUpdateRequest{
@@ -167,7 +167,8 @@ func (a *SubscriptionsApiService) SubscriptionsBatchUpdate(ctx context.Context, 
 }
 
 // Execute executes the request
-//  @return BatchResponseSubscriptionResponse
+//
+//	@return BatchResponseSubscriptionResponse
 func (a *SubscriptionsApiService) SubscriptionsBatchUpdateExecute(r ApiSubscriptionsBatchUpdateRequest) (*BatchResponseSubscriptionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -283,9 +284,9 @@ func (r ApiSubscriptionsCreateRequest) Execute() (*SubscriptionResponse, *http.R
 /*
 SubscriptionsCreate Method for SubscriptionsCreate
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param appId
- @return ApiSubscriptionsCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param appId
+	@return ApiSubscriptionsCreateRequest
 */
 func (a *SubscriptionsApiService) SubscriptionsCreate(ctx context.Context, appId int32) ApiSubscriptionsCreateRequest {
 	return ApiSubscriptionsCreateRequest{
@@ -296,7 +297,8 @@ func (a *SubscriptionsApiService) SubscriptionsCreate(ctx context.Context, appId
 }
 
 // Execute executes the request
-//  @return SubscriptionResponse
+//
+//	@return SubscriptionResponse
 func (a *SubscriptionsApiService) SubscriptionsCreateExecute(r ApiSubscriptionsCreateRequest) (*SubscriptionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -406,9 +408,9 @@ func (r ApiSubscriptionsGetAllRequest) Execute() (*SubscriptionListResponse, *ht
 /*
 SubscriptionsGetAll Method for SubscriptionsGetAll
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param appId
- @return ApiSubscriptionsGetAllRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param appId
+	@return ApiSubscriptionsGetAllRequest
 */
 func (a *SubscriptionsApiService) SubscriptionsGetAll(ctx context.Context, appId int32) ApiSubscriptionsGetAllRequest {
 	return ApiSubscriptionsGetAllRequest{
@@ -419,7 +421,8 @@ func (a *SubscriptionsApiService) SubscriptionsGetAll(ctx context.Context, appId
 }
 
 // Execute executes the request
-//  @return SubscriptionListResponse
+//
+//	@return SubscriptionListResponse
 func (a *SubscriptionsApiService) SubscriptionsGetAllExecute(r ApiSubscriptionsGetAllRequest) (*SubscriptionListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -525,10 +528,10 @@ func (r ApiSubscriptionsGetByIDRequest) Execute() (*SubscriptionResponse, *http.
 /*
 SubscriptionsGetByID Method for SubscriptionsGetByID
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param subscriptionId
- @param appId
- @return ApiSubscriptionsGetByIDRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param subscriptionId
+	@param appId
+	@return ApiSubscriptionsGetByIDRequest
 */
 func (a *SubscriptionsApiService) SubscriptionsGetByID(ctx context.Context, subscriptionId int32, appId int32) ApiSubscriptionsGetByIDRequest {
 	return ApiSubscriptionsGetByIDRequest{
@@ -540,7 +543,8 @@ func (a *SubscriptionsApiService) SubscriptionsGetByID(ctx context.Context, subs
 }
 
 // Execute executes the request
-//  @return SubscriptionResponse
+//
+//	@return SubscriptionResponse
 func (a *SubscriptionsApiService) SubscriptionsGetByIDExecute(r ApiSubscriptionsGetByIDRequest) (*SubscriptionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -653,10 +657,10 @@ func (r ApiSubscriptionsUpdateRequest) Execute() (*SubscriptionResponse, *http.R
 /*
 SubscriptionsUpdate Method for SubscriptionsUpdate
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param subscriptionId
- @param appId
- @return ApiSubscriptionsUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param subscriptionId
+	@param appId
+	@return ApiSubscriptionsUpdateRequest
 */
 func (a *SubscriptionsApiService) SubscriptionsUpdate(ctx context.Context, subscriptionId int32, appId int32) ApiSubscriptionsUpdateRequest {
 	return ApiSubscriptionsUpdateRequest{
@@ -668,7 +672,8 @@ func (a *SubscriptionsApiService) SubscriptionsUpdate(ctx context.Context, subsc
 }
 
 // Execute executes the request
-//  @return SubscriptionResponse
+//
+//	@return SubscriptionResponse
 func (a *SubscriptionsApiService) SubscriptionsUpdateExecute(r ApiSubscriptionsUpdateRequest) (*SubscriptionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch

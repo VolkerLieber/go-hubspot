@@ -43,8 +43,8 @@ PostCrmV3ObjectsDealsGdprDeletePurge GDPR DELETE
 
 Permanently delete a contact and all associated content to follow GDPR. Use optional property 'idProperty' set to 'email' to identify contact by email address. If email address is not found, the email address will be added to a blocklist and prevent it from being used in the future.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostCrmV3ObjectsDealsGdprDeletePurgeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPostCrmV3ObjectsDealsGdprDeletePurgeRequest
 */
 func (a *GDPRApiService) PostCrmV3ObjectsDealsGdprDeletePurge(ctx context.Context) ApiPostCrmV3ObjectsDealsGdprDeletePurgeRequest {
 	return ApiPostCrmV3ObjectsDealsGdprDeletePurgeRequest{

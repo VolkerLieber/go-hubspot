@@ -39,9 +39,9 @@ UserAccountsArchive Delete user account
 
 Deletes a user account from HubSpot, meaning that HubSpot will no longer send requests to the external accounting system for this user.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param accountId The ID of the user account to delete.
- @return ApiUserAccountsArchiveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param accountId The ID of the user account to delete.
+	@return ApiUserAccountsArchiveRequest
 */
 func (a *UserAccountsApiService) UserAccountsArchive(ctx context.Context, accountId string) ApiUserAccountsArchiveRequest {
 	return ApiUserAccountsArchiveRequest{
@@ -154,8 +154,8 @@ UserAccountsReplace Create a user account
 
 Creates an account which contains the information about the account in the external accounting system.  This *must* be called after a user connects their HubSpot account to the external accounting system, as there is no other way for HubSpot to obtain the external account details.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUserAccountsReplaceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiUserAccountsReplaceRequest
 */
 func (a *UserAccountsApiService) UserAccountsReplace(ctx context.Context) ApiUserAccountsReplaceRequest {
 	return ApiUserAccountsReplaceRequest{

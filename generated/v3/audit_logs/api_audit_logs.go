@@ -94,8 +94,8 @@ GetPage Query audit logs
 
 Returns audit logs based on filters.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetPageRequest
 */
 func (a *AuditLogsApiService) GetPage(ctx context.Context) ApiGetPageRequest {
 	return ApiGetPageRequest{
@@ -105,7 +105,8 @@ func (a *AuditLogsApiService) GetPage(ctx context.Context) ApiGetPageRequest {
 }
 
 // Execute executes the request
-//  @return CollectionResponsePublicAuditLog
+//
+//	@return CollectionResponsePublicAuditLog
 func (a *AuditLogsApiService) GetPageExecute(r ApiGetPageRequest) (*CollectionResponsePublicAuditLog, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet

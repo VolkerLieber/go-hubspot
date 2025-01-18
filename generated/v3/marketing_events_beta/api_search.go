@@ -44,8 +44,8 @@ Search Search for marketing events
 
 Search for marketing events that have an event id that starts with the query string
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSearchRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSearchRequest
 */
 func (a *SearchApiService) Search(ctx context.Context) ApiSearchRequest {
 	return ApiSearchRequest{
@@ -55,7 +55,8 @@ func (a *SearchApiService) Search(ctx context.Context) ApiSearchRequest {
 }
 
 // Execute executes the request
-//  @return CollectionResponseMarketingEventExternalUniqueIdentifierNoPaging
+//
+//	@return CollectionResponseMarketingEventExternalUniqueIdentifierNoPaging
 func (a *SearchApiService) SearchExecute(r ApiSearchRequest) (*CollectionResponseMarketingEventExternalUniqueIdentifierNoPaging, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet

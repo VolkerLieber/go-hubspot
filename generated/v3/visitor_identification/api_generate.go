@@ -43,8 +43,8 @@ PostConversationsV3VisitorIdentificationTokensCreateGenerateToken Generate a tok
 
 Generates a new visitor identification token. This token will be unique every time this endpoint is called, even if called with the same email address. This token is temporary and will expire after 12 hours
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostConversationsV3VisitorIdentificationTokensCreateGenerateTokenRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPostConversationsV3VisitorIdentificationTokensCreateGenerateTokenRequest
 */
 func (a *GenerateApiService) PostConversationsV3VisitorIdentificationTokensCreateGenerateToken(ctx context.Context) ApiPostConversationsV3VisitorIdentificationTokensCreateGenerateTokenRequest {
 	return ApiPostConversationsV3VisitorIdentificationTokensCreateGenerateTokenRequest{
@@ -54,7 +54,8 @@ func (a *GenerateApiService) PostConversationsV3VisitorIdentificationTokensCreat
 }
 
 // Execute executes the request
-//  @return IdentificationTokenResponse
+//
+//	@return IdentificationTokenResponse
 func (a *GenerateApiService) PostConversationsV3VisitorIdentificationTokensCreateGenerateTokenExecute(r ApiPostConversationsV3VisitorIdentificationTokensCreateGenerateTokenRequest) (*IdentificationTokenResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

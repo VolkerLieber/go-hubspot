@@ -43,9 +43,9 @@ func (r ApiSearchRequest) Execute() (*CollectionResponseWithTotalSimplePublicObj
 /*
 Search Method for Search
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param objectType
- @return ApiSearchRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param objectType
+	@return ApiSearchRequest
 */
 func (a *SearchApiService) Search(ctx context.Context, objectType string) ApiSearchRequest {
 	return ApiSearchRequest{
@@ -56,7 +56,8 @@ func (a *SearchApiService) Search(ctx context.Context, objectType string) ApiSea
 }
 
 // Execute executes the request
-//  @return CollectionResponseWithTotalSimplePublicObjectForwardPaging
+//
+//	@return CollectionResponseWithTotalSimplePublicObjectForwardPaging
 func (a *SearchApiService) SearchExecute(r ApiSearchRequest) (*CollectionResponseWithTotalSimplePublicObjectForwardPaging, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -111,16 +112,12 @@ func (a *SearchApiService) SearchExecute(r ApiSearchRequest) (*CollectionRespons
 	}
 	if r.ctx != nil {
 		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["private_apps_legacy"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["private-app-legacy"] = key
-			}
+		if auth, ok := r.ctx.Value(hubspot.ContextKey).(hubspot.Authorizer); ok {
+			auth.Apply(hubspot.AuthorizationRequest{
+				QueryParams: localVarQueryParams,
+				FormParams:  localVarFormParams,
+				Headers:     localVarHeaderParams,
+			})
 		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)

@@ -36,10 +36,10 @@ func (r ApiArchiveRequest) Execute() (*http.Response, error) {
 /*
 Archive Archive an extension definition
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param definitionId
- @param appId
- @return ApiArchiveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param definitionId
+	@param appId
+	@return ApiArchiveRequest
 */
 func (a *DefinitionsApiService) Archive(ctx context.Context, definitionId string, appId int32) ApiArchiveRequest {
 	return ApiArchiveRequest{
@@ -142,9 +142,9 @@ func (r ApiCreateRequest) Execute() (*PublicActionDefinition, *http.Response, er
 /*
 Create Create a new extension definition
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param appId
- @return ApiCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param appId
+	@return ApiCreateRequest
 */
 func (a *DefinitionsApiService) Create(ctx context.Context, appId int32) ApiCreateRequest {
 	return ApiCreateRequest{
@@ -155,7 +155,8 @@ func (a *DefinitionsApiService) Create(ctx context.Context, appId int32) ApiCrea
 }
 
 // Execute executes the request
-//  @return PublicActionDefinition
+//
+//	@return PublicActionDefinition
 func (a *DefinitionsApiService) CreateExecute(r ApiCreateRequest) (*PublicActionDefinition, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -263,10 +264,10 @@ func (r ApiGetByIDRequest) Execute() (*PublicActionDefinition, *http.Response, e
 /*
 GetByID Get extension definition by Id
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param definitionId
- @param appId
- @return ApiGetByIDRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param definitionId
+	@param appId
+	@return ApiGetByIDRequest
 */
 func (a *DefinitionsApiService) GetByID(ctx context.Context, definitionId string, appId int32) ApiGetByIDRequest {
 	return ApiGetByIDRequest{
@@ -278,7 +279,8 @@ func (a *DefinitionsApiService) GetByID(ctx context.Context, definitionId string
 }
 
 // Execute executes the request
-//  @return PublicActionDefinition
+//
+//	@return PublicActionDefinition
 func (a *DefinitionsApiService) GetByIDExecute(r ApiGetByIDRequest) (*PublicActionDefinition, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -398,9 +400,9 @@ func (r ApiGetPageRequest) Execute() (*CollectionResponsePublicActionDefinitionF
 /*
 GetPage Get paged extension definitions
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param appId
- @return ApiGetPageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param appId
+	@return ApiGetPageRequest
 */
 func (a *DefinitionsApiService) GetPage(ctx context.Context, appId int32) ApiGetPageRequest {
 	return ApiGetPageRequest{
@@ -411,7 +413,8 @@ func (a *DefinitionsApiService) GetPage(ctx context.Context, appId int32) ApiGet
 }
 
 // Execute executes the request
-//  @return CollectionResponsePublicActionDefinitionForwardPaging
+//
+//	@return CollectionResponsePublicActionDefinitionForwardPaging
 func (a *DefinitionsApiService) GetPageExecute(r ApiGetPageRequest) (*CollectionResponsePublicActionDefinitionForwardPaging, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -522,10 +525,10 @@ func (r ApiUpdateRequest) Execute() (*PublicActionDefinition, *http.Response, er
 /*
 Update Patch an existing extension definition
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param definitionId
- @param appId
- @return ApiUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param definitionId
+	@param appId
+	@return ApiUpdateRequest
 */
 func (a *DefinitionsApiService) Update(ctx context.Context, definitionId string, appId int32) ApiUpdateRequest {
 	return ApiUpdateRequest{
@@ -537,7 +540,8 @@ func (a *DefinitionsApiService) Update(ctx context.Context, definitionId string,
 }
 
 // Execute executes the request
-//  @return PublicActionDefinition
+//
+//	@return PublicActionDefinition
 func (a *DefinitionsApiService) UpdateExecute(r ApiUpdateRequest) (*PublicActionDefinition, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch

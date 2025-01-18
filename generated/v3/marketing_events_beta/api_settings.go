@@ -46,9 +46,9 @@ SettingsCreate Update the application settings
 
 Create or update the current settings for the application.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param appId The id of the application to update the settings for.
- @return ApiSettingsCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param appId The id of the application to update the settings for.
+	@return ApiSettingsCreateRequest
 */
 func (a *SettingsApiService) SettingsCreate(ctx context.Context, appId int32) ApiSettingsCreateRequest {
 	return ApiSettingsCreateRequest{
@@ -59,7 +59,8 @@ func (a *SettingsApiService) SettingsCreate(ctx context.Context, appId int32) Ap
 }
 
 // Execute executes the request
-//  @return EventDetailSettings
+//
+//	@return EventDetailSettings
 func (a *SettingsApiService) SettingsCreateExecute(r ApiSettingsCreateRequest) (*EventDetailSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -171,9 +172,9 @@ SettingsGetAll Retrieve the application settings
 
 Retrieve the current settings for the application.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param appId The id of the application to retrieve the settings for.
- @return ApiSettingsGetAllRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param appId The id of the application to retrieve the settings for.
+	@return ApiSettingsGetAllRequest
 */
 func (a *SettingsApiService) SettingsGetAll(ctx context.Context, appId int32) ApiSettingsGetAllRequest {
 	return ApiSettingsGetAllRequest{
@@ -184,7 +185,8 @@ func (a *SettingsApiService) SettingsGetAll(ctx context.Context, appId int32) Ap
 }
 
 // Execute executes the request
-//  @return EventDetailSettings
+//
+//	@return EventDetailSettings
 func (a *SettingsApiService) SettingsGetAllExecute(r ApiSettingsGetAllRequest) (*EventDetailSettings, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet

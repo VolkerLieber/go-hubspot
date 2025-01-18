@@ -45,8 +45,8 @@ Create Create a marketing event
 
 Creates a new marketing event in HubSpot
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateRequest
 */
 func (a *BasicApiService) Create(ctx context.Context) ApiCreateRequest {
 	return ApiCreateRequest{
@@ -56,7 +56,8 @@ func (a *BasicApiService) Create(ctx context.Context) ApiCreateRequest {
 }
 
 // Execute executes the request
-//  @return MarketingEventDefaultResponse
+//
+//	@return MarketingEventDefaultResponse
 func (a *BasicApiService) CreateExecute(r ApiCreateRequest) (*MarketingEventDefaultResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -174,9 +175,9 @@ ExternalArchive Delete a marketing event
 
 Deletes an existing Marketing Event with the specified id, if one exists.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param externalEventId The id of the marketing event to delete
- @return ApiExternalArchiveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param externalEventId The id of the marketing event to delete
+	@return ApiExternalArchiveRequest
 */
 func (a *BasicApiService) ExternalArchive(ctx context.Context, externalEventId string) ApiExternalArchiveRequest {
 	return ApiExternalArchiveRequest{
@@ -294,9 +295,9 @@ ExternalCancel Mark a marketing event as cancelled
 
 Mark a marketing event as cancelled.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param externalEventId The id of the marketing event to mark as cancelled
- @return ApiExternalCancelRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param externalEventId The id of the marketing event to mark as cancelled
+	@return ApiExternalCancelRequest
 */
 func (a *BasicApiService) ExternalCancel(ctx context.Context, externalEventId string) ApiExternalCancelRequest {
 	return ApiExternalCancelRequest{
@@ -307,7 +308,8 @@ func (a *BasicApiService) ExternalCancel(ctx context.Context, externalEventId st
 }
 
 // Execute executes the request
-//  @return MarketingEventDefaultResponse
+//
+//	@return MarketingEventDefaultResponse
 func (a *BasicApiService) ExternalCancelExecute(r ApiExternalCancelRequest) (*MarketingEventDefaultResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -425,9 +427,9 @@ ExternalGetByID Get a marketing event
 
 Returns the details of the Marketing Event with the specified id, if one exists.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param externalEventId The id of the marketing event to return
- @return ApiExternalGetByIDRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param externalEventId The id of the marketing event to return
+	@return ApiExternalGetByIDRequest
 */
 func (a *BasicApiService) ExternalGetByID(ctx context.Context, externalEventId string) ApiExternalGetByIDRequest {
 	return ApiExternalGetByIDRequest{
@@ -438,7 +440,8 @@ func (a *BasicApiService) ExternalGetByID(ctx context.Context, externalEventId s
 }
 
 // Execute executes the request
-//  @return MarketingEventPublicReadResponse
+//
+//	@return MarketingEventPublicReadResponse
 func (a *BasicApiService) ExternalGetByIDExecute(r ApiExternalGetByIDRequest) (*MarketingEventPublicReadResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -556,9 +559,9 @@ ExternalReplace Create or update a marketing event
 
 Upsets a Marketing Event. If there is an existing Marketing event with the specified id, it will be updated; otherwise a new event will be created.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param externalEventId The id of the marketing event to upsert
- @return ApiExternalReplaceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param externalEventId The id of the marketing event to upsert
+	@return ApiExternalReplaceRequest
 */
 func (a *BasicApiService) ExternalReplace(ctx context.Context, externalEventId string) ApiExternalReplaceRequest {
 	return ApiExternalReplaceRequest{
@@ -569,7 +572,8 @@ func (a *BasicApiService) ExternalReplace(ctx context.Context, externalEventId s
 }
 
 // Execute executes the request
-//  @return MarketingEventPublicDefaultResponse
+//
+//	@return MarketingEventPublicDefaultResponse
 func (a *BasicApiService) ExternalReplaceExecute(r ApiExternalReplaceRequest) (*MarketingEventPublicDefaultResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -695,9 +699,9 @@ ExternalUpdate Update a marketing event
 
 Updates an existing Marketing Event with the specified id, if one exists.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param externalEventId The id of the marketing event to update
- @return ApiExternalUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param externalEventId The id of the marketing event to update
+	@return ApiExternalUpdateRequest
 */
 func (a *BasicApiService) ExternalUpdate(ctx context.Context, externalEventId string) ApiExternalUpdateRequest {
 	return ApiExternalUpdateRequest{
@@ -708,7 +712,8 @@ func (a *BasicApiService) ExternalUpdate(ctx context.Context, externalEventId st
 }
 
 // Execute executes the request
-//  @return MarketingEventPublicDefaultResponse
+//
+//	@return MarketingEventPublicDefaultResponse
 func (a *BasicApiService) ExternalUpdateExecute(r ApiExternalUpdateRequest) (*MarketingEventPublicDefaultResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch

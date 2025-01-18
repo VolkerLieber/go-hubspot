@@ -41,9 +41,9 @@ Archive Delete a redirect
 
 Delete one existing redirect, so it is no longer mapped.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param urlRedirectId The ID of the target redirect.
- @return ApiArchiveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param urlRedirectId The ID of the target redirect.
+	@return ApiArchiveRequest
 */
 func (a *RedirectsApiService) Archive(ctx context.Context, urlRedirectId string) ApiArchiveRequest {
 	return ApiArchiveRequest{
@@ -155,8 +155,8 @@ Create Create a redirect
 
 Creates and configures a new URL redirect.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateRequest
 */
 func (a *RedirectsApiService) Create(ctx context.Context) ApiCreateRequest {
 	return ApiCreateRequest{
@@ -166,7 +166,8 @@ func (a *RedirectsApiService) Create(ctx context.Context) ApiCreateRequest {
 }
 
 // Execute executes the request
-//  @return UrlMapping
+//
+//	@return UrlMapping
 func (a *RedirectsApiService) CreateExecute(r ApiCreateRequest) (*UrlMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -277,9 +278,9 @@ GetByID Get details for a redirect
 
 Returns the details for a single existing URL redirect by ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param urlRedirectId The ID of the target redirect.
- @return ApiGetByIDRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param urlRedirectId The ID of the target redirect.
+	@return ApiGetByIDRequest
 */
 func (a *RedirectsApiService) GetByID(ctx context.Context, urlRedirectId string) ApiGetByIDRequest {
 	return ApiGetByIDRequest{
@@ -290,7 +291,8 @@ func (a *RedirectsApiService) GetByID(ctx context.Context, urlRedirectId string)
 }
 
 // Execute executes the request
-//  @return UrlMapping
+//
+//	@return UrlMapping
 func (a *RedirectsApiService) GetByIDExecute(r ApiGetByIDRequest) (*UrlMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -465,8 +467,8 @@ GetPage Get current redirects
 
 Returns all existing URL redirects. Results can be limited and filtered by creation or updated date.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetPageRequest
 */
 func (a *RedirectsApiService) GetPage(ctx context.Context) ApiGetPageRequest {
 	return ApiGetPageRequest{
@@ -476,7 +478,8 @@ func (a *RedirectsApiService) GetPage(ctx context.Context) ApiGetPageRequest {
 }
 
 // Execute executes the request
-//  @return CollectionResponseWithTotalUrlMappingForwardPaging
+//
+//	@return CollectionResponseWithTotalUrlMappingForwardPaging
 func (a *RedirectsApiService) GetPageExecute(r ApiGetPageRequest) (*CollectionResponseWithTotalUrlMappingForwardPaging, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -626,9 +629,9 @@ Update Update a redirect
 
 Updates the settings for an existing URL redirect.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param urlRedirectId
- @return ApiUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param urlRedirectId
+	@return ApiUpdateRequest
 */
 func (a *RedirectsApiService) Update(ctx context.Context, urlRedirectId string) ApiUpdateRequest {
 	return ApiUpdateRequest{
@@ -639,7 +642,8 @@ func (a *RedirectsApiService) Update(ctx context.Context, urlRedirectId string) 
 }
 
 // Execute executes the request
-//  @return UrlMapping
+//
+//	@return UrlMapping
 func (a *RedirectsApiService) UpdateExecute(r ApiUpdateRequest) (*UrlMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch

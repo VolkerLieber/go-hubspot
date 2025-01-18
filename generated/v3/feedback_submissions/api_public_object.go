@@ -41,8 +41,8 @@ func (r ApiPostCrmV3ObjectsFeedbackSubmissionsMergeMergeRequest) Execute() (*Sim
 /*
 PostCrmV3ObjectsFeedbackSubmissionsMergeMerge Merge two feedback submissions with same type
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostCrmV3ObjectsFeedbackSubmissionsMergeMergeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPostCrmV3ObjectsFeedbackSubmissionsMergeMergeRequest
 */
 func (a *PublicObjectApiService) PostCrmV3ObjectsFeedbackSubmissionsMergeMerge(ctx context.Context) ApiPostCrmV3ObjectsFeedbackSubmissionsMergeMergeRequest {
 	return ApiPostCrmV3ObjectsFeedbackSubmissionsMergeMergeRequest{
@@ -52,7 +52,8 @@ func (a *PublicObjectApiService) PostCrmV3ObjectsFeedbackSubmissionsMergeMerge(c
 }
 
 // Execute executes the request
-//  @return SimplePublicObject
+//
+//	@return SimplePublicObject
 func (a *PublicObjectApiService) PostCrmV3ObjectsFeedbackSubmissionsMergeMergeExecute(r ApiPostCrmV3ObjectsFeedbackSubmissionsMergeMergeRequest) (*SimplePublicObject, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

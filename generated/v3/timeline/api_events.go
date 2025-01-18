@@ -40,10 +40,10 @@ GetCrmV3TimelineEventsEventTemplateIdEventIdDetailGetDetailById Gets the detailT
 
 This will take the `detailTemplate` from the event template and return an object rendering the specified event. If the template references `extraData` that isn't found in the event, it will be ignored and we'll render without it.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param eventTemplateId The event template ID.
- @param eventId The event ID.
- @return ApiGetCrmV3TimelineEventsEventTemplateIdEventIdDetailGetDetailByIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param eventTemplateId The event template ID.
+	@param eventId The event ID.
+	@return ApiGetCrmV3TimelineEventsEventTemplateIdEventIdDetailGetDetailByIdRequest
 */
 func (a *EventsApiService) GetCrmV3TimelineEventsEventTemplateIdEventIdDetailGetDetailById(ctx context.Context, eventTemplateId string, eventId string) ApiGetCrmV3TimelineEventsEventTemplateIdEventIdDetailGetDetailByIdRequest {
 	return ApiGetCrmV3TimelineEventsEventTemplateIdEventIdDetailGetDetailByIdRequest{
@@ -55,7 +55,8 @@ func (a *EventsApiService) GetCrmV3TimelineEventsEventTemplateIdEventIdDetailGet
 }
 
 // Execute executes the request
-//  @return EventDetail
+//
+//	@return EventDetail
 func (a *EventsApiService) GetCrmV3TimelineEventsEventTemplateIdEventIdDetailGetDetailByIdExecute(r ApiGetCrmV3TimelineEventsEventTemplateIdEventIdDetailGetDetailByIdRequest) (*EventDetail, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -106,16 +107,12 @@ func (a *EventsApiService) GetCrmV3TimelineEventsEventTemplateIdEventIdDetailGet
 	}
 	if r.ctx != nil {
 		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["private_apps_legacy"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["private-app-legacy"] = key
-			}
+		if auth, ok := r.ctx.Value(hubspot.ContextKey).(hubspot.Authorizer); ok {
+			auth.Apply(hubspot.AuthorizationRequest{
+				QueryParams: localVarQueryParams,
+				FormParams:  localVarFormParams,
+				Headers:     localVarHeaderParams,
+			})
 		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -178,10 +175,10 @@ GetCrmV3TimelineEventsEventTemplateIdEventIdGetById Gets the event
 
 This returns the previously created event. It contains all existing info for the event, but not necessarily the CRM object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param eventTemplateId The event template ID.
- @param eventId The event ID.
- @return ApiGetCrmV3TimelineEventsEventTemplateIdEventIdGetByIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param eventTemplateId The event template ID.
+	@param eventId The event ID.
+	@return ApiGetCrmV3TimelineEventsEventTemplateIdEventIdGetByIdRequest
 */
 func (a *EventsApiService) GetCrmV3TimelineEventsEventTemplateIdEventIdGetById(ctx context.Context, eventTemplateId string, eventId string) ApiGetCrmV3TimelineEventsEventTemplateIdEventIdGetByIdRequest {
 	return ApiGetCrmV3TimelineEventsEventTemplateIdEventIdGetByIdRequest{
@@ -193,7 +190,8 @@ func (a *EventsApiService) GetCrmV3TimelineEventsEventTemplateIdEventIdGetById(c
 }
 
 // Execute executes the request
-//  @return TimelineEventResponse
+//
+//	@return TimelineEventResponse
 func (a *EventsApiService) GetCrmV3TimelineEventsEventTemplateIdEventIdGetByIdExecute(r ApiGetCrmV3TimelineEventsEventTemplateIdEventIdGetByIdRequest) (*TimelineEventResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -244,16 +242,12 @@ func (a *EventsApiService) GetCrmV3TimelineEventsEventTemplateIdEventIdGetByIdEx
 	}
 	if r.ctx != nil {
 		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["private_apps_legacy"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["private-app-legacy"] = key
-			}
+		if auth, ok := r.ctx.Value(hubspot.ContextKey).(hubspot.Authorizer); ok {
+			auth.Apply(hubspot.AuthorizationRequest{
+				QueryParams: localVarQueryParams,
+				FormParams:  localVarFormParams,
+				Headers:     localVarHeaderParams,
+			})
 		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -323,10 +317,10 @@ GetCrmV3TimelineEventsEventTemplateIdEventIdRenderGetRenderById Renders the head
 
 This will take either the `headerTemplate` or `detailTemplate` from the event template and render for the specified event as HTML. If the template references `extraData` that isn't found in the event, it will be ignored and we'll render without it.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param eventTemplateId The event template ID.
- @param eventId The event ID.
- @return ApiGetCrmV3TimelineEventsEventTemplateIdEventIdRenderGetRenderByIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param eventTemplateId The event template ID.
+	@param eventId The event ID.
+	@return ApiGetCrmV3TimelineEventsEventTemplateIdEventIdRenderGetRenderByIdRequest
 */
 func (a *EventsApiService) GetCrmV3TimelineEventsEventTemplateIdEventIdRenderGetRenderById(ctx context.Context, eventTemplateId string, eventId string) ApiGetCrmV3TimelineEventsEventTemplateIdEventIdRenderGetRenderByIdRequest {
 	return ApiGetCrmV3TimelineEventsEventTemplateIdEventIdRenderGetRenderByIdRequest{
@@ -338,7 +332,8 @@ func (a *EventsApiService) GetCrmV3TimelineEventsEventTemplateIdEventIdRenderGet
 }
 
 // Execute executes the request
-//  @return string
+//
+//	@return string
 func (a *EventsApiService) GetCrmV3TimelineEventsEventTemplateIdEventIdRenderGetRenderByIdExecute(r ApiGetCrmV3TimelineEventsEventTemplateIdEventIdRenderGetRenderByIdRequest) (string, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -392,16 +387,12 @@ func (a *EventsApiService) GetCrmV3TimelineEventsEventTemplateIdEventIdRenderGet
 	}
 	if r.ctx != nil {
 		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["private_apps_legacy"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["private-app-legacy"] = key
-			}
+		if auth, ok := r.ctx.Value(hubspot.ContextKey).(hubspot.Authorizer); ok {
+			auth.Apply(hubspot.AuthorizationRequest{
+				QueryParams: localVarQueryParams,
+				FormParams:  localVarFormParams,
+				Headers:     localVarHeaderParams,
+			})
 		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -469,8 +460,8 @@ PostCrmV3TimelineEventsBatchCreateCreateBatch Creates multiple events
 
 Creates multiple instances of timeline events based on an event template. Once created, these event are immutable on the object timeline and cannot be modified. If the event template was configured to update object properties via `objectPropertyName`, this call will also attempt to updates those properties, or add them if they don't exist.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostCrmV3TimelineEventsBatchCreateCreateBatchRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPostCrmV3TimelineEventsBatchCreateCreateBatchRequest
 */
 func (a *EventsApiService) PostCrmV3TimelineEventsBatchCreateCreateBatch(ctx context.Context) ApiPostCrmV3TimelineEventsBatchCreateCreateBatchRequest {
 	return ApiPostCrmV3TimelineEventsBatchCreateCreateBatchRequest{
@@ -532,16 +523,12 @@ func (a *EventsApiService) PostCrmV3TimelineEventsBatchCreateCreateBatchExecute(
 	}
 	if r.ctx != nil {
 		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["private_apps_legacy"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["private-app-legacy"] = key
-			}
+		if auth, ok := r.ctx.Value(hubspot.ContextKey).(hubspot.Authorizer); ok {
+			auth.Apply(hubspot.AuthorizationRequest{
+				QueryParams: localVarQueryParams,
+				FormParams:  localVarFormParams,
+				Headers:     localVarHeaderParams,
+			})
 		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -600,8 +587,8 @@ PostCrmV3TimelineEventsCreate Create a single event
 
 Creates an instance of a timeline event based on an event template. Once created, this event is immutable on the object timeline and cannot be modified. If the event template was configured to update object properties via `objectPropertyName`, this call will also attempt to updates those properties, or add them if they don't exist.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostCrmV3TimelineEventsCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPostCrmV3TimelineEventsCreateRequest
 */
 func (a *EventsApiService) PostCrmV3TimelineEventsCreate(ctx context.Context) ApiPostCrmV3TimelineEventsCreateRequest {
 	return ApiPostCrmV3TimelineEventsCreateRequest{
@@ -611,7 +598,8 @@ func (a *EventsApiService) PostCrmV3TimelineEventsCreate(ctx context.Context) Ap
 }
 
 // Execute executes the request
-//  @return TimelineEventResponse
+//
+//	@return TimelineEventResponse
 func (a *EventsApiService) PostCrmV3TimelineEventsCreateExecute(r ApiPostCrmV3TimelineEventsCreateRequest) (*TimelineEventResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -665,16 +653,12 @@ func (a *EventsApiService) PostCrmV3TimelineEventsCreateExecute(r ApiPostCrmV3Ti
 	}
 	if r.ctx != nil {
 		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["private_apps_legacy"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["private-app-legacy"] = key
-			}
+		if auth, ok := r.ctx.Value(hubspot.ContextKey).(hubspot.Authorizer); ok {
+			auth.Apply(hubspot.AuthorizationRequest{
+				QueryParams: localVarQueryParams,
+				FormParams:  localVarFormParams,
+				Headers:     localVarHeaderParams,
+			})
 		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)

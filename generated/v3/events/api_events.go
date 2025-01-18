@@ -123,8 +123,8 @@ func (r ApiGetEventsV3EventsGetPageRequest) Execute() (*CollectionResponseExtern
 /*
 GetEventsV3EventsGetPage Method for GetEventsV3EventsGetPage
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetEventsV3EventsGetPageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetEventsV3EventsGetPageRequest
 */
 func (a *EventsApiService) GetEventsV3EventsGetPage(ctx context.Context) ApiGetEventsV3EventsGetPageRequest {
 	return ApiGetEventsV3EventsGetPageRequest{
@@ -134,7 +134,8 @@ func (a *EventsApiService) GetEventsV3EventsGetPage(ctx context.Context) ApiGetE
 }
 
 // Execute executes the request
-//  @return CollectionResponseExternalUnifiedEvent
+//
+//	@return CollectionResponseExternalUnifiedEvent
 func (a *EventsApiService) GetEventsV3EventsGetPageExecute(r ApiGetEventsV3EventsGetPageRequest) (*CollectionResponseExternalUnifiedEvent, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet

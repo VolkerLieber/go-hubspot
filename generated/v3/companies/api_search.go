@@ -41,8 +41,8 @@ func (r ApiSearchRequest) Execute() (*CollectionResponseWithTotalSimplePublicObj
 /*
 Search Method for Search
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSearchRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSearchRequest
 */
 func (a *SearchApiService) Search(ctx context.Context) ApiSearchRequest {
 	return ApiSearchRequest{
@@ -52,7 +52,8 @@ func (a *SearchApiService) Search(ctx context.Context) ApiSearchRequest {
 }
 
 // Execute executes the request
-//  @return CollectionResponseWithTotalSimplePublicObjectForwardPaging
+//
+//	@return CollectionResponseWithTotalSimplePublicObjectForwardPaging
 func (a *SearchApiService) SearchExecute(r ApiSearchRequest) (*CollectionResponseWithTotalSimplePublicObjectForwardPaging, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

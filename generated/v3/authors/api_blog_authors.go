@@ -48,9 +48,9 @@ Archive Delete a Blog Author
 
 Delete the Blog Author object identified by the id in the path.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param objectId The Blog Author id.
- @return ApiArchiveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param objectId The Blog Author id.
+	@return ApiArchiveRequest
 */
 func (a *BlogAuthorsApiService) Archive(ctx context.Context, objectId string) ApiArchiveRequest {
 	return ApiArchiveRequest{
@@ -166,8 +166,8 @@ AttachToLanguageGroup Attach a Blog Author to a multi-language group
 
 Attach a Blog Author to a multi-language group.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAttachToLanguageGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAttachToLanguageGroupRequest
 */
 func (a *BlogAuthorsApiService) AttachToLanguageGroup(ctx context.Context) ApiAttachToLanguageGroupRequest {
 	return ApiAttachToLanguageGroupRequest{
@@ -283,8 +283,8 @@ BatchArchive Delete a batch of Blog Authors
 
 Delete the Blog Author objects identified in the request body.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiBatchArchiveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiBatchArchiveRequest
 */
 func (a *BlogAuthorsApiService) BatchArchive(ctx context.Context) ApiBatchArchiveRequest {
 	return ApiBatchArchiveRequest{
@@ -400,8 +400,8 @@ BatchCreate Create a batch of Blog Authors
 
 Create the Blog Author objects detailed in the request body.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiBatchCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiBatchCreateRequest
 */
 func (a *BlogAuthorsApiService) BatchCreate(ctx context.Context) ApiBatchCreateRequest {
 	return ApiBatchCreateRequest{
@@ -411,7 +411,8 @@ func (a *BlogAuthorsApiService) BatchCreate(ctx context.Context) ApiBatchCreateR
 }
 
 // Execute executes the request
-//  @return BatchResponseBlogAuthor
+//
+//	@return BatchResponseBlogAuthor
 func (a *BlogAuthorsApiService) BatchCreateExecute(r ApiBatchCreateRequest) (*BatchResponseBlogAuthor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -535,8 +536,8 @@ BatchRead Retrieve a batch of Blog Authors
 
 Retrieve the Blog Author objects identified in the request body.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiBatchReadRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiBatchReadRequest
 */
 func (a *BlogAuthorsApiService) BatchRead(ctx context.Context) ApiBatchReadRequest {
 	return ApiBatchReadRequest{
@@ -546,7 +547,8 @@ func (a *BlogAuthorsApiService) BatchRead(ctx context.Context) ApiBatchReadReque
 }
 
 // Execute executes the request
-//  @return BatchResponseBlogAuthor
+//
+//	@return BatchResponseBlogAuthor
 func (a *BlogAuthorsApiService) BatchReadExecute(r ApiBatchReadRequest) (*BatchResponseBlogAuthor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -673,8 +675,8 @@ BatchUpdate Update a batch of Blog Authors
 
 Update the Blog Author objects identified in the request body.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiBatchUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiBatchUpdateRequest
 */
 func (a *BlogAuthorsApiService) BatchUpdate(ctx context.Context) ApiBatchUpdateRequest {
 	return ApiBatchUpdateRequest{
@@ -684,7 +686,8 @@ func (a *BlogAuthorsApiService) BatchUpdate(ctx context.Context) ApiBatchUpdateR
 }
 
 // Execute executes the request
-//  @return BatchResponseBlogAuthor
+//
+//	@return BatchResponseBlogAuthor
 func (a *BlogAuthorsApiService) BatchUpdateExecute(r ApiBatchUpdateRequest) (*BatchResponseBlogAuthor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -804,8 +807,8 @@ Create Create a new Blog Author
 
 Create a new Blog Author.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateRequest
 */
 func (a *BlogAuthorsApiService) Create(ctx context.Context) ApiCreateRequest {
 	return ApiCreateRequest{
@@ -815,7 +818,8 @@ func (a *BlogAuthorsApiService) Create(ctx context.Context) ApiCreateRequest {
 }
 
 // Execute executes the request
-//  @return BlogAuthor
+//
+//	@return BlogAuthor
 func (a *BlogAuthorsApiService) CreateExecute(r ApiCreateRequest) (*BlogAuthor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -932,8 +936,8 @@ CreateLanguageVariation Create a new language variation
 
 Create a new language variation from an existing Blog Author.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateLanguageVariationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateLanguageVariationRequest
 */
 func (a *BlogAuthorsApiService) CreateLanguageVariation(ctx context.Context) ApiCreateLanguageVariationRequest {
 	return ApiCreateLanguageVariationRequest{
@@ -943,7 +947,8 @@ func (a *BlogAuthorsApiService) CreateLanguageVariation(ctx context.Context) Api
 }
 
 // Execute executes the request
-//  @return BlogAuthor
+//
+//	@return BlogAuthor
 func (a *BlogAuthorsApiService) CreateLanguageVariationExecute(r ApiCreateLanguageVariationRequest) (*BlogAuthor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -1060,8 +1065,8 @@ DetachFromLanguageGroup Detach a Blog Author from a multi-language group
 
 Detach a Blog Author from a multi-language group.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDetachFromLanguageGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDetachFromLanguageGroupRequest
 */
 func (a *BlogAuthorsApiService) DetachFromLanguageGroup(ctx context.Context) ApiDetachFromLanguageGroupRequest {
 	return ApiDetachFromLanguageGroupRequest{
@@ -1184,9 +1189,9 @@ GetByID Retrieve a Blog Author
 
 Retrieve the Blog Author object identified by the id in the path.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param objectId The Blog Author id.
- @return ApiGetByIDRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param objectId The Blog Author id.
+	@return ApiGetByIDRequest
 */
 func (a *BlogAuthorsApiService) GetByID(ctx context.Context, objectId string) ApiGetByIDRequest {
 	return ApiGetByIDRequest{
@@ -1197,7 +1202,8 @@ func (a *BlogAuthorsApiService) GetByID(ctx context.Context, objectId string) Ap
 }
 
 // Execute executes the request
-//  @return BlogAuthor
+//
+//	@return BlogAuthor
 func (a *BlogAuthorsApiService) GetByIDExecute(r ApiGetByIDRequest) (*BlogAuthor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1385,9 +1391,8 @@ GetPage Get all Blog Authors
 
 Get the list of blog authors. Supports paging and filtering. This method would be useful for an integration that examined these models and used an external service to suggest edits.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetPageRequest
 */
 func (a *BlogAuthorsApiService) GetPage(ctx context.Context) ApiGetPageRequest {
 	return ApiGetPageRequest{
@@ -1397,7 +1402,8 @@ func (a *BlogAuthorsApiService) GetPage(ctx context.Context) ApiGetPageRequest {
 }
 
 // Execute executes the request
-//  @return CollectionResponseWithTotalBlogAuthorForwardPaging
+//
+//	@return CollectionResponseWithTotalBlogAuthorForwardPaging
 func (a *BlogAuthorsApiService) GetPageExecute(r ApiGetPageRequest) (*CollectionResponseWithTotalBlogAuthorForwardPaging, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1550,8 +1556,8 @@ SetLanguagePrimary Set a new primary language
 
 Set a Blog Author as the primary language of a multi-language group.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSetLanguagePrimaryRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSetLanguagePrimaryRequest
 */
 func (a *BlogAuthorsApiService) SetLanguagePrimary(ctx context.Context) ApiSetLanguagePrimaryRequest {
 	return ApiSetLanguagePrimaryRequest{
@@ -1676,10 +1682,9 @@ Update Update a Blog Author
 Sparse updates a single Blog Author object identified by the id in the path.
 All the column values need not be specified. Only the that need to be modified can be specified.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param objectId The Blog Author id.
- @return ApiUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param objectId The Blog Author id.
+	@return ApiUpdateRequest
 */
 func (a *BlogAuthorsApiService) Update(ctx context.Context, objectId string) ApiUpdateRequest {
 	return ApiUpdateRequest{
@@ -1690,7 +1695,8 @@ func (a *BlogAuthorsApiService) Update(ctx context.Context, objectId string) Api
 }
 
 // Execute executes the request
-//  @return BlogAuthor
+//
+//	@return BlogAuthor
 func (a *BlogAuthorsApiService) UpdateExecute(r ApiUpdateRequest) (*BlogAuthor, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
@@ -1811,8 +1817,8 @@ UpdateLanguages Update languages of multi-language group
 
 Explicitly set new languages for each Blog Author in a multi-language group.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUpdateLanguagesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiUpdateLanguagesRequest
 */
 func (a *BlogAuthorsApiService) UpdateLanguages(ctx context.Context) ApiUpdateLanguagesRequest {
 	return ApiUpdateLanguagesRequest{

@@ -44,8 +44,8 @@ SendEmail Send a single transactional email asynchronously.
 
 Asynchronously send a transactional email. Returns the status of the email send with a statusId that can be used to continuously query for the status using the Email Send Status API.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSendEmailRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSendEmailRequest
 */
 func (a *SingleSendApiService) SendEmail(ctx context.Context) ApiSendEmailRequest {
 	return ApiSendEmailRequest{
@@ -55,7 +55,8 @@ func (a *SingleSendApiService) SendEmail(ctx context.Context) ApiSendEmailReques
 }
 
 // Execute executes the request
-//  @return EmailSendStatusView
+//
+//	@return EmailSendStatusView
 func (a *SingleSendApiService) SendEmailExecute(r ApiSendEmailRequest) (*EmailSendStatusView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

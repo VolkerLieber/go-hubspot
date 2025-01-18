@@ -46,9 +46,9 @@ DeleteCrmV3SchemasObjectTypeArchive Delete a schema
 
 Deletes a schema. Any existing records of this schema must be deleted **first**. Otherwise this call will fail.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param objectType Fully qualified name or object type ID of your schema.
- @return ApiDeleteCrmV3SchemasObjectTypeArchiveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param objectType Fully qualified name or object type ID of your schema.
+	@return ApiDeleteCrmV3SchemasObjectTypeArchiveRequest
 */
 func (a *CoreApiService) DeleteCrmV3SchemasObjectTypeArchive(ctx context.Context, objectType string) ApiDeleteCrmV3SchemasObjectTypeArchiveRequest {
 	return ApiDeleteCrmV3SchemasObjectTypeArchiveRequest{
@@ -159,10 +159,10 @@ DeleteCrmV3SchemasObjectTypeAssociationsAssociationIdentifierArchiveAssociation 
 
 Removes an existing association from a schema.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param objectType Fully qualified name or object type ID of your schema.
- @param associationIdentifier Unique ID of the association to remove.
- @return ApiDeleteCrmV3SchemasObjectTypeAssociationsAssociationIdentifierArchiveAssociationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param objectType Fully qualified name or object type ID of your schema.
+	@param associationIdentifier Unique ID of the association to remove.
+	@return ApiDeleteCrmV3SchemasObjectTypeAssociationsAssociationIdentifierArchiveAssociationRequest
 */
 func (a *CoreApiService) DeleteCrmV3SchemasObjectTypeAssociationsAssociationIdentifierArchiveAssociation(ctx context.Context, objectType string, associationIdentifier string) ApiDeleteCrmV3SchemasObjectTypeAssociationsAssociationIdentifierArchiveAssociationRequest {
 	return ApiDeleteCrmV3SchemasObjectTypeAssociationsAssociationIdentifierArchiveAssociationRequest{
@@ -277,8 +277,8 @@ GetCrmV3SchemasGetAll Get all schemas
 
 Returns all object schemas that have been defined for your account.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetCrmV3SchemasGetAllRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetCrmV3SchemasGetAllRequest
 */
 func (a *CoreApiService) GetCrmV3SchemasGetAll(ctx context.Context) ApiGetCrmV3SchemasGetAllRequest {
 	return ApiGetCrmV3SchemasGetAllRequest{
@@ -288,7 +288,8 @@ func (a *CoreApiService) GetCrmV3SchemasGetAll(ctx context.Context) ApiGetCrmV3S
 }
 
 // Execute executes the request
-//  @return CollectionResponseObjectSchemaNoPaging
+//
+//	@return CollectionResponseObjectSchemaNoPaging
 func (a *CoreApiService) GetCrmV3SchemasGetAllExecute(r ApiGetCrmV3SchemasGetAllRequest) (*CollectionResponseObjectSchemaNoPaging, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -397,9 +398,9 @@ GetCrmV3SchemasObjectTypeGetById Get an existing schema
 
 Returns an existing object schema.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param objectType Fully qualified name or object type ID of your schema.
- @return ApiGetCrmV3SchemasObjectTypeGetByIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param objectType Fully qualified name or object type ID of your schema.
+	@return ApiGetCrmV3SchemasObjectTypeGetByIdRequest
 */
 func (a *CoreApiService) GetCrmV3SchemasObjectTypeGetById(ctx context.Context, objectType string) ApiGetCrmV3SchemasObjectTypeGetByIdRequest {
 	return ApiGetCrmV3SchemasObjectTypeGetByIdRequest{
@@ -410,7 +411,8 @@ func (a *CoreApiService) GetCrmV3SchemasObjectTypeGetById(ctx context.Context, o
 }
 
 // Execute executes the request
-//  @return ObjectSchema
+//
+//	@return ObjectSchema
 func (a *CoreApiService) GetCrmV3SchemasObjectTypeGetByIdExecute(r ApiGetCrmV3SchemasObjectTypeGetByIdRequest) (*ObjectSchema, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -524,9 +526,9 @@ PatchCrmV3SchemasObjectTypeUpdate Update a schema
 
 Update the details for an existing object schema.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param objectType Fully qualified name or object type ID of your schema.
- @return ApiPatchCrmV3SchemasObjectTypeUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param objectType Fully qualified name or object type ID of your schema.
+	@return ApiPatchCrmV3SchemasObjectTypeUpdateRequest
 */
 func (a *CoreApiService) PatchCrmV3SchemasObjectTypeUpdate(ctx context.Context, objectType string) ApiPatchCrmV3SchemasObjectTypeUpdateRequest {
 	return ApiPatchCrmV3SchemasObjectTypeUpdateRequest{
@@ -537,7 +539,8 @@ func (a *CoreApiService) PatchCrmV3SchemasObjectTypeUpdate(ctx context.Context, 
 }
 
 // Execute executes the request
-//  @return ObjectTypeDefinition
+//
+//	@return ObjectTypeDefinition
 func (a *CoreApiService) PatchCrmV3SchemasObjectTypeUpdateExecute(r ApiPatchCrmV3SchemasObjectTypeUpdateRequest) (*ObjectTypeDefinition, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
@@ -655,8 +658,8 @@ PostCrmV3SchemasCreate Create a new schema
 
 Define a new object schema, along with custom properties and associations. The entire object schema, including its object type ID, properties, and associations will be returned in the response.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostCrmV3SchemasCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPostCrmV3SchemasCreateRequest
 */
 func (a *CoreApiService) PostCrmV3SchemasCreate(ctx context.Context) ApiPostCrmV3SchemasCreateRequest {
 	return ApiPostCrmV3SchemasCreateRequest{
@@ -666,7 +669,8 @@ func (a *CoreApiService) PostCrmV3SchemasCreate(ctx context.Context) ApiPostCrmV
 }
 
 // Execute executes the request
-//  @return ObjectSchema
+//
+//	@return ObjectSchema
 func (a *CoreApiService) PostCrmV3SchemasCreateExecute(r ApiPostCrmV3SchemasCreateRequest) (*ObjectSchema, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -784,9 +788,9 @@ PostCrmV3SchemasObjectTypeAssociationsCreateAssociation Create an association
 
 Defines a new association between the primary schema's object type and other object types.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param objectType Fully qualified name or object type ID of your schema.
- @return ApiPostCrmV3SchemasObjectTypeAssociationsCreateAssociationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param objectType Fully qualified name or object type ID of your schema.
+	@return ApiPostCrmV3SchemasObjectTypeAssociationsCreateAssociationRequest
 */
 func (a *CoreApiService) PostCrmV3SchemasObjectTypeAssociationsCreateAssociation(ctx context.Context, objectType string) ApiPostCrmV3SchemasObjectTypeAssociationsCreateAssociationRequest {
 	return ApiPostCrmV3SchemasObjectTypeAssociationsCreateAssociationRequest{
@@ -797,7 +801,8 @@ func (a *CoreApiService) PostCrmV3SchemasObjectTypeAssociationsCreateAssociation
 }
 
 // Execute executes the request
-//  @return AssociationDefinition
+//
+//	@return AssociationDefinition
 func (a *CoreApiService) PostCrmV3SchemasObjectTypeAssociationsCreateAssociationExecute(r ApiPostCrmV3SchemasObjectTypeAssociationsCreateAssociationRequest) (*AssociationDefinition, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

@@ -54,10 +54,10 @@ AttendanceCreateCreate Record
 
 Record a subscription state between multiple HubSpot contacts and a marketing event, using HubSpot contact ids.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param externalEventId The id of the marketing event
- @param subscriberState The new subscriber state for the HubSpot contacts and the specified marketing event. For example: 'register', 'attend' or 'cancel'.
- @return ApiAttendanceCreateCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param externalEventId The id of the marketing event
+	@param subscriberState The new subscriber state for the HubSpot contacts and the specified marketing event. For example: 'register', 'attend' or 'cancel'.
+	@return ApiAttendanceCreateCreateRequest
 */
 func (a *AttendanceSubscriberStateChangesApiService) AttendanceCreateCreate(ctx context.Context, externalEventId string, subscriberState string) ApiAttendanceCreateCreateRequest {
 	return ApiAttendanceCreateCreateRequest{
@@ -69,7 +69,8 @@ func (a *AttendanceSubscriberStateChangesApiService) AttendanceCreateCreate(ctx 
 }
 
 // Execute executes the request
-//  @return BatchResponseSubscriberVidResponse
+//
+//	@return BatchResponseSubscriberVidResponse
 func (a *AttendanceSubscriberStateChangesApiService) AttendanceCreateCreateExecute(r ApiAttendanceCreateCreateRequest) (*BatchResponseSubscriberVidResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -200,10 +201,10 @@ AttendanceEmailCreateCreateByEmail Record
 
 Record a subscription state between multiple HubSpot contacts and a marketing event, using contact email addresses. If contact is not present it will be automatically created.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param externalEventId The id of the marketing event
- @param subscriberState The new subscriber state for the HubSpot contacts and the specified marketing event. For example: 'register', 'attend' or 'cancel'.
- @return ApiAttendanceEmailCreateCreateByEmailRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param externalEventId The id of the marketing event
+	@param subscriberState The new subscriber state for the HubSpot contacts and the specified marketing event. For example: 'register', 'attend' or 'cancel'.
+	@return ApiAttendanceEmailCreateCreateByEmailRequest
 */
 func (a *AttendanceSubscriberStateChangesApiService) AttendanceEmailCreateCreateByEmail(ctx context.Context, externalEventId string, subscriberState string) ApiAttendanceEmailCreateCreateByEmailRequest {
 	return ApiAttendanceEmailCreateCreateByEmailRequest{
@@ -215,7 +216,8 @@ func (a *AttendanceSubscriberStateChangesApiService) AttendanceEmailCreateCreate
 }
 
 // Execute executes the request
-//  @return BatchResponseSubscriberEmailResponse
+//
+//	@return BatchResponseSubscriberEmailResponse
 func (a *AttendanceSubscriberStateChangesApiService) AttendanceEmailCreateCreateByEmailExecute(r ApiAttendanceEmailCreateCreateByEmailRequest) (*BatchResponseSubscriberEmailResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

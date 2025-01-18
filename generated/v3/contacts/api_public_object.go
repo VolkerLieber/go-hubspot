@@ -41,8 +41,8 @@ func (r ApiMergeRequest) Execute() (*SimplePublicObject, *http.Response, error) 
 /*
 Merge Merge two contacts with same type
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiMergeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiMergeRequest
 */
 func (a *PublicObjectApiService) Merge(ctx context.Context) ApiMergeRequest {
 	return ApiMergeRequest{
@@ -52,7 +52,8 @@ func (a *PublicObjectApiService) Merge(ctx context.Context) ApiMergeRequest {
 }
 
 // Execute executes the request
-//  @return SimplePublicObject
+//
+//	@return SimplePublicObject
 func (a *PublicObjectApiService) MergeExecute(r ApiMergeRequest) (*SimplePublicObject, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

@@ -54,9 +54,9 @@ GetBusinessUnitsV3BusinessUnitsUserUserIdGetByUserID Get Business Units for a us
 
 Get Business Units identified by `userId`. The `userId` refers to the user’s ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param userId Identifier of user to retrieve.
- @return ApiGetBusinessUnitsV3BusinessUnitsUserUserIdGetByUserIDRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param userId Identifier of user to retrieve.
+	@return ApiGetBusinessUnitsV3BusinessUnitsUserUserIdGetByUserIDRequest
 */
 func (a *BusinessUnitApiService) GetBusinessUnitsV3BusinessUnitsUserUserIdGetByUserID(ctx context.Context, userId string) ApiGetBusinessUnitsV3BusinessUnitsUserUserIdGetByUserIDRequest {
 	return ApiGetBusinessUnitsV3BusinessUnitsUserUserIdGetByUserIDRequest{
@@ -67,7 +67,8 @@ func (a *BusinessUnitApiService) GetBusinessUnitsV3BusinessUnitsUserUserIdGetByU
 }
 
 // Execute executes the request
-//  @return CollectionResponsePublicBusinessUnitNoPaging
+//
+//	@return CollectionResponsePublicBusinessUnitNoPaging
 func (a *BusinessUnitApiService) GetBusinessUnitsV3BusinessUnitsUserUserIdGetByUserIDExecute(r ApiGetBusinessUnitsV3BusinessUnitsUserUserIdGetByUserIDRequest) (*CollectionResponsePublicBusinessUnitNoPaging, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet

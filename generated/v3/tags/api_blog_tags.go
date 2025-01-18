@@ -48,9 +48,9 @@ Archive Delete a Blog Tag
 
 Delete the Blog Tag object identified by the id in the path.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param objectId The Blog Tag id.
- @return ApiArchiveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param objectId The Blog Tag id.
+	@return ApiArchiveRequest
 */
 func (a *BlogTagsApiService) Archive(ctx context.Context, objectId string) ApiArchiveRequest {
 	return ApiArchiveRequest{
@@ -166,8 +166,8 @@ AttachToLanguageGroup Attach a Blog Tag to a multi-language group
 
 Attach a Blog Tag to a multi-language group.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAttachToLanguageGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAttachToLanguageGroupRequest
 */
 func (a *BlogTagsApiService) AttachToLanguageGroup(ctx context.Context) ApiAttachToLanguageGroupRequest {
 	return ApiAttachToLanguageGroupRequest{
@@ -283,8 +283,8 @@ BatchArchive Delete a batch of Blog Tags
 
 Delete the Blog Tag objects identified in the request body.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiBatchArchiveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiBatchArchiveRequest
 */
 func (a *BlogTagsApiService) BatchArchive(ctx context.Context) ApiBatchArchiveRequest {
 	return ApiBatchArchiveRequest{
@@ -400,8 +400,8 @@ BatchCreate Create a batch of Blog Tags
 
 Create the Blog Tag objects detailed in the request body.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiBatchCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiBatchCreateRequest
 */
 func (a *BlogTagsApiService) BatchCreate(ctx context.Context) ApiBatchCreateRequest {
 	return ApiBatchCreateRequest{
@@ -411,7 +411,8 @@ func (a *BlogTagsApiService) BatchCreate(ctx context.Context) ApiBatchCreateRequ
 }
 
 // Execute executes the request
-//  @return BatchResponseTag
+//
+//	@return BatchResponseTag
 func (a *BlogTagsApiService) BatchCreateExecute(r ApiBatchCreateRequest) (*BatchResponseTag, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -535,8 +536,8 @@ BatchRead Retrieve a batch of Blog Tags
 
 Retrieve the Blog Tag objects identified in the request body.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiBatchReadRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiBatchReadRequest
 */
 func (a *BlogTagsApiService) BatchRead(ctx context.Context) ApiBatchReadRequest {
 	return ApiBatchReadRequest{
@@ -546,7 +547,8 @@ func (a *BlogTagsApiService) BatchRead(ctx context.Context) ApiBatchReadRequest 
 }
 
 // Execute executes the request
-//  @return BatchResponseTag
+//
+//	@return BatchResponseTag
 func (a *BlogTagsApiService) BatchReadExecute(r ApiBatchReadRequest) (*BatchResponseTag, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -673,8 +675,8 @@ BatchUpdate Update a batch of Blog Tags
 
 Update the Blog Tag objects identified in the request body.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiBatchUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiBatchUpdateRequest
 */
 func (a *BlogTagsApiService) BatchUpdate(ctx context.Context) ApiBatchUpdateRequest {
 	return ApiBatchUpdateRequest{
@@ -684,7 +686,8 @@ func (a *BlogTagsApiService) BatchUpdate(ctx context.Context) ApiBatchUpdateRequ
 }
 
 // Execute executes the request
-//  @return BatchResponseTag
+//
+//	@return BatchResponseTag
 func (a *BlogTagsApiService) BatchUpdateExecute(r ApiBatchUpdateRequest) (*BatchResponseTag, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -804,8 +807,8 @@ Create Create a new Blog Tag
 
 Create a new Blog Tag.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateRequest
 */
 func (a *BlogTagsApiService) Create(ctx context.Context) ApiCreateRequest {
 	return ApiCreateRequest{
@@ -815,7 +818,8 @@ func (a *BlogTagsApiService) Create(ctx context.Context) ApiCreateRequest {
 }
 
 // Execute executes the request
-//  @return Tag
+//
+//	@return Tag
 func (a *BlogTagsApiService) CreateExecute(r ApiCreateRequest) (*Tag, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -932,8 +936,8 @@ CreateLanguageVariation Create a new language variation
 
 Create a new language variation from an existing Blog Tag
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateLanguageVariationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateLanguageVariationRequest
 */
 func (a *BlogTagsApiService) CreateLanguageVariation(ctx context.Context) ApiCreateLanguageVariationRequest {
 	return ApiCreateLanguageVariationRequest{
@@ -943,7 +947,8 @@ func (a *BlogTagsApiService) CreateLanguageVariation(ctx context.Context) ApiCre
 }
 
 // Execute executes the request
-//  @return Tag
+//
+//	@return Tag
 func (a *BlogTagsApiService) CreateLanguageVariationExecute(r ApiCreateLanguageVariationRequest) (*Tag, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -1060,8 +1065,8 @@ DetachFromLanguageGroup Detach a Blog Tag from a multi-language group
 
 Detach a Blog Tag from a multi-language group.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDetachFromLanguageGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDetachFromLanguageGroupRequest
 */
 func (a *BlogTagsApiService) DetachFromLanguageGroup(ctx context.Context) ApiDetachFromLanguageGroupRequest {
 	return ApiDetachFromLanguageGroupRequest{
@@ -1184,9 +1189,9 @@ GetByID Retrieve a Blog Tag
 
 Retrieve the Blog Tag object identified by the id in the path.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param objectId The Blog Tag id.
- @return ApiGetByIDRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param objectId The Blog Tag id.
+	@return ApiGetByIDRequest
 */
 func (a *BlogTagsApiService) GetByID(ctx context.Context, objectId string) ApiGetByIDRequest {
 	return ApiGetByIDRequest{
@@ -1197,7 +1202,8 @@ func (a *BlogTagsApiService) GetByID(ctx context.Context, objectId string) ApiGe
 }
 
 // Execute executes the request
-//  @return Tag
+//
+//	@return Tag
 func (a *BlogTagsApiService) GetByIDExecute(r ApiGetByIDRequest) (*Tag, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1385,9 +1391,8 @@ GetPage Get all Blog Tags
 
 Get the list of blog tags. Supports paging and filtering. This method would be useful for an integration that examined these models and used an external service to suggest edits.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetPageRequest
 */
 func (a *BlogTagsApiService) GetPage(ctx context.Context) ApiGetPageRequest {
 	return ApiGetPageRequest{
@@ -1397,7 +1402,8 @@ func (a *BlogTagsApiService) GetPage(ctx context.Context) ApiGetPageRequest {
 }
 
 // Execute executes the request
-//  @return CollectionResponseWithTotalTagForwardPaging
+//
+//	@return CollectionResponseWithTotalTagForwardPaging
 func (a *BlogTagsApiService) GetPageExecute(r ApiGetPageRequest) (*CollectionResponseWithTotalTagForwardPaging, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1550,8 +1556,8 @@ SetLanguagePrimary Set a new primary language
 
 Set a Blog Tag as the primary language of a multi-language group.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSetLanguagePrimaryRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSetLanguagePrimaryRequest
 */
 func (a *BlogTagsApiService) SetLanguagePrimary(ctx context.Context) ApiSetLanguagePrimaryRequest {
 	return ApiSetLanguagePrimaryRequest{
@@ -1676,10 +1682,9 @@ Update Update a Blog Tag
 Sparse updates a single Blog Tag object identified by the id in the path.
 All the column values need not be specified. Only the that need to be modified can be specified.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param objectId The Blog Tag id.
- @return ApiUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param objectId The Blog Tag id.
+	@return ApiUpdateRequest
 */
 func (a *BlogTagsApiService) Update(ctx context.Context, objectId string) ApiUpdateRequest {
 	return ApiUpdateRequest{
@@ -1690,7 +1695,8 @@ func (a *BlogTagsApiService) Update(ctx context.Context, objectId string) ApiUpd
 }
 
 // Execute executes the request
-//  @return Tag
+//
+//	@return Tag
 func (a *BlogTagsApiService) UpdateExecute(r ApiUpdateRequest) (*Tag, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
@@ -1811,8 +1817,8 @@ UpdateLanguages Update languages of multi-language group
 
 Explicitly set new languages for each Blog Tag in a multi-language group.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUpdateLanguagesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiUpdateLanguagesRequest
 */
 func (a *BlogTagsApiService) UpdateLanguages(ctx context.Context) ApiUpdateLanguagesRequest {
 	return ApiUpdateLanguagesRequest{

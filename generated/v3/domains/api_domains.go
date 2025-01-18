@@ -17,6 +17,7 @@ import (
 	"net/http"
 
 	"github.com/clarkmcc/go-hubspot"
+
 	"net/url"
 	"reflect"
 	"strings"
@@ -41,9 +42,9 @@ GetByID Get a single domain
 
 Returns a single domains with the id specified.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param domainId The unique ID of the domain.
- @return ApiGetByIDRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param domainId The unique ID of the domain.
+	@return ApiGetByIDRequest
 */
 func (a *DomainsApiService) GetByID(ctx context.Context, domainId string) ApiGetByIDRequest {
 	return ApiGetByIDRequest{
@@ -54,7 +55,8 @@ func (a *DomainsApiService) GetByID(ctx context.Context, domainId string) ApiGet
 }
 
 // Execute executes the request
-//  @return Domain
+//
+//	@return Domain
 func (a *DomainsApiService) GetByIDExecute(r ApiGetByIDRequest) (*Domain, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -104,16 +106,12 @@ func (a *DomainsApiService) GetByIDExecute(r ApiGetByIDRequest) (*Domain, *http.
 	}
 	if r.ctx != nil {
 		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["private_apps_legacy"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["private-app-legacy"] = key
-			}
+		if auth, ok := r.ctx.Value(hubspot.ContextKey).(hubspot.Authorizer); ok {
+			auth.Apply(hubspot.AuthorizationRequest{
+				QueryParams: localVarQueryParams,
+				FormParams:  localVarFormParams,
+				Headers:     localVarHeaderParams,
+			})
 		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -243,8 +241,8 @@ GetPage Get current domains
 
 Returns all existing domains that have been created. Results can be limited and filtered by creation or updated date.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetPageRequest
 */
 func (a *DomainsApiService) GetPage(ctx context.Context) ApiGetPageRequest {
 	return ApiGetPageRequest{
@@ -254,7 +252,8 @@ func (a *DomainsApiService) GetPage(ctx context.Context) ApiGetPageRequest {
 }
 
 // Execute executes the request
-//  @return CollectionResponseWithTotalDomainForwardPaging
+//
+//	@return CollectionResponseWithTotalDomainForwardPaging
 func (a *DomainsApiService) GetPageExecute(r ApiGetPageRequest) (*CollectionResponseWithTotalDomainForwardPaging, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -341,16 +340,12 @@ func (a *DomainsApiService) GetPageExecute(r ApiGetPageRequest) (*CollectionResp
 	}
 	if r.ctx != nil {
 		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["private_apps_legacy"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["private-app-legacy"] = key
-			}
+		if auth, ok := r.ctx.Value(hubspot.ContextKey).(hubspot.Authorizer); ok {
+			auth.Apply(hubspot.AuthorizationRequest{
+				QueryParams: localVarQueryParams,
+				FormParams:  localVarFormParams,
+				Headers:     localVarHeaderParams,
+			})
 		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)

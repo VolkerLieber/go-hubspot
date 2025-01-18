@@ -39,9 +39,9 @@ ExtractByPath Extracts a zip file
 
 Extracts a zip file in the file system. The zip file will be extracted in-place and not be deleted automatically.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path The file system location of the zip file.
- @return ApiExtractByPathRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param path The file system location of the zip file.
+	@return ApiExtractByPathRequest
 
 Deprecated
 */

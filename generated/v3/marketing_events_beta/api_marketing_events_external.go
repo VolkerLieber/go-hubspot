@@ -49,9 +49,9 @@ func (r ApiExternalCompleteCompleteRequest) Execute() (*MarketingEventDefaultRes
 /*
 ExternalCompleteComplete Method for ExternalCompleteComplete
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param externalEventId
- @return ApiExternalCompleteCompleteRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param externalEventId
+	@return ApiExternalCompleteCompleteRequest
 */
 func (a *MarketingEventsExternalApiService) ExternalCompleteComplete(ctx context.Context, externalEventId string) ApiExternalCompleteCompleteRequest {
 	return ApiExternalCompleteCompleteRequest{
@@ -62,7 +62,8 @@ func (a *MarketingEventsExternalApiService) ExternalCompleteComplete(ctx context
 }
 
 // Execute executes the request
-//  @return MarketingEventDefaultResponse
+//
+//	@return MarketingEventDefaultResponse
 func (a *MarketingEventsExternalApiService) ExternalCompleteCompleteExecute(r ApiExternalCompleteCompleteRequest) (*MarketingEventDefaultResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

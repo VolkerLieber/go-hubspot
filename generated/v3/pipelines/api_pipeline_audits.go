@@ -40,10 +40,10 @@ GetAudit Return an audit of all changes to the pipeline
 
 Return a reverse chronological list of all mutations that have occurred on the pipeline identified by `{pipelineId}`.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param objectType
- @param pipelineId
- @return ApiGetAuditRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param objectType
+	@param pipelineId
+	@return ApiGetAuditRequest
 */
 func (a *PipelineAuditsApiService) GetAudit(ctx context.Context, objectType string, pipelineId string) ApiGetAuditRequest {
 	return ApiGetAuditRequest{
@@ -55,7 +55,8 @@ func (a *PipelineAuditsApiService) GetAudit(ctx context.Context, objectType stri
 }
 
 // Execute executes the request
-//  @return CollectionResponsePublicAuditInfoNoPaging
+//
+//	@return CollectionResponsePublicAuditInfoNoPaging
 func (a *PipelineAuditsApiService) GetAuditExecute(r ApiGetAuditRequest) (*CollectionResponsePublicAuditInfoNoPaging, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -106,16 +107,12 @@ func (a *PipelineAuditsApiService) GetAuditExecute(r ApiGetAuditRequest) (*Colle
 	}
 	if r.ctx != nil {
 		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["private_apps_legacy"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["private-app-legacy"] = key
-			}
+		if auth, ok := r.ctx.Value(hubspot.ContextKey).(hubspot.Authorizer); ok {
+			auth.Apply(hubspot.AuthorizationRequest{
+				QueryParams: localVarQueryParams,
+				FormParams:  localVarFormParams,
+				Headers:     localVarHeaderParams,
+			})
 		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)

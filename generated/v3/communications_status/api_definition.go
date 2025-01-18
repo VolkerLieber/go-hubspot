@@ -37,8 +37,8 @@ GetPage Get subscription definitions
 
 Get a list of all subscription definitions for the portal
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetPageRequest
 */
 func (a *DefinitionApiService) GetPage(ctx context.Context) ApiGetPageRequest {
 	return ApiGetPageRequest{
@@ -48,7 +48,8 @@ func (a *DefinitionApiService) GetPage(ctx context.Context) ApiGetPageRequest {
 }
 
 // Execute executes the request
-//  @return SubscriptionDefinitionsResponse
+//
+//	@return SubscriptionDefinitionsResponse
 func (a *DefinitionApiService) GetPageExecute(r ApiGetPageRequest) (*SubscriptionDefinitionsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet

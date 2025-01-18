@@ -46,10 +46,10 @@ PostCrmV4AssociationsFromObjectTypeToObjectTypeBatchArchiveArchive Delete
 
 Batch delete associations for objects
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param fromObjectType
- @param toObjectType
- @return ApiPostCrmV4AssociationsFromObjectTypeToObjectTypeBatchArchiveArchiveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param fromObjectType
+	@param toObjectType
+	@return ApiPostCrmV4AssociationsFromObjectTypeToObjectTypeBatchArchiveArchiveRequest
 */
 func (a *BatchApiService) PostCrmV4AssociationsFromObjectTypeToObjectTypeBatchArchiveArchive(ctx context.Context, fromObjectType string, toObjectType string) ApiPostCrmV4AssociationsFromObjectTypeToObjectTypeBatchArchiveArchiveRequest {
 	return ApiPostCrmV4AssociationsFromObjectTypeToObjectTypeBatchArchiveArchiveRequest{
@@ -115,16 +115,12 @@ func (a *BatchApiService) PostCrmV4AssociationsFromObjectTypeToObjectTypeBatchAr
 	}
 	if r.ctx != nil {
 		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["private_apps_legacy"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["private-app-legacy"] = key
-			}
+		if auth, ok := r.ctx.Value(hubspot.ContextKey).(hubspot.Authorizer); ok {
+			auth.Apply(hubspot.AuthorizationRequest{
+				QueryParams: localVarQueryParams,
+				FormParams:  localVarFormParams,
+				Headers:     localVarHeaderParams,
+			})
 		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -184,10 +180,10 @@ PostCrmV4AssociationsFromObjectTypeToObjectTypeBatchAssociateDefaultCreateDefaul
 
 Create the default (most generic) association type between two object types
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param fromObjectType
- @param toObjectType
- @return ApiPostCrmV4AssociationsFromObjectTypeToObjectTypeBatchAssociateDefaultCreateDefaultRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param fromObjectType
+	@param toObjectType
+	@return ApiPostCrmV4AssociationsFromObjectTypeToObjectTypeBatchAssociateDefaultCreateDefaultRequest
 */
 func (a *BatchApiService) PostCrmV4AssociationsFromObjectTypeToObjectTypeBatchAssociateDefaultCreateDefault(ctx context.Context, fromObjectType string, toObjectType string) ApiPostCrmV4AssociationsFromObjectTypeToObjectTypeBatchAssociateDefaultCreateDefaultRequest {
 	return ApiPostCrmV4AssociationsFromObjectTypeToObjectTypeBatchAssociateDefaultCreateDefaultRequest{
@@ -199,7 +195,8 @@ func (a *BatchApiService) PostCrmV4AssociationsFromObjectTypeToObjectTypeBatchAs
 }
 
 // Execute executes the request
-//  @return BatchResponsePublicDefaultAssociation
+//
+//	@return BatchResponsePublicDefaultAssociation
 func (a *BatchApiService) PostCrmV4AssociationsFromObjectTypeToObjectTypeBatchAssociateDefaultCreateDefaultExecute(r ApiPostCrmV4AssociationsFromObjectTypeToObjectTypeBatchAssociateDefaultCreateDefaultRequest) (*BatchResponsePublicDefaultAssociation, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -255,16 +252,12 @@ func (a *BatchApiService) PostCrmV4AssociationsFromObjectTypeToObjectTypeBatchAs
 	}
 	if r.ctx != nil {
 		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["private_apps_legacy"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["private-app-legacy"] = key
-			}
+		if auth, ok := r.ctx.Value(hubspot.ContextKey).(hubspot.Authorizer); ok {
+			auth.Apply(hubspot.AuthorizationRequest{
+				QueryParams: localVarQueryParams,
+				FormParams:  localVarFormParams,
+				Headers:     localVarHeaderParams,
+			})
 		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -333,10 +326,10 @@ PostCrmV4AssociationsFromObjectTypeToObjectTypeBatchCreateCreate Create
 
 Batch create associations for objects
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param fromObjectType
- @param toObjectType
- @return ApiPostCrmV4AssociationsFromObjectTypeToObjectTypeBatchCreateCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param fromObjectType
+	@param toObjectType
+	@return ApiPostCrmV4AssociationsFromObjectTypeToObjectTypeBatchCreateCreateRequest
 */
 func (a *BatchApiService) PostCrmV4AssociationsFromObjectTypeToObjectTypeBatchCreateCreate(ctx context.Context, fromObjectType string, toObjectType string) ApiPostCrmV4AssociationsFromObjectTypeToObjectTypeBatchCreateCreateRequest {
 	return ApiPostCrmV4AssociationsFromObjectTypeToObjectTypeBatchCreateCreateRequest{
@@ -348,7 +341,8 @@ func (a *BatchApiService) PostCrmV4AssociationsFromObjectTypeToObjectTypeBatchCr
 }
 
 // Execute executes the request
-//  @return BatchResponseLabelsBetweenObjectPair
+//
+//	@return BatchResponseLabelsBetweenObjectPair
 func (a *BatchApiService) PostCrmV4AssociationsFromObjectTypeToObjectTypeBatchCreateCreateExecute(r ApiPostCrmV4AssociationsFromObjectTypeToObjectTypeBatchCreateCreateRequest) (*BatchResponseLabelsBetweenObjectPair, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -404,16 +398,12 @@ func (a *BatchApiService) PostCrmV4AssociationsFromObjectTypeToObjectTypeBatchCr
 	}
 	if r.ctx != nil {
 		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["private_apps_legacy"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["private-app-legacy"] = key
-			}
+		if auth, ok := r.ctx.Value(hubspot.ContextKey).(hubspot.Authorizer); ok {
+			auth.Apply(hubspot.AuthorizationRequest{
+				QueryParams: localVarQueryParams,
+				FormParams:  localVarFormParams,
+				Headers:     localVarHeaderParams,
+			})
 		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -482,10 +472,10 @@ PostCrmV4AssociationsFromObjectTypeToObjectTypeBatchLabelsArchiveArchiveLabels D
 
 Batch delete specific association labels for objects. Deleting an unlabeled association will also delete all labeled associations between those two objects
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param fromObjectType
- @param toObjectType
- @return ApiPostCrmV4AssociationsFromObjectTypeToObjectTypeBatchLabelsArchiveArchiveLabelsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param fromObjectType
+	@param toObjectType
+	@return ApiPostCrmV4AssociationsFromObjectTypeToObjectTypeBatchLabelsArchiveArchiveLabelsRequest
 */
 func (a *BatchApiService) PostCrmV4AssociationsFromObjectTypeToObjectTypeBatchLabelsArchiveArchiveLabels(ctx context.Context, fromObjectType string, toObjectType string) ApiPostCrmV4AssociationsFromObjectTypeToObjectTypeBatchLabelsArchiveArchiveLabelsRequest {
 	return ApiPostCrmV4AssociationsFromObjectTypeToObjectTypeBatchLabelsArchiveArchiveLabelsRequest{
@@ -551,16 +541,12 @@ func (a *BatchApiService) PostCrmV4AssociationsFromObjectTypeToObjectTypeBatchLa
 	}
 	if r.ctx != nil {
 		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["private_apps_legacy"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["private-app-legacy"] = key
-			}
+		if auth, ok := r.ctx.Value(hubspot.ContextKey).(hubspot.Authorizer); ok {
+			auth.Apply(hubspot.AuthorizationRequest{
+				QueryParams: localVarQueryParams,
+				FormParams:  localVarFormParams,
+				Headers:     localVarHeaderParams,
+			})
 		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -620,10 +606,10 @@ PostCrmV4AssociationsFromObjectTypeToObjectTypeBatchReadGetPage Read
 
 Batch read associations for objects to specific object type. The 'after' field in a returned paging object  can be added alongside the 'id' to retrieve the next page of associations from that objectId. The 'link' field is deprecated and should be ignored.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param fromObjectType
- @param toObjectType
- @return ApiPostCrmV4AssociationsFromObjectTypeToObjectTypeBatchReadGetPageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param fromObjectType
+	@param toObjectType
+	@return ApiPostCrmV4AssociationsFromObjectTypeToObjectTypeBatchReadGetPageRequest
 */
 func (a *BatchApiService) PostCrmV4AssociationsFromObjectTypeToObjectTypeBatchReadGetPage(ctx context.Context, fromObjectType string, toObjectType string) ApiPostCrmV4AssociationsFromObjectTypeToObjectTypeBatchReadGetPageRequest {
 	return ApiPostCrmV4AssociationsFromObjectTypeToObjectTypeBatchReadGetPageRequest{
@@ -635,7 +621,8 @@ func (a *BatchApiService) PostCrmV4AssociationsFromObjectTypeToObjectTypeBatchRe
 }
 
 // Execute executes the request
-//  @return BatchResponsePublicAssociationMultiWithLabel
+//
+//	@return BatchResponsePublicAssociationMultiWithLabel
 func (a *BatchApiService) PostCrmV4AssociationsFromObjectTypeToObjectTypeBatchReadGetPageExecute(r ApiPostCrmV4AssociationsFromObjectTypeToObjectTypeBatchReadGetPageRequest) (*BatchResponsePublicAssociationMultiWithLabel, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -691,16 +678,12 @@ func (a *BatchApiService) PostCrmV4AssociationsFromObjectTypeToObjectTypeBatchRe
 	}
 	if r.ctx != nil {
 		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["private_apps_legacy"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["private-app-legacy"] = key
-			}
+		if auth, ok := r.ctx.Value(hubspot.ContextKey).(hubspot.Authorizer); ok {
+			auth.Apply(hubspot.AuthorizationRequest{
+				QueryParams: localVarQueryParams,
+				FormParams:  localVarFormParams,
+				Headers:     localVarHeaderParams,
+			})
 		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)

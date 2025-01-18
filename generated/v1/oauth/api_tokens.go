@@ -67,8 +67,8 @@ func (r ApiPostOauthV1TokenCreateRequest) Execute() (*TokenResponseIF, *http.Res
 /*
 PostOauthV1TokenCreate Method for PostOauthV1TokenCreate
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostOauthV1TokenCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPostOauthV1TokenCreateRequest
 */
 func (a *TokensApiService) PostOauthV1TokenCreate(ctx context.Context) ApiPostOauthV1TokenCreateRequest {
 	return ApiPostOauthV1TokenCreateRequest{
@@ -78,7 +78,8 @@ func (a *TokensApiService) PostOauthV1TokenCreate(ctx context.Context) ApiPostOa
 }
 
 // Execute executes the request
-//  @return TokenResponseIF
+//
+//	@return TokenResponseIF
 func (a *TokensApiService) PostOauthV1TokenCreateExecute(r ApiPostOauthV1TokenCreateRequest) (*TokenResponseIF, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

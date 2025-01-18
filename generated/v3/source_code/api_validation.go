@@ -47,9 +47,9 @@ Validate Validate the contents of a file
 
 Validates the file contents passed to the endpoint given a specified path and environment. Accepts multipart/form-data content type.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path The file system location of the file.
- @return ApiValidateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param path The file system location of the file.
+	@return ApiValidateRequest
 */
 func (a *ValidationApiService) Validate(ctx context.Context, path string) ApiValidateRequest {
 	return ApiValidateRequest{
@@ -60,7 +60,8 @@ func (a *ValidationApiService) Validate(ctx context.Context, path string) ApiVal
 }
 
 // Execute executes the request
-//  @return Error
+//
+//	@return Error
 func (a *ValidationApiService) ValidateExecute(r ApiValidateRequest) (*Error, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

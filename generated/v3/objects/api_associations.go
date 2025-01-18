@@ -41,13 +41,13 @@ func (r ApiDeleteCrmV3ObjectsObjectTypeObjectIdAssociationsToObjectTypeToObjectI
 /*
 DeleteCrmV3ObjectsObjectTypeObjectIdAssociationsToObjectTypeToObjectIdAssociationType Remove an association between two objects
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param objectType
- @param objectId
- @param toObjectType
- @param toObjectId
- @param associationType
- @return ApiDeleteCrmV3ObjectsObjectTypeObjectIdAssociationsToObjectTypeToObjectIdAssociationTypeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param objectType
+	@param objectId
+	@param toObjectType
+	@param toObjectId
+	@param associationType
+	@return ApiDeleteCrmV3ObjectsObjectTypeObjectIdAssociationsToObjectTypeToObjectIdAssociationTypeRequest
 */
 func (a *AssociationsApiService) DeleteCrmV3ObjectsObjectTypeObjectIdAssociationsToObjectTypeToObjectIdAssociationType(ctx context.Context, objectType string, objectId string, toObjectType string, toObjectId string, associationType string) ApiDeleteCrmV3ObjectsObjectTypeObjectIdAssociationsToObjectTypeToObjectIdAssociationTypeRequest {
 	return ApiDeleteCrmV3ObjectsObjectTypeObjectIdAssociationsToObjectTypeToObjectIdAssociationTypeRequest{
@@ -114,16 +114,12 @@ func (a *AssociationsApiService) DeleteCrmV3ObjectsObjectTypeObjectIdAssociation
 	}
 	if r.ctx != nil {
 		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["private_apps_legacy"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["private-app-legacy"] = key
-			}
+		if auth, ok := r.ctx.Value(hubspot.ContextKey).(hubspot.Authorizer); ok {
+			auth.Apply(hubspot.AuthorizationRequest{
+				QueryParams: localVarQueryParams,
+				FormParams:  localVarFormParams,
+				Headers:     localVarHeaderParams,
+			})
 		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -190,11 +186,11 @@ func (r ApiGetCrmV3ObjectsObjectTypeObjectIdAssociationsToObjectTypeRequest) Exe
 /*
 GetCrmV3ObjectsObjectTypeObjectIdAssociationsToObjectType List associations of an object by type
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param objectType
- @param objectId
- @param toObjectType
- @return ApiGetCrmV3ObjectsObjectTypeObjectIdAssociationsToObjectTypeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param objectType
+	@param objectId
+	@param toObjectType
+	@return ApiGetCrmV3ObjectsObjectTypeObjectIdAssociationsToObjectTypeRequest
 */
 func (a *AssociationsApiService) GetCrmV3ObjectsObjectTypeObjectIdAssociationsToObjectType(ctx context.Context, objectType string, objectId string, toObjectType string) ApiGetCrmV3ObjectsObjectTypeObjectIdAssociationsToObjectTypeRequest {
 	return ApiGetCrmV3ObjectsObjectTypeObjectIdAssociationsToObjectTypeRequest{
@@ -207,7 +203,8 @@ func (a *AssociationsApiService) GetCrmV3ObjectsObjectTypeObjectIdAssociationsTo
 }
 
 // Execute executes the request
-//  @return CollectionResponseAssociatedIdForwardPaging
+//
+//	@return CollectionResponseAssociatedIdForwardPaging
 func (a *AssociationsApiService) GetCrmV3ObjectsObjectTypeObjectIdAssociationsToObjectTypeExecute(r ApiGetCrmV3ObjectsObjectTypeObjectIdAssociationsToObjectTypeRequest) (*CollectionResponseAssociatedIdForwardPaging, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -265,16 +262,12 @@ func (a *AssociationsApiService) GetCrmV3ObjectsObjectTypeObjectIdAssociationsTo
 	}
 	if r.ctx != nil {
 		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["private_apps_legacy"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["private-app-legacy"] = key
-			}
+		if auth, ok := r.ctx.Value(hubspot.ContextKey).(hubspot.Authorizer); ok {
+			auth.Apply(hubspot.AuthorizationRequest{
+				QueryParams: localVarQueryParams,
+				FormParams:  localVarFormParams,
+				Headers:     localVarHeaderParams,
+			})
 		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -338,13 +331,13 @@ func (r ApiPutCrmV3ObjectsObjectTypeObjectIdAssociationsToObjectTypeToObjectIdAs
 /*
 PutCrmV3ObjectsObjectTypeObjectIdAssociationsToObjectTypeToObjectIdAssociationType Associate an object with another object
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param objectType
- @param objectId
- @param toObjectType
- @param toObjectId
- @param associationType
- @return ApiPutCrmV3ObjectsObjectTypeObjectIdAssociationsToObjectTypeToObjectIdAssociationTypeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param objectType
+	@param objectId
+	@param toObjectType
+	@param toObjectId
+	@param associationType
+	@return ApiPutCrmV3ObjectsObjectTypeObjectIdAssociationsToObjectTypeToObjectIdAssociationTypeRequest
 */
 func (a *AssociationsApiService) PutCrmV3ObjectsObjectTypeObjectIdAssociationsToObjectTypeToObjectIdAssociationType(ctx context.Context, objectType string, objectId string, toObjectType string, toObjectId string, associationType string) ApiPutCrmV3ObjectsObjectTypeObjectIdAssociationsToObjectTypeToObjectIdAssociationTypeRequest {
 	return ApiPutCrmV3ObjectsObjectTypeObjectIdAssociationsToObjectTypeToObjectIdAssociationTypeRequest{
@@ -359,7 +352,8 @@ func (a *AssociationsApiService) PutCrmV3ObjectsObjectTypeObjectIdAssociationsTo
 }
 
 // Execute executes the request
-//  @return SimplePublicObjectWithAssociations
+//
+//	@return SimplePublicObjectWithAssociations
 func (a *AssociationsApiService) PutCrmV3ObjectsObjectTypeObjectIdAssociationsToObjectTypeToObjectIdAssociationTypeExecute(r ApiPutCrmV3ObjectsObjectTypeObjectIdAssociationsToObjectTypeToObjectIdAssociationTypeRequest) (*SimplePublicObjectWithAssociations, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
@@ -413,16 +407,12 @@ func (a *AssociationsApiService) PutCrmV3ObjectsObjectTypeObjectIdAssociationsTo
 	}
 	if r.ctx != nil {
 		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["private_apps_legacy"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["private-app-legacy"] = key
-			}
+		if auth, ok := r.ctx.Value(hubspot.ContextKey).(hubspot.Authorizer); ok {
+			auth.Apply(hubspot.AuthorizationRequest{
+				QueryParams: localVarQueryParams,
+				FormParams:  localVarFormParams,
+				Headers:     localVarHeaderParams,
+			})
 		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)

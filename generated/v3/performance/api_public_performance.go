@@ -93,8 +93,8 @@ GetPage View your website's performance.
 
 Returns time series data website performance data for the given domain and/or path.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetPageRequest
 */
 func (a *PublicPerformanceApiService) GetPage(ctx context.Context) ApiGetPageRequest {
 	return ApiGetPageRequest{
@@ -104,7 +104,8 @@ func (a *PublicPerformanceApiService) GetPage(ctx context.Context) ApiGetPageReq
 }
 
 // Execute executes the request
-//  @return PublicPerformanceResponse
+//
+//	@return PublicPerformanceResponse
 func (a *PublicPerformanceApiService) GetPageExecute(r ApiGetPageRequest) (*PublicPerformanceResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -288,8 +289,8 @@ GetUptime View your website's uptime.
 
 Returns uptime time series website performance data for the given domain.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetUptimeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetUptimeRequest
 */
 func (a *PublicPerformanceApiService) GetUptime(ctx context.Context) ApiGetUptimeRequest {
 	return ApiGetUptimeRequest{
@@ -299,7 +300,8 @@ func (a *PublicPerformanceApiService) GetUptime(ctx context.Context) ApiGetUptim
 }
 
 // Execute executes the request
-//  @return PublicPerformanceResponse
+//
+//	@return PublicPerformanceResponse
 func (a *PublicPerformanceApiService) GetUptimeExecute(r ApiGetUptimeRequest) (*PublicPerformanceResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet

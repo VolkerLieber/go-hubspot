@@ -43,9 +43,9 @@ func (r ApiCallbackCompleteRequest) Execute() (*http.Response, error) {
 /*
 CallbackComplete Completes a single callback
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param callbackId
- @return ApiCallbackCompleteRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param callbackId
+	@return ApiCallbackCompleteRequest
 */
 func (a *CallbacksApiService) CallbackComplete(ctx context.Context, callbackId string) ApiCallbackCompleteRequest {
 	return ApiCallbackCompleteRequest{
@@ -160,8 +160,8 @@ func (r ApiCallbackCompleteBatchRequest) Execute() (*http.Response, error) {
 /*
 CallbackCompleteBatch Completes a batch of callbacks
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCallbackCompleteBatchRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCallbackCompleteBatchRequest
 */
 func (a *CallbacksApiService) CallbackCompleteBatch(ctx context.Context) ApiCallbackCompleteBatchRequest {
 	return ApiCallbackCompleteBatchRequest{

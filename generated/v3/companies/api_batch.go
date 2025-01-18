@@ -41,8 +41,8 @@ func (r ApiBatchArchiveRequest) Execute() (*http.Response, error) {
 /*
 BatchArchive Archive a batch of companies by ID
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiBatchArchiveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiBatchArchiveRequest
 */
 func (a *BatchApiService) BatchArchive(ctx context.Context) ApiBatchArchiveRequest {
 	return ApiBatchArchiveRequest{
@@ -155,8 +155,8 @@ func (r ApiBatchCreateRequest) Execute() (*BatchResponseSimplePublicObject, *htt
 /*
 BatchCreate Create a batch of companies
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiBatchCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiBatchCreateRequest
 */
 func (a *BatchApiService) BatchCreate(ctx context.Context) ApiBatchCreateRequest {
 	return ApiBatchCreateRequest{
@@ -166,7 +166,8 @@ func (a *BatchApiService) BatchCreate(ctx context.Context) ApiBatchCreateRequest
 }
 
 // Execute executes the request
-//  @return BatchResponseSimplePublicObject
+//
+//	@return BatchResponseSimplePublicObject
 func (a *BatchApiService) BatchCreateExecute(r ApiBatchCreateRequest) (*BatchResponseSimplePublicObject, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -287,8 +288,8 @@ func (r ApiBatchReadRequest) Execute() (*BatchResponseSimplePublicObject, *http.
 /*
 BatchRead Read a batch of companies by internal ID, or unique property values
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiBatchReadRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiBatchReadRequest
 */
 func (a *BatchApiService) BatchRead(ctx context.Context) ApiBatchReadRequest {
 	return ApiBatchReadRequest{
@@ -298,7 +299,8 @@ func (a *BatchApiService) BatchRead(ctx context.Context) ApiBatchReadRequest {
 }
 
 // Execute executes the request
-//  @return BatchResponseSimplePublicObject
+//
+//	@return BatchResponseSimplePublicObject
 func (a *BatchApiService) BatchReadExecute(r ApiBatchReadRequest) (*BatchResponseSimplePublicObject, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -415,8 +417,8 @@ func (r ApiBatchUpdateRequest) Execute() (*BatchResponseSimplePublicObject, *htt
 /*
 BatchUpdate Update a batch of companies
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiBatchUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiBatchUpdateRequest
 */
 func (a *BatchApiService) BatchUpdate(ctx context.Context) ApiBatchUpdateRequest {
 	return ApiBatchUpdateRequest{
@@ -426,7 +428,8 @@ func (a *BatchApiService) BatchUpdate(ctx context.Context) ApiBatchUpdateRequest
 }
 
 // Execute executes the request
-//  @return BatchResponseSimplePublicObject
+//
+//	@return BatchResponseSimplePublicObject
 func (a *BatchApiService) BatchUpdateExecute(r ApiBatchUpdateRequest) (*BatchResponseSimplePublicObject, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

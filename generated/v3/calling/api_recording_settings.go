@@ -37,9 +37,9 @@ func (r ApiGetCrmV3ExtensionsCallingAppIdSettingsRecordingGetUrlFormatRequest) E
 /*
 GetCrmV3ExtensionsCallingAppIdSettingsRecordingGetUrlFormat Method for GetCrmV3ExtensionsCallingAppIdSettingsRecordingGetUrlFormat
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param appId
- @return ApiGetCrmV3ExtensionsCallingAppIdSettingsRecordingGetUrlFormatRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param appId
+	@return ApiGetCrmV3ExtensionsCallingAppIdSettingsRecordingGetUrlFormatRequest
 */
 func (a *RecordingSettingsApiService) GetCrmV3ExtensionsCallingAppIdSettingsRecordingGetUrlFormat(ctx context.Context, appId int32) ApiGetCrmV3ExtensionsCallingAppIdSettingsRecordingGetUrlFormatRequest {
 	return ApiGetCrmV3ExtensionsCallingAppIdSettingsRecordingGetUrlFormatRequest{
@@ -50,7 +50,8 @@ func (a *RecordingSettingsApiService) GetCrmV3ExtensionsCallingAppIdSettingsReco
 }
 
 // Execute executes the request
-//  @return RecordingSettingsResponse
+//
+//	@return RecordingSettingsResponse
 func (a *RecordingSettingsApiService) GetCrmV3ExtensionsCallingAppIdSettingsRecordingGetUrlFormatExecute(r ApiGetCrmV3ExtensionsCallingAppIdSettingsRecordingGetUrlFormatRequest) (*RecordingSettingsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -161,9 +162,9 @@ func (r ApiPatchCrmV3ExtensionsCallingAppIdSettingsRecordingUpdateUrlFormatReque
 /*
 PatchCrmV3ExtensionsCallingAppIdSettingsRecordingUpdateUrlFormat Method for PatchCrmV3ExtensionsCallingAppIdSettingsRecordingUpdateUrlFormat
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param appId
- @return ApiPatchCrmV3ExtensionsCallingAppIdSettingsRecordingUpdateUrlFormatRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param appId
+	@return ApiPatchCrmV3ExtensionsCallingAppIdSettingsRecordingUpdateUrlFormatRequest
 */
 func (a *RecordingSettingsApiService) PatchCrmV3ExtensionsCallingAppIdSettingsRecordingUpdateUrlFormat(ctx context.Context, appId int32) ApiPatchCrmV3ExtensionsCallingAppIdSettingsRecordingUpdateUrlFormatRequest {
 	return ApiPatchCrmV3ExtensionsCallingAppIdSettingsRecordingUpdateUrlFormatRequest{
@@ -174,7 +175,8 @@ func (a *RecordingSettingsApiService) PatchCrmV3ExtensionsCallingAppIdSettingsRe
 }
 
 // Execute executes the request
-//  @return RecordingSettingsResponse
+//
+//	@return RecordingSettingsResponse
 func (a *RecordingSettingsApiService) PatchCrmV3ExtensionsCallingAppIdSettingsRecordingUpdateUrlFormatExecute(r ApiPatchCrmV3ExtensionsCallingAppIdSettingsRecordingUpdateUrlFormatRequest) (*RecordingSettingsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
@@ -290,9 +292,9 @@ func (r ApiPostCrmV3ExtensionsCallingAppIdSettingsRecordingRegisterUrlFormatRequ
 /*
 PostCrmV3ExtensionsCallingAppIdSettingsRecordingRegisterUrlFormat Method for PostCrmV3ExtensionsCallingAppIdSettingsRecordingRegisterUrlFormat
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param appId
- @return ApiPostCrmV3ExtensionsCallingAppIdSettingsRecordingRegisterUrlFormatRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param appId
+	@return ApiPostCrmV3ExtensionsCallingAppIdSettingsRecordingRegisterUrlFormatRequest
 */
 func (a *RecordingSettingsApiService) PostCrmV3ExtensionsCallingAppIdSettingsRecordingRegisterUrlFormat(ctx context.Context, appId int32) ApiPostCrmV3ExtensionsCallingAppIdSettingsRecordingRegisterUrlFormatRequest {
 	return ApiPostCrmV3ExtensionsCallingAppIdSettingsRecordingRegisterUrlFormatRequest{
@@ -303,7 +305,8 @@ func (a *RecordingSettingsApiService) PostCrmV3ExtensionsCallingAppIdSettingsRec
 }
 
 // Execute executes the request
-//  @return RecordingSettingsResponse
+//
+//	@return RecordingSettingsResponse
 func (a *RecordingSettingsApiService) PostCrmV3ExtensionsCallingAppIdSettingsRecordingRegisterUrlFormatExecute(r ApiPostCrmV3ExtensionsCallingAppIdSettingsRecordingRegisterUrlFormatRequest) (*RecordingSettingsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

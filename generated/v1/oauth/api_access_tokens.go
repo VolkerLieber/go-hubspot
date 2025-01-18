@@ -33,9 +33,9 @@ func (r ApiGetOauthV1AccessTokensTokenGetRequest) Execute() (*AccessTokenInfoRes
 /*
 GetOauthV1AccessTokensTokenGet Method for GetOauthV1AccessTokensTokenGet
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param token
- @return ApiGetOauthV1AccessTokensTokenGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param token
+	@return ApiGetOauthV1AccessTokensTokenGetRequest
 */
 func (a *AccessTokensApiService) GetOauthV1AccessTokensTokenGet(ctx context.Context, token string) ApiGetOauthV1AccessTokensTokenGetRequest {
 	return ApiGetOauthV1AccessTokensTokenGetRequest{
@@ -46,7 +46,8 @@ func (a *AccessTokensApiService) GetOauthV1AccessTokensTokenGet(ctx context.Cont
 }
 
 // Execute executes the request
-//  @return AccessTokenInfoResponse
+//
+//	@return AccessTokenInfoResponse
 func (a *AccessTokensApiService) GetOauthV1AccessTokensTokenGetExecute(r ApiGetOauthV1AccessTokensTokenGetRequest) (*AccessTokenInfoResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet

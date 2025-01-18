@@ -35,8 +35,8 @@ CardsGetSample Get sample card detail response
 
 Returns an example card detail response. This is the payload with displayed details for a card that will be shown to a user. An app should send this in response to the data fetch request.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCardsGetSampleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCardsGetSampleRequest
 */
 func (a *SampleResponseApiService) CardsGetSample(ctx context.Context) ApiCardsGetSampleRequest {
 	return ApiCardsGetSampleRequest{
@@ -46,7 +46,8 @@ func (a *SampleResponseApiService) CardsGetSample(ctx context.Context) ApiCardsG
 }
 
 // Execute executes the request
-//  @return IntegratorCardPayloadResponse
+//
+//	@return IntegratorCardPayloadResponse
 func (a *SampleResponseApiService) CardsGetSampleExecute(r ApiCardsGetSampleRequest) (*IntegratorCardPayloadResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet

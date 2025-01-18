@@ -40,9 +40,9 @@ Archive Archive
 
 Move an Object identified by `{dealId}` to the recycling bin.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param dealId
- @return ApiArchiveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param dealId
+	@return ApiArchiveRequest
 */
 func (a *BasicApiService) Archive(ctx context.Context, dealId string) ApiArchiveRequest {
 	return ApiArchiveRequest{
@@ -154,8 +154,8 @@ Create Create
 
 Create a deal with the given properties and return a copy of the object, including the ID. Documentation and examples for creating standard deals is provided.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateRequest
 */
 func (a *BasicApiService) Create(ctx context.Context) ApiCreateRequest {
 	return ApiCreateRequest{
@@ -165,7 +165,8 @@ func (a *BasicApiService) Create(ctx context.Context) ApiCreateRequest {
 }
 
 // Execute executes the request
-//  @return SimplePublicObject
+//
+//	@return SimplePublicObject
 func (a *BasicApiService) CreateExecute(r ApiCreateRequest) (*SimplePublicObject, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -311,9 +312,9 @@ GetByID Read
 
 Read an Object identified by `{dealId}`. `{dealId}` refers to the internal object ID by default, or optionally any unique property value as specified by the `idProperty` query param.  Control what is returned via the `properties` query param.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param dealId
- @return ApiGetByIDRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param dealId
+	@return ApiGetByIDRequest
 */
 func (a *BasicApiService) GetByID(ctx context.Context, dealId string) ApiGetByIDRequest {
 	return ApiGetByIDRequest{
@@ -324,7 +325,8 @@ func (a *BasicApiService) GetByID(ctx context.Context, dealId string) ApiGetByID
 }
 
 // Execute executes the request
-//  @return SimplePublicObjectWithAssociations
+//
+//	@return SimplePublicObjectWithAssociations
 func (a *BasicApiService) GetByIDExecute(r ApiGetByIDRequest) (*SimplePublicObjectWithAssociations, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -511,8 +513,8 @@ GetPage List
 
 Read a page of deals. Control what is returned via the `properties` query param.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetPageRequest
 */
 func (a *BasicApiService) GetPage(ctx context.Context) ApiGetPageRequest {
 	return ApiGetPageRequest{
@@ -522,7 +524,8 @@ func (a *BasicApiService) GetPage(ctx context.Context) ApiGetPageRequest {
 }
 
 // Execute executes the request
-//  @return CollectionResponseSimplePublicObjectWithAssociationsForwardPaging
+//
+//	@return CollectionResponseSimplePublicObjectWithAssociationsForwardPaging
 func (a *BasicApiService) GetPageExecute(r ApiGetPageRequest) (*CollectionResponseSimplePublicObjectWithAssociationsForwardPaging, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -683,9 +686,9 @@ Update Update
 
 Perform a partial update of an Object identified by `{dealId}`. `{dealId}` refers to the internal object ID by default, or optionally any unique property value as specified by the `idProperty` query param. Provided property values will be overwritten. Read-only and non-existent properties will be ignored. Properties values can be cleared by passing an empty string.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param dealId
- @return ApiUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param dealId
+	@return ApiUpdateRequest
 */
 func (a *BasicApiService) Update(ctx context.Context, dealId string) ApiUpdateRequest {
 	return ApiUpdateRequest{
@@ -696,7 +699,8 @@ func (a *BasicApiService) Update(ctx context.Context, dealId string) ApiUpdateRe
 }
 
 // Execute executes the request
-//  @return SimplePublicObject
+//
+//	@return SimplePublicObject
 func (a *BasicApiService) UpdateExecute(r ApiUpdateRequest) (*SimplePublicObject, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch

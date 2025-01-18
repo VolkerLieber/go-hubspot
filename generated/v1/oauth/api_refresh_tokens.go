@@ -33,9 +33,9 @@ func (r ApiDeleteOauthV1RefreshTokensTokenArchiveRequest) Execute() (*http.Respo
 /*
 DeleteOauthV1RefreshTokensTokenArchive Method for DeleteOauthV1RefreshTokensTokenArchive
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param token
- @return ApiDeleteOauthV1RefreshTokensTokenArchiveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param token
+	@return ApiDeleteOauthV1RefreshTokensTokenArchiveRequest
 */
 func (a *RefreshTokensApiService) DeleteOauthV1RefreshTokensTokenArchive(ctx context.Context, token string) ApiDeleteOauthV1RefreshTokensTokenArchiveRequest {
 	return ApiDeleteOauthV1RefreshTokensTokenArchiveRequest{
@@ -130,9 +130,9 @@ func (r ApiGetOauthV1RefreshTokensTokenGetRequest) Execute() (*RefreshTokenInfoR
 /*
 GetOauthV1RefreshTokensTokenGet Method for GetOauthV1RefreshTokensTokenGet
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param token
- @return ApiGetOauthV1RefreshTokensTokenGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param token
+	@return ApiGetOauthV1RefreshTokensTokenGetRequest
 */
 func (a *RefreshTokensApiService) GetOauthV1RefreshTokensTokenGet(ctx context.Context, token string) ApiGetOauthV1RefreshTokensTokenGetRequest {
 	return ApiGetOauthV1RefreshTokensTokenGetRequest{
@@ -143,7 +143,8 @@ func (a *RefreshTokensApiService) GetOauthV1RefreshTokensTokenGet(ctx context.Co
 }
 
 // Execute executes the request
-//  @return RefreshTokenInfoResponse
+//
+//	@return RefreshTokenInfoResponse
 func (a *RefreshTokensApiService) GetOauthV1RefreshTokensTokenGetExecute(r ApiGetOauthV1RefreshTokensTokenGetRequest) (*RefreshTokenInfoResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet

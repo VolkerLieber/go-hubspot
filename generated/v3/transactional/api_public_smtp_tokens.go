@@ -39,9 +39,9 @@ ArchiveToken Delete a single token by ID.
 
 Delete a single token by ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tokenId Identifier generated when a token is created.
- @return ApiArchiveTokenRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param tokenId Identifier generated when a token is created.
+	@return ApiArchiveTokenRequest
 */
 func (a *PublicSmtpTokensApiService) ArchiveToken(ctx context.Context, tokenId string) ApiArchiveTokenRequest {
 	return ApiArchiveTokenRequest{
@@ -154,8 +154,8 @@ CreateToken Create a SMTP API token.
 
 Create a SMTP API token.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateTokenRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateTokenRequest
 */
 func (a *PublicSmtpTokensApiService) CreateToken(ctx context.Context) ApiCreateTokenRequest {
 	return ApiCreateTokenRequest{
@@ -165,7 +165,8 @@ func (a *PublicSmtpTokensApiService) CreateToken(ctx context.Context) ApiCreateT
 }
 
 // Execute executes the request
-//  @return SmtpApiTokenView
+//
+//	@return SmtpApiTokenView
 func (a *PublicSmtpTokensApiService) CreateTokenExecute(r ApiCreateTokenRequest) (*SmtpApiTokenView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -276,9 +277,9 @@ GetTokenByID Query a single token by ID.
 
 Query a single token by ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tokenId Identifier generated when a token is created.
- @return ApiGetTokenByIDRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param tokenId Identifier generated when a token is created.
+	@return ApiGetTokenByIDRequest
 */
 func (a *PublicSmtpTokensApiService) GetTokenByID(ctx context.Context, tokenId string) ApiGetTokenByIDRequest {
 	return ApiGetTokenByIDRequest{
@@ -289,7 +290,8 @@ func (a *PublicSmtpTokensApiService) GetTokenByID(ctx context.Context, tokenId s
 }
 
 // Execute executes the request
-//  @return SmtpApiTokenView
+//
+//	@return SmtpApiTokenView
 func (a *PublicSmtpTokensApiService) GetTokenByIDExecute(r ApiGetTokenByIDRequest) (*SmtpApiTokenView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -423,8 +425,8 @@ GetTokensPage Query SMTP API tokens by campaign name or an emailCampaignId.
 
 Query multiple SMTP API tokens by campaign name or a single token by emailCampaignId.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetTokensPageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetTokensPageRequest
 */
 func (a *PublicSmtpTokensApiService) GetTokensPage(ctx context.Context) ApiGetTokensPageRequest {
 	return ApiGetTokensPageRequest{
@@ -434,7 +436,8 @@ func (a *PublicSmtpTokensApiService) GetTokensPage(ctx context.Context) ApiGetTo
 }
 
 // Execute executes the request
-//  @return CollectionResponseSmtpApiTokenViewForwardPaging
+//
+//	@return CollectionResponseSmtpApiTokenViewForwardPaging
 func (a *PublicSmtpTokensApiService) GetTokensPageExecute(r ApiGetTokensPageRequest) (*CollectionResponseSmtpApiTokenViewForwardPaging, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -552,9 +555,9 @@ ResetPassword Reset the password of an existing token.
 
 Allows the creation of a replacement password for a given token. Once the password is successfully reset, the old password for the token will be invalid.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tokenId Identifier generated when a token is created.
- @return ApiResetPasswordRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param tokenId Identifier generated when a token is created.
+	@return ApiResetPasswordRequest
 */
 func (a *PublicSmtpTokensApiService) ResetPassword(ctx context.Context, tokenId string) ApiResetPasswordRequest {
 	return ApiResetPasswordRequest{
@@ -565,7 +568,8 @@ func (a *PublicSmtpTokensApiService) ResetPassword(ctx context.Context, tokenId 
 }
 
 // Execute executes the request
-//  @return SmtpApiTokenView
+//
+//	@return SmtpApiTokenView
 func (a *PublicSmtpTokensApiService) ResetPasswordExecute(r ApiResetPasswordRequest) (*SmtpApiTokenView, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

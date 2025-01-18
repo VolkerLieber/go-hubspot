@@ -47,9 +47,9 @@ PostCmsV3HubdbTablesTableIdOrNameRowsBatchReadReadTableRows Get a set of rows
 Returns rows in the `published` version of the specified table, given a set of row ids.
 **Note:** This endpoint can be accessed without any authentication if the table is set to be allowed for public access.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tableIdOrName The ID or name of the table to query.
- @return ApiPostCmsV3HubdbTablesTableIdOrNameRowsBatchReadReadTableRowsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param tableIdOrName The ID or name of the table to query.
+	@return ApiPostCmsV3HubdbTablesTableIdOrNameRowsBatchReadReadTableRowsRequest
 */
 func (a *RowsBatchApiService) PostCmsV3HubdbTablesTableIdOrNameRowsBatchReadReadTableRows(ctx context.Context, tableIdOrName string) ApiPostCmsV3HubdbTablesTableIdOrNameRowsBatchReadReadTableRowsRequest {
 	return ApiPostCmsV3HubdbTablesTableIdOrNameRowsBatchReadReadTableRowsRequest{
@@ -60,7 +60,8 @@ func (a *RowsBatchApiService) PostCmsV3HubdbTablesTableIdOrNameRowsBatchReadRead
 }
 
 // Execute executes the request
-//  @return BatchResponseHubDbTableRowV3
+//
+//	@return BatchResponseHubDbTableRowV3
 func (a *RowsBatchApiService) PostCmsV3HubdbTablesTableIdOrNameRowsBatchReadReadTableRowsExecute(r ApiPostCmsV3HubdbTablesTableIdOrNameRowsBatchReadReadTableRowsRequest) (*BatchResponseHubDbTableRowV3, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -179,9 +180,9 @@ PostCmsV3HubdbTablesTableIdOrNameRowsDraftBatchCloneCloneDraftTableRows Clone ro
 
 Clones rows in the `draft` version of the specified table, given a set of row ids. Maximum of 100 row ids per call.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tableIdOrName The ID or name of the table
- @return ApiPostCmsV3HubdbTablesTableIdOrNameRowsDraftBatchCloneCloneDraftTableRowsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param tableIdOrName The ID or name of the table
+	@return ApiPostCmsV3HubdbTablesTableIdOrNameRowsDraftBatchCloneCloneDraftTableRowsRequest
 */
 func (a *RowsBatchApiService) PostCmsV3HubdbTablesTableIdOrNameRowsDraftBatchCloneCloneDraftTableRows(ctx context.Context, tableIdOrName string) ApiPostCmsV3HubdbTablesTableIdOrNameRowsDraftBatchCloneCloneDraftTableRowsRequest {
 	return ApiPostCmsV3HubdbTablesTableIdOrNameRowsDraftBatchCloneCloneDraftTableRowsRequest{
@@ -192,7 +193,8 @@ func (a *RowsBatchApiService) PostCmsV3HubdbTablesTableIdOrNameRowsDraftBatchClo
 }
 
 // Execute executes the request
-//  @return BatchResponseHubDbTableRowV3
+//
+//	@return BatchResponseHubDbTableRowV3
 func (a *RowsBatchApiService) PostCmsV3HubdbTablesTableIdOrNameRowsDraftBatchCloneCloneDraftTableRowsExecute(r ApiPostCmsV3HubdbTablesTableIdOrNameRowsDraftBatchCloneCloneDraftTableRowsRequest) (*BatchResponseHubDbTableRowV3, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -311,9 +313,9 @@ PostCmsV3HubdbTablesTableIdOrNameRowsDraftBatchCreateCreateDraftTableRows Create
 
 Creates rows in the `draft` version of the specified table, given an array of row objects. Maximum of 100 row object per call. See the overview section for more details with an example.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tableIdOrName The ID or name of the table
- @return ApiPostCmsV3HubdbTablesTableIdOrNameRowsDraftBatchCreateCreateDraftTableRowsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param tableIdOrName The ID or name of the table
+	@return ApiPostCmsV3HubdbTablesTableIdOrNameRowsDraftBatchCreateCreateDraftTableRowsRequest
 */
 func (a *RowsBatchApiService) PostCmsV3HubdbTablesTableIdOrNameRowsDraftBatchCreateCreateDraftTableRows(ctx context.Context, tableIdOrName string) ApiPostCmsV3HubdbTablesTableIdOrNameRowsDraftBatchCreateCreateDraftTableRowsRequest {
 	return ApiPostCmsV3HubdbTablesTableIdOrNameRowsDraftBatchCreateCreateDraftTableRowsRequest{
@@ -324,7 +326,8 @@ func (a *RowsBatchApiService) PostCmsV3HubdbTablesTableIdOrNameRowsDraftBatchCre
 }
 
 // Execute executes the request
-//  @return BatchResponseHubDbTableRowV3
+//
+//	@return BatchResponseHubDbTableRowV3
 func (a *RowsBatchApiService) PostCmsV3HubdbTablesTableIdOrNameRowsDraftBatchCreateCreateDraftTableRowsExecute(r ApiPostCmsV3HubdbTablesTableIdOrNameRowsDraftBatchCreateCreateDraftTableRowsRequest) (*BatchResponseHubDbTableRowV3, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -443,9 +446,9 @@ PostCmsV3HubdbTablesTableIdOrNameRowsDraftBatchPurgePurgeDraftTableRows Permanen
 
 Permanently deletes rows from the `draft` version of the table, given a set of row ids. Maximum of 100 row ids per call.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tableIdOrName The ID or name of the table
- @return ApiPostCmsV3HubdbTablesTableIdOrNameRowsDraftBatchPurgePurgeDraftTableRowsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param tableIdOrName The ID or name of the table
+	@return ApiPostCmsV3HubdbTablesTableIdOrNameRowsDraftBatchPurgePurgeDraftTableRowsRequest
 */
 func (a *RowsBatchApiService) PostCmsV3HubdbTablesTableIdOrNameRowsDraftBatchPurgePurgeDraftTableRows(ctx context.Context, tableIdOrName string) ApiPostCmsV3HubdbTablesTableIdOrNameRowsDraftBatchPurgePurgeDraftTableRowsRequest {
 	return ApiPostCmsV3HubdbTablesTableIdOrNameRowsDraftBatchPurgePurgeDraftTableRowsRequest{
@@ -564,9 +567,9 @@ PostCmsV3HubdbTablesTableIdOrNameRowsDraftBatchReadReadDraftTableRows Get a set 
 
 Returns rows in the `draft` version of the specified table, given a set of row ids.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tableIdOrName The ID or name of the table
- @return ApiPostCmsV3HubdbTablesTableIdOrNameRowsDraftBatchReadReadDraftTableRowsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param tableIdOrName The ID or name of the table
+	@return ApiPostCmsV3HubdbTablesTableIdOrNameRowsDraftBatchReadReadDraftTableRowsRequest
 */
 func (a *RowsBatchApiService) PostCmsV3HubdbTablesTableIdOrNameRowsDraftBatchReadReadDraftTableRows(ctx context.Context, tableIdOrName string) ApiPostCmsV3HubdbTablesTableIdOrNameRowsDraftBatchReadReadDraftTableRowsRequest {
 	return ApiPostCmsV3HubdbTablesTableIdOrNameRowsDraftBatchReadReadDraftTableRowsRequest{
@@ -577,7 +580,8 @@ func (a *RowsBatchApiService) PostCmsV3HubdbTablesTableIdOrNameRowsDraftBatchRea
 }
 
 // Execute executes the request
-//  @return BatchResponseHubDbTableRowV3
+//
+//	@return BatchResponseHubDbTableRowV3
 func (a *RowsBatchApiService) PostCmsV3HubdbTablesTableIdOrNameRowsDraftBatchReadReadDraftTableRowsExecute(r ApiPostCmsV3HubdbTablesTableIdOrNameRowsDraftBatchReadReadDraftTableRowsRequest) (*BatchResponseHubDbTableRowV3, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -696,9 +700,9 @@ PostCmsV3HubdbTablesTableIdOrNameRowsDraftBatchReplaceReplaceDraftTableRows Repl
 
 Replaces multiple rows as a batch in the `draft` version of the table, with a maximum of 100 rows per call. See the endpoint `PUT /tables/{tableIdOrName}/rows/{rowId}/draft` for details on updating a single row.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tableIdOrName The ID or name of the table
- @return ApiPostCmsV3HubdbTablesTableIdOrNameRowsDraftBatchReplaceReplaceDraftTableRowsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param tableIdOrName The ID or name of the table
+	@return ApiPostCmsV3HubdbTablesTableIdOrNameRowsDraftBatchReplaceReplaceDraftTableRowsRequest
 */
 func (a *RowsBatchApiService) PostCmsV3HubdbTablesTableIdOrNameRowsDraftBatchReplaceReplaceDraftTableRows(ctx context.Context, tableIdOrName string) ApiPostCmsV3HubdbTablesTableIdOrNameRowsDraftBatchReplaceReplaceDraftTableRowsRequest {
 	return ApiPostCmsV3HubdbTablesTableIdOrNameRowsDraftBatchReplaceReplaceDraftTableRowsRequest{
@@ -709,7 +713,8 @@ func (a *RowsBatchApiService) PostCmsV3HubdbTablesTableIdOrNameRowsDraftBatchRep
 }
 
 // Execute executes the request
-//  @return BatchResponseHubDbTableRowV3
+//
+//	@return BatchResponseHubDbTableRowV3
 func (a *RowsBatchApiService) PostCmsV3HubdbTablesTableIdOrNameRowsDraftBatchReplaceReplaceDraftTableRowsExecute(r ApiPostCmsV3HubdbTablesTableIdOrNameRowsDraftBatchReplaceReplaceDraftTableRowsRequest) (*BatchResponseHubDbTableRowV3, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -828,9 +833,9 @@ PostCmsV3HubdbTablesTableIdOrNameRowsDraftBatchUpdateUpdateDraftTableRows Update
 
 Updates multiple rows as a batch in the `draft` version of the table, with a maximum of 100 rows per call. See the endpoint `PATCH /tables/{tableIdOrName}/rows/{rowId}/draft` for details on updating a single row.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tableIdOrName The ID or name of the table
- @return ApiPostCmsV3HubdbTablesTableIdOrNameRowsDraftBatchUpdateUpdateDraftTableRowsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param tableIdOrName The ID or name of the table
+	@return ApiPostCmsV3HubdbTablesTableIdOrNameRowsDraftBatchUpdateUpdateDraftTableRowsRequest
 */
 func (a *RowsBatchApiService) PostCmsV3HubdbTablesTableIdOrNameRowsDraftBatchUpdateUpdateDraftTableRows(ctx context.Context, tableIdOrName string) ApiPostCmsV3HubdbTablesTableIdOrNameRowsDraftBatchUpdateUpdateDraftTableRowsRequest {
 	return ApiPostCmsV3HubdbTablesTableIdOrNameRowsDraftBatchUpdateUpdateDraftTableRowsRequest{
@@ -841,7 +846,8 @@ func (a *RowsBatchApiService) PostCmsV3HubdbTablesTableIdOrNameRowsDraftBatchUpd
 }
 
 // Execute executes the request
-//  @return BatchResponseHubDbTableRowV3
+//
+//	@return BatchResponseHubDbTableRowV3
 func (a *RowsBatchApiService) PostCmsV3HubdbTablesTableIdOrNameRowsDraftBatchUpdateUpdateDraftTableRowsExecute(r ApiPostCmsV3HubdbTablesTableIdOrNameRowsDraftBatchUpdateUpdateDraftTableRowsRequest) (*BatchResponseHubDbTableRowV3, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

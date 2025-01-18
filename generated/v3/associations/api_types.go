@@ -17,6 +17,7 @@ import (
 	"net/http"
 
 	"github.com/clarkmcc/go-hubspot"
+
 	"net/url"
 	"strings"
 )
@@ -40,10 +41,10 @@ GetAll List association types
 
 List all the valid association types available between two object types
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param fromObjectType
- @param toObjectType
- @return ApiGetAllRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param fromObjectType
+	@param toObjectType
+	@return ApiGetAllRequest
 */
 func (a *TypesApiService) GetAll(ctx context.Context, fromObjectType string, toObjectType string) ApiGetAllRequest {
 	return ApiGetAllRequest{
@@ -55,7 +56,8 @@ func (a *TypesApiService) GetAll(ctx context.Context, fromObjectType string, toO
 }
 
 // Execute executes the request
-//  @return CollectionResponsePublicAssociationDefinitionNoPaging
+//
+//	@return CollectionResponsePublicAssociationDefinitionNoPaging
 func (a *TypesApiService) GetAllExecute(r ApiGetAllRequest) (*CollectionResponsePublicAssociationDefinitionNoPaging, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -106,16 +108,12 @@ func (a *TypesApiService) GetAllExecute(r ApiGetAllRequest) (*CollectionResponse
 	}
 	if r.ctx != nil {
 		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["private_apps_legacy"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["private-app-legacy"] = key
-			}
+		if auth, ok := r.ctx.Value(hubspot.ContextKey).(hubspot.Authorizer); ok {
+			auth.Apply(hubspot.AuthorizationRequest{
+				QueryParams: localVarQueryParams,
+				FormParams:  localVarFormParams,
+				Headers:     localVarHeaderParams,
+			})
 		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)

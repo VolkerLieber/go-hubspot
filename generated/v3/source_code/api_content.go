@@ -41,10 +41,10 @@ ContentArchive Delete a file
 
 Deletes the file at the specified path in the specified environment.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param environment The environment of the file (\"draft\" or \"published\").
- @param path The file system location of the file.
- @return ApiContentArchiveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param environment The environment of the file (\"draft\" or \"published\").
+	@param path The file system location of the file.
+	@return ApiContentArchiveRequest
 */
 func (a *ContentApiService) ContentArchive(ctx context.Context, environment string, path string) ApiContentArchiveRequest {
 	return ApiContentArchiveRequest{
@@ -161,10 +161,10 @@ ContentCreate Create a file
 
 Creates a file at the specified path in the specified environment. Accepts multipart/form-data content type. Throws an error if a file already exists at the specified path.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param environment The environment of the file (\"draft\" or \"published\").
- @param path The file system location of the file.
- @return ApiContentCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param environment The environment of the file (\"draft\" or \"published\").
+	@param path The file system location of the file.
+	@return ApiContentCreateRequest
 
 Deprecated
 */
@@ -178,7 +178,9 @@ func (a *ContentApiService) ContentCreate(ctx context.Context, environment strin
 }
 
 // Execute executes the request
-//  @return AssetFileMetadata
+//
+//	@return AssetFileMetadata
+//
 // Deprecated
 func (a *ContentApiService) ContentCreateExecute(r ApiContentCreateRequest) (*AssetFileMetadata, *http.Response, error) {
 	var (
@@ -305,10 +307,10 @@ GetCmsV3SourceCodeEnvironmentContentPathDownload Download a file
 
 Downloads the byte contents of the file at the specified path in the specified environment.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param environment The environment of the file (\"draft\" or \"published\").
- @param path The file system location of the file.
- @return ApiGetCmsV3SourceCodeEnvironmentContentPathDownloadRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param environment The environment of the file (\"draft\" or \"published\").
+	@param path The file system location of the file.
+	@return ApiGetCmsV3SourceCodeEnvironmentContentPathDownloadRequest
 */
 func (a *ContentApiService) GetCmsV3SourceCodeEnvironmentContentPathDownload(ctx context.Context, environment string, path string) ApiGetCmsV3SourceCodeEnvironmentContentPathDownloadRequest {
 	return ApiGetCmsV3SourceCodeEnvironmentContentPathDownloadRequest{
@@ -320,7 +322,8 @@ func (a *ContentApiService) GetCmsV3SourceCodeEnvironmentContentPathDownload(ctx
 }
 
 // Execute executes the request
-//  @return Error
+//
+//	@return Error
 func (a *ContentApiService) GetCmsV3SourceCodeEnvironmentContentPathDownloadExecute(r ApiGetCmsV3SourceCodeEnvironmentContentPathDownloadRequest) (*Error, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -436,10 +439,10 @@ PutCmsV3SourceCodeEnvironmentContentPathCreateOrUpdate Create or update a file
 
 Upserts a file at the specified path in the specified environment. Accepts multipart/form-data content type.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param environment The environment of the file (\"draft\" or \"published\").
- @param path The file system location of the file.
- @return ApiPutCmsV3SourceCodeEnvironmentContentPathCreateOrUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param environment The environment of the file (\"draft\" or \"published\").
+	@param path The file system location of the file.
+	@return ApiPutCmsV3SourceCodeEnvironmentContentPathCreateOrUpdateRequest
 */
 func (a *ContentApiService) PutCmsV3SourceCodeEnvironmentContentPathCreateOrUpdate(ctx context.Context, environment string, path string) ApiPutCmsV3SourceCodeEnvironmentContentPathCreateOrUpdateRequest {
 	return ApiPutCmsV3SourceCodeEnvironmentContentPathCreateOrUpdateRequest{
@@ -451,7 +454,8 @@ func (a *ContentApiService) PutCmsV3SourceCodeEnvironmentContentPathCreateOrUpda
 }
 
 // Execute executes the request
-//  @return AssetFileMetadata
+//
+//	@return AssetFileMetadata
 func (a *ContentApiService) PutCmsV3SourceCodeEnvironmentContentPathCreateOrUpdateExecute(r ApiPutCmsV3SourceCodeEnvironmentContentPathCreateOrUpdateRequest) (*AssetFileMetadata, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut

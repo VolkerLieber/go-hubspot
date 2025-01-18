@@ -53,9 +53,9 @@ InvoiceCreatePayment Records an invoice payment
 
 Records an payment against an invoice.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param invoiceId The ID of the invoice. This is the invoice ID from the external accounting system.
- @return ApiInvoiceCreatePaymentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param invoiceId The ID of the invoice. This is the invoice ID from the external accounting system.
+	@return ApiInvoiceCreatePaymentRequest
 */
 func (a *InvoiceApiService) InvoiceCreatePayment(ctx context.Context, invoiceId string) ApiInvoiceCreatePaymentRequest {
 	return ApiInvoiceCreatePaymentRequest{
@@ -66,7 +66,8 @@ func (a *InvoiceApiService) InvoiceCreatePayment(ctx context.Context, invoiceId 
 }
 
 // Execute executes the request
-//  @return InvoiceUpdateResponse
+//
+//	@return InvoiceUpdateResponse
 func (a *InvoiceApiService) InvoiceCreatePaymentExecute(r ApiInvoiceCreatePaymentRequest) (*InvoiceUpdateResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -188,9 +189,9 @@ InvoiceGetByID Get invoice data
 
 Returns invoice data for an Accounting account from the specified ID
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param invoiceId The ID of the invoice. This is the invoice ID from the external accounting system.
- @return ApiInvoiceGetByIDRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param invoiceId The ID of the invoice. This is the invoice ID from the external accounting system.
+	@return ApiInvoiceGetByIDRequest
 */
 func (a *InvoiceApiService) InvoiceGetByID(ctx context.Context, invoiceId string) ApiInvoiceGetByIDRequest {
 	return ApiInvoiceGetByIDRequest{
@@ -201,7 +202,8 @@ func (a *InvoiceApiService) InvoiceGetByID(ctx context.Context, invoiceId string
 }
 
 // Execute executes the request
-//  @return InvoiceReadResponse
+//
+//	@return InvoiceReadResponse
 func (a *InvoiceApiService) InvoiceGetByIDExecute(r ApiInvoiceGetByIDRequest) (*InvoiceReadResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -326,9 +328,9 @@ InvoiceUpdate Update an invoice
 
 Updates an Invoice by the given ID.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param invoiceId The ID of the invoice. This is the invoice ID from the external accounting system.
- @return ApiInvoiceUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param invoiceId The ID of the invoice. This is the invoice ID from the external accounting system.
+	@return ApiInvoiceUpdateRequest
 */
 func (a *InvoiceApiService) InvoiceUpdate(ctx context.Context, invoiceId string) ApiInvoiceUpdateRequest {
 	return ApiInvoiceUpdateRequest{
@@ -339,7 +341,8 @@ func (a *InvoiceApiService) InvoiceUpdate(ctx context.Context, invoiceId string)
 }
 
 // Execute executes the request
-//  @return InvoiceUpdateResponse
+//
+//	@return InvoiceUpdateResponse
 func (a *InvoiceApiService) InvoiceUpdateExecute(r ApiInvoiceUpdateRequest) (*InvoiceUpdateResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch

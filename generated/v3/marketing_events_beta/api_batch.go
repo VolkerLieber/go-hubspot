@@ -44,8 +44,8 @@ ArchiveBatch Delete multiple marketing events
 
 Bulk delete a number of marketing events in HubSpot
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiArchiveBatchRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiArchiveBatchRequest
 */
 func (a *BatchApiService) ArchiveBatch(ctx context.Context) ApiArchiveBatchRequest {
 	return ApiArchiveBatchRequest{
@@ -55,7 +55,8 @@ func (a *BatchApiService) ArchiveBatch(ctx context.Context) ApiArchiveBatchReque
 }
 
 // Execute executes the request
-//  @return Error
+//
+//	@return Error
 func (a *BatchApiService) ArchiveBatchExecute(r ApiArchiveBatchRequest) (*Error, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -172,8 +173,8 @@ Upsert Create or update multiple marketing events
 
 Upset multiple Marketing Event. If there is an existing Marketing event with the specified id, it will be updated; otherwise a new event will be created.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUpsertRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiUpsertRequest
 */
 func (a *BatchApiService) Upsert(ctx context.Context) ApiUpsertRequest {
 	return ApiUpsertRequest{
@@ -183,7 +184,8 @@ func (a *BatchApiService) Upsert(ctx context.Context) ApiUpsertRequest {
 }
 
 // Execute executes the request
-//  @return BatchResponseMarketingEventPublicDefaultResponse
+//
+//	@return BatchResponseMarketingEventPublicDefaultResponse
 func (a *BatchApiService) UpsertExecute(r ApiUpsertRequest) (*BatchResponseMarketingEventPublicDefaultResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

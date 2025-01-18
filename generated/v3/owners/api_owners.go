@@ -50,9 +50,9 @@ func (r ApiGetByIDRequest) Execute() (*PublicOwner, *http.Response, error) {
 /*
 GetByID Read an owner by given `id` or `userId`
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ownerId
- @return ApiGetByIDRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param ownerId
+	@return ApiGetByIDRequest
 */
 func (a *OwnersApiService) GetByID(ctx context.Context, ownerId int32) ApiGetByIDRequest {
 	return ApiGetByIDRequest{
@@ -63,7 +63,8 @@ func (a *OwnersApiService) GetByID(ctx context.Context, ownerId int32) ApiGetByI
 }
 
 // Execute executes the request
-//  @return PublicOwner
+//
+//	@return PublicOwner
 func (a *OwnersApiService) GetByIDExecute(r ApiGetByIDRequest) (*PublicOwner, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -119,16 +120,12 @@ func (a *OwnersApiService) GetByIDExecute(r ApiGetByIDRequest) (*PublicOwner, *h
 	}
 	if r.ctx != nil {
 		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["private_apps_legacy"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["private-app-legacy"] = key
-			}
+		if auth, ok := r.ctx.Value(hubspot.ContextKey).(hubspot.Authorizer); ok {
+			auth.Apply(hubspot.AuthorizationRequest{
+				QueryParams: localVarQueryParams,
+				FormParams:  localVarFormParams,
+				Headers:     localVarHeaderParams,
+			})
 		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -215,8 +212,8 @@ func (r ApiGetPageRequest) Execute() (*CollectionResponsePublicOwnerForwardPagin
 /*
 GetPage Get a page of owners
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetPageRequest
 */
 func (a *OwnersApiService) GetPage(ctx context.Context) ApiGetPageRequest {
 	return ApiGetPageRequest{
@@ -226,7 +223,8 @@ func (a *OwnersApiService) GetPage(ctx context.Context) ApiGetPageRequest {
 }
 
 // Execute executes the request
-//  @return CollectionResponsePublicOwnerForwardPaging
+//
+//	@return CollectionResponsePublicOwnerForwardPaging
 func (a *OwnersApiService) GetPageExecute(r ApiGetPageRequest) (*CollectionResponsePublicOwnerForwardPaging, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -287,16 +285,12 @@ func (a *OwnersApiService) GetPageExecute(r ApiGetPageRequest) (*CollectionRespo
 	}
 	if r.ctx != nil {
 		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["private_apps_legacy"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["private-app-legacy"] = key
-			}
+		if auth, ok := r.ctx.Value(hubspot.ContextKey).(hubspot.Authorizer); ok {
+			auth.Apply(hubspot.AuthorizationRequest{
+				QueryParams: localVarQueryParams,
+				FormParams:  localVarFormParams,
+				Headers:     localVarHeaderParams,
+			})
 		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
